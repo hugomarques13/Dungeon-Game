@@ -12,7 +12,19 @@ config_version=5
 
 config/name="Dungeon Game"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+TargetGetter="*uid://bcutmf1h00hw1"
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "red",
+"res://Scripts/": "orange",
+"res://Sprites/": "yellow"
+}
 
 [physics]
 

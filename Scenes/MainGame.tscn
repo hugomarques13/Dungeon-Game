@@ -13,15 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://cwttu2l43dspi" path="res://Sprites/Rooms/tilesbottom1.png" id="10_r5sjn"]
 [ext_resource type="Texture2D" uid="uid://b4f2m8xwohvlu" path="res://Sprites/Enemies/Lord_Dungeon.png" id="11_ev6kq"]
 [ext_resource type="Texture2D" uid="uid://dillut2scdnxl" path="res://Sprites/Rooms/tilesbottom2.png" id="11_yc6xl"]
-[ext_resource type="Texture2D" uid="uid://bano8m5q4o0vj" path="res://Sprites/Rooms/Traps/tileblades1.png" id="12_o6tew"]
 [ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="12_q8sds"]
 [ext_resource type="Script" uid="uid://c4h8y7kek513i" path="res://Scripts/floor_handler.gd" id="12_yr2pg"]
-[ext_resource type="Texture2D" uid="uid://b7ewjjnpg368l" path="res://Sprites/Rooms/Traps/tileblades2.png" id="13_3ijh3"]
-[ext_resource type="Texture2D" uid="uid://btavelkygboyp" path="res://Sprites/Rooms/Traps/tileblades3.png" id="14_fto8l"]
 [ext_resource type="Script" uid="uid://bo85l345u8m1e" path="res://Scripts/enemies_movement.gd" id="14_wyocf"]
-[ext_resource type="Texture2D" uid="uid://d0f1eo7cqcvb2" path="res://Sprites/Rooms/Traps/tileblades4.png" id="15_gskau"]
 [ext_resource type="Texture2D" uid="uid://b38eo4a3dq5qv" path="res://Sprites/HUD/Shop/iconbackground.png" id="16_jn25s"]
-[ext_resource type="Texture2D" uid="uid://7rbu08qm80pj" path="res://Sprites/Rooms/Traps/tileblades5.png" id="16_ny3r6"]
 [ext_resource type="Script" uid="uid://cxjtyj1u0o56a" path="res://Scripts/shop.gd" id="16_yy0n7"]
 [ext_resource type="Texture2D" uid="uid://bwu3f001lbmeb" path="res://Sprites/HUD/Shop/IconTabName.png" id="17_glaac"]
 [ext_resource type="Texture2D" uid="uid://c1ju1fmt5suwi" path="res://Sprites/Rooms/tileflag.png" id="17_ny3r6"]
@@ -34,7 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://cx3s6eg4oolbu" path="res://Sprites/HUD/Shop/IconTextSpace.png" id="23_im1vy"]
 [ext_resource type="Texture2D" uid="uid://b3866okum5htt" path="res://Sprites/HUD/Shop/IconNameSpace.png" id="24_yy0n7"]
 [ext_resource type="Texture2D" uid="uid://dpqwa1jwhcgd8" path="res://Sprites/HUD/Shop/IconSoulsSpace.png" id="25_0wdc3"]
+[ext_resource type="Texture2D" uid="uid://csou8l3mg33k8" path="res://Sprites/HUD/FloorUpA.png" id="25_hnhmk"]
+[ext_resource type="Texture2D" uid="uid://pmog3jkh0ahy" path="res://Sprites/HUD/FloorUpB.png" id="26_s11rx"]
 [ext_resource type="Texture2D" uid="uid://cfssjydl0yhe3" path="res://Sprites/HUD/Souls.png" id="26_w42fa"]
+[ext_resource type="Texture2D" uid="uid://bmmyt1t25oqmq" path="res://Sprites/HUD/FloorDownA.png" id="27_4ekvx"]
+[ext_resource type="Texture2D" uid="uid://2ta0jnej328" path="res://Sprites/HUD/FloorDownB.png" id="28_m7vhu"]
 [ext_resource type="PackedScene" uid="uid://bsc1ltlimehli" path="res://Prefabs/souls.tscn" id="33_o6tew"]
 [ext_resource type="Texture2D" uid="uid://vd3wsvr4q4rv" path="res://Sprites/HUD/Shop/placeh.png" id="34_ny3r6"]
 [ext_resource type="Script" uid="uid://s52ujt22d3ak" path="res://Scripts/player.gd" id="36_3ijh3"]
@@ -42,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://dyr55hkvnwomk" path="res://Sprites/HUD/Combat/SkillList.png" id="41_50m7d"]
 [ext_resource type="Texture2D" uid="uid://ba8v8i6v4q84s" path="res://Sprites/HUD/Combat/SkillButton.png" id="42_1u2qj"]
 [ext_resource type="Texture2D" uid="uid://cvll8vwijbe3t" path="res://Sprites/HUD/Combat/SkillButtonHighlight.png" id="43_hnhmk"]
-[ext_resource type="Script" uid="uid://crlxejloh0g2j" path="res://Scripts/skill_button.gd" id="44_s11rx"]
+[ext_resource type="Script" uid="uid://2xdxyx3h2mos" path="res://Scripts/top_bar.gd" id="43_s11rx"]
 [ext_resource type="Texture2D" uid="uid://bn77jofch8mk0" path="res://Sprites/HUD/Combat/SkillOnCooldown.png" id="45_4ekvx"]
 [ext_resource type="Texture2D" uid="uid://0c733tps0unr" path="res://Sprites/HUD/Combat/SkillMenu.png" id="46_m7vhu"]
 [ext_resource type="Texture2D" uid="uid://b8p68ctxriyif" path="res://Sprites/HUD/Combat/Action1.png" id="47_dhbwi"]
@@ -58,38 +57,18 @@ vertices = PackedVector2Array(311, 254.36719, 184.46094, 174.6875, 219.0625, 186
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 4, 8, 11, 12), PackedInt32Array(13, 14, 9, 12, 15, 16), PackedInt32Array(17, 18, 13, 16, 19), PackedInt32Array(17, 19, 20), PackedInt32Array(17, 20, 21), PackedInt32Array(22, 17, 21, 23), PackedInt32Array(3, 24, 22, 23, 25, 0)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(109, 139, 298, 258, 294, 266, 512, 395, 581, 358, 675, 400, 694, 410, 708, 421, 710, 442, 725, 458, 733, 477, 750, 495, 753, 511, 817, 548, 868, 515, 810, 477, 804, 462, 782, 450, 776, 431, 760, 414, 754, 392, 594, 290, 517, 335, 358, 238, 338, 237, 223, 177)])
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_76w8d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_o6tew")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_3ijh3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_fto8l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_gskau")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_ny3r6")
-}],
-"loop": false,
-"name": &"default",
-"speed": 20.0
-}]
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lcmar"]
 vertices = PackedVector2Array(337.71875, 253.14063, 147.42188, 138.0625, 179.86719, 118.71094, 331.8203, 213.67969, 416.8828, 200.03906, 410.89844, 167.61719, 599.90625, 282.1172, 541.90625, 280.25, 435.03906, 385.04688, 375.53125, 380.8672, 648.7578, 541.27344, 642.02344, 512.7578, 960.8203, 314.8672, 1004.3906, 343.6797, 980.4922, 358.35156, 962.3828, 340.2422)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(11, 12, 15, 10)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(128, 138, 180, 107, 332, 202, 411, 156, 619, 282, 454, 385, 642, 501, 961, 303, 1023, 344, 979, 371, 961, 353, 649, 553, 356, 381, 523, 280, 417, 212, 338, 265)])
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cqekc"]
-vertices = PackedVector2Array(752.5781, 481.45313, 831.6328, 526.47656, 660.71875, 635.3203, 547.35156, 570.53906, 623.96094, 521.78906, 649.96094, 508.8125, 412.35938, 171.88281, 596.7969, 283.09375, 443.1328, 377.89063, 338.21875, 223, 308.95313, 234.89844, 150.92188, 137.88281, 177.96094, 120.828125, 960.8125, 314.89063, 987.6328, 332.77344, 231.03906, 283.84375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 9), PackedInt32Array(13, 14, 0, 5), PackedInt32Array(8, 5, 4, 15), PackedInt32Array(9, 8, 15, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(132, 138, 178, 109, 338, 211, 412, 160, 616, 283, 462, 378, 650, 497, 961, 303, 1006, 333, 772, 481, 851, 526, 661, 647, 528, 571, 605, 522, 212, 284, 290, 235)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hnhmk"]
+vertices = PackedVector2Array(1041.0938, 293.3125, 1012.5078, 275.67188, 1078.3125, 231.8125, 1137.5703, 235.92188, 873.10156, 75.74219, 878.03906, 104.171875, 303.75, 233.28125, 154.40625, 136.04688, 178.13281, 120.796875, 363.64844, 233.92188, 191.39063, 337.09375, 140.54688, 332.78906, 409.82813, 489.32813, 407.14063, 463.6797, 747.75, 279.54688, 705.6719, 278.5703, 676.8281, 230.60938, 623.5703, 232.50781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11), PackedInt32Array(12, 11, 10, 13), PackedInt32Array(14, 12, 13, 15), PackedInt32Array(16, 14, 15, 17), PackedInt32Array(16, 17, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(136, 136, 178, 109, 383, 234, 211, 337, 407, 452, 686, 279, 604, 233, 873, 64, 1157, 236, 1041, 305, 994, 276, 1060, 232, 878, 116, 695, 231, 766, 280, 410, 501, 121, 333, 285, 233)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcmar"]
+radius = 44.407207
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgk2h"]
 texture = ExtResource("21_him8o")
@@ -104,8 +83,8 @@ load_path = "res://.godot/imported/Action2.png-d188bf93f3e1c6b588cafd8fb28c83d5.
 
 [node name="Floor1" type="Node2D" parent="." unique_id=2072207568]
 
-[node name="Tile2" type="Sprite2D" parent="Floor1" unique_id=537807805]
-position = Vector2(665, 370)
+[node name="Tile2" type="Sprite2D" parent="Floor1" unique_id=537807805 groups=["FloorTile"]]
+position = Vector2(667, 370)
 texture = ExtResource("1_8etcy")
 
 [node name="WallA1" type="Sprite2D" parent="Floor1" unique_id=1099117981]
@@ -116,15 +95,15 @@ texture = ExtResource("2_73a8k")
 position = Vector2(628, 253)
 texture = ExtResource("2_73a8k")
 
-[node name="Tile4" type="Sprite2D" parent="Floor1" unique_id=1259396056]
-position = Vector2(511, 370)
+[node name="Tile4" type="Sprite2D" parent="Floor1" unique_id=1259396056 groups=["FloorTile"]]
+position = Vector2(512, 368)
 texture = ExtResource("1_8etcy")
 
-[node name="Tile5" type="Sprite2D" parent="Floor1" unique_id=1153979179]
+[node name="Tile5" type="Sprite2D" parent="Floor1" unique_id=1153979179 groups=["FloorTile"]]
 position = Vector2(434, 321)
 texture = ExtResource("1_8etcy")
 
-[node name="Tile6" type="Sprite2D" parent="Floor1" unique_id=1462590507]
+[node name="Tile6" type="Sprite2D" parent="Floor1" unique_id=1462590507 groups=["FloorTile"]]
 position = Vector2(357, 274)
 texture = ExtResource("1_8etcy")
 
@@ -161,7 +140,7 @@ texture = ExtResource("7_ktwve")
 
 [node name="Tilesbottom" type="Sprite2D" parent="Floor1" unique_id=1314678352]
 z_index = -1
-position = Vector2(512, 426)
+position = Vector2(512, 424)
 texture = ExtResource("8_r5sjn")
 
 [node name="WallB1" type="Sprite2D" parent="Floor1" unique_id=2030133154]
@@ -178,7 +157,7 @@ navigation_polygon = SubResource("NavigationPolygon_ktwve")
 
 [node name="Tilesbottom1" type="Sprite2D" parent="Floor1" unique_id=277172417]
 z_index = -1
-position = Vector2(627, 427)
+position = Vector2(628, 425)
 texture = ExtResource("10_r5sjn")
 
 [node name="Tilesbottom2" type="Sprite2D" parent="Floor1" unique_id=630132333]
@@ -195,10 +174,6 @@ texture = ExtResource("10_r5sjn")
 z_index = -1
 position = Vector2(319, 330)
 texture = ExtResource("10_r5sjn")
-
-[node name="SpikeTrap" type="AnimatedSprite2D" parent="Floor1" unique_id=1181611683]
-position = Vector2(-392, 314)
-sprite_frames = SubResource("SpriteFrames_76w8d")
 
 [node name="Tileflag" type="Sprite2D" parent="Floor1" unique_id=33579722]
 z_index = -1
@@ -219,255 +194,254 @@ position = Vector2(821, 513)
 [node name="Fight1" type="Marker2D" parent="Floor1/Points" unique_id=1624147275]
 position = Vector2(590, 319)
 
-[node name="Floor2Large" type="Node2D" parent="." unique_id=1868701126]
+[node name="Floor2" type="Node2D" parent="." unique_id=1868701126]
 position = Vector2(0, 648)
 
-[node name="Tile2" type="Sprite2D" parent="Floor2Large" unique_id=1914259262]
+[node name="Tile2" type="Sprite2D" parent="Floor2" unique_id=1914259262 groups=["FloorTile"]]
 position = Vector2(568, 285)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile8" type="Sprite2D" parent="Floor2Large" unique_id=1610859010]
+[node name="Tile8" type="Sprite2D" parent="Floor2" unique_id=1610859010 groups=["FloorTile"]]
 position = Vector2(488, 333)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile9" type="Sprite2D" parent="Floor2Large" unique_id=286068624]
+[node name="Tile9" type="Sprite2D" parent="Floor2" unique_id=286068624 groups=["FloorTile"]]
 position = Vector2(411, 381)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile11" type="Sprite2D" parent="Floor2Large" unique_id=558953048]
+[node name="Tile11" type="Sprite2D" parent="Floor2" unique_id=558953048 groups=["FloorTile"]]
 position = Vector2(569, 477)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile12" type="Sprite2D" parent="Floor2Large" unique_id=470333733]
+[node name="Tile12" type="Sprite2D" parent="Floor2" unique_id=470333733 groups=["FloorTile"]]
 position = Vector2(649, 525)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile13" type="Sprite2D" parent="Floor2Large" unique_id=887486570]
+[node name="Tile13" type="Sprite2D" parent="Floor2" unique_id=887486570 groups=["FloorTile"]]
 position = Vector2(727, 477)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile14" type="Sprite2D" parent="Floor2Large" unique_id=24187706]
+[node name="Tile14" type="Sprite2D" parent="Floor2" unique_id=24187706 groups=["FloorTile"]]
 position = Vector2(805, 429)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile15" type="Sprite2D" parent="Floor2Large" unique_id=736349531]
+[node name="Tile15" type="Sprite2D" parent="Floor2" unique_id=736349531 groups=["FloorTile"]]
 position = Vector2(883, 381)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile7" type="Sprite2D" parent="Floor2Large" unique_id=1678619273]
+[node name="Tile7" type="Sprite2D" parent="Floor2" unique_id=1678619273 groups=["FloorTile"]]
 position = Vector2(961, 333)
 texture = ExtResource("10_k6vqf")
 
-[node name="WallA1" type="Sprite2D" parent="Floor2Large" unique_id=1552210866]
+[node name="WallA1" type="Sprite2D" parent="Floor2" unique_id=1552210866]
 position = Vector2(138, 324)
 texture = ExtResource("2_73a8k")
 
-[node name="Tile3" type="Sprite2D" parent="Floor2Large" unique_id=1406434898]
+[node name="Tile3" type="Sprite2D" parent="Floor2" unique_id=1406434898 groups=["FloorTile"]]
 position = Vector2(490, 235)
 texture = ExtResource("10_k6vqf")
 
-[node name="WallA2" type="Sprite2D" parent="Floor2Large" unique_id=1517811188]
+[node name="WallA2" type="Sprite2D" parent="Floor2" unique_id=1517811188]
 position = Vector2(49, 304)
 texture = ExtResource("2_73a8k")
 
-[node name="Tile4" type="Sprite2D" parent="Floor2Large" unique_id=1254227618]
+[node name="Tile4" type="Sprite2D" parent="Floor2" unique_id=1254227618 groups=["FloorTile"]]
 position = Vector2(411, 188)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile5" type="Sprite2D" parent="Floor2Large" unique_id=703054227]
+[node name="Tile5" type="Sprite2D" parent="Floor2" unique_id=703054227 groups=["FloorTile"]]
 position = Vector2(333, 236)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile6" type="Sprite2D" parent="Floor2Large" unique_id=537878354]
+[node name="Tile6" type="Sprite2D" parent="Floor2" unique_id=537878354 groups=["FloorTile"]]
 position = Vector2(255, 188)
 texture = ExtResource("10_k6vqf")
 
-[node name="WallA5" type="Sprite2D" parent="Floor2Large" unique_id=111155831]
+[node name="WallA5" type="Sprite2D" parent="Floor2" unique_id=111155831]
 position = Vector2(589, 140)
 texture = ExtResource("2_73a8k")
 
-[node name="WallA7" type="Sprite2D" parent="Floor2Large" unique_id=1586285105]
+[node name="WallA7" type="Sprite2D" parent="Floor2" unique_id=1586285105]
 z_index = -1
 position = Vector2(1001, 264)
 texture = ExtResource("2_73a8k")
 
-[node name="TileLevelChange" type="Sprite2D" parent="Floor2Large" unique_id=210476244]
+[node name="TileLevelChange" type="Sprite2D" parent="Floor2" unique_id=210476244]
 position = Vector2(177, 141)
 texture = ExtResource("6_wyocf")
 
-[node name="WallsCornerInwards" type="Sprite2D" parent="Floor2Large" unique_id=1095467194]
+[node name="WallsCornerInwards" type="Sprite2D" parent="Floor2" unique_id=1095467194]
 position = Vector2(252, 373)
 texture = ExtResource("7_ktwve")
 
-[node name="Tilesbottom" type="Sprite2D" parent="Floor2Large" unique_id=1930925731]
+[node name="Tilesbottom" type="Sprite2D" parent="Floor2" unique_id=1930925731]
 z_index = -1
 position = Vector2(150, 466)
 texture = ExtResource("8_r5sjn")
 
-[node name="LordDungeon" type="Sprite2D" parent="Floor2Large" unique_id=749811026]
+[node name="LordDungeon" type="Sprite2D" parent="Floor2" unique_id=749811026]
 position = Vector2(999.99994, 318.99994)
 rotation = -0.5275147
 scale = Vector2(0.21, 0.20999998)
 skew = 0.51312673
 texture = ExtResource("11_ev6kq")
 
-[node name="Center" type="Marker2D" parent="Floor2Large" unique_id=702193848]
+[node name="Center" type="Marker2D" parent="Floor2" unique_id=702193848]
 position = Vector2(576, 324)
 
-[node name="Start" type="Marker2D" parent="Floor2Large" unique_id=535930453]
+[node name="Start" type="Marker2D" parent="Floor2" unique_id=535930453]
 position = Vector2(174, 116)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor2Large" unique_id=1720183765]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor2" unique_id=1720183765]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_lcmar")
 
-[node name="Tileflag" type="Sprite2D" parent="Floor2Large" unique_id=1069569610]
+[node name="Tileflag" type="Sprite2D" parent="Floor2" unique_id=1069569610]
 z_index = -1
 position = Vector2(491, 429)
 texture = ExtResource("17_ny3r6")
 
-[node name="Flag1" parent="Floor2Large" unique_id=1626341124 instance=ExtResource("18_ny3r6")]
+[node name="Flag1" parent="Floor2" unique_id=1626341124 instance=ExtResource("18_ny3r6")]
 position = Vector2(491, 397)
 
-[node name="Points" type="Node2D" parent="Floor2Large" unique_id=1405951218]
+[node name="Points" type="Node2D" parent="Floor2" unique_id=1405951218]
 
-[node name="End" type="Marker2D" parent="Floor2Large/Points" unique_id=284727669]
+[node name="End" type="Marker2D" parent="Floor2/Points" unique_id=284727669]
 position = Vector2(999, 352)
 
-[node name="Fight1" type="Marker2D" parent="Floor2Large/Points" unique_id=1850587627]
+[node name="Fight1" type="Marker2D" parent="Floor2/Points" unique_id=1850587627]
 position = Vector2(492, 427)
 
-[node name="Floor2" type="Node2D" parent="." unique_id=2034295302]
-visible = false
-position = Vector2(0, 648)
+[node name="Floor3" type="Node2D" parent="." unique_id=2001177782]
+position = Vector2(0, 1296)
 
-[node name="Tile2" type="Sprite2D" parent="Floor2" unique_id=434800510]
-position = Vector2(568, 285)
+[node name="Tile8" type="Sprite2D" parent="Floor3" unique_id=1427651607 groups=["FloorTile"]]
+position = Vector2(408, 476)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile8" type="Sprite2D" parent="Floor2" unique_id=1934192925]
-position = Vector2(488, 333)
+[node name="Tile9" type="Sprite2D" parent="Floor3" unique_id=1705162375 groups=["FloorTile"]]
+position = Vector2(330, 428)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile9" type="Sprite2D" parent="Floor2" unique_id=1527522390]
-position = Vector2(411, 381)
+[node name="Tile11" type="Sprite2D" parent="Floor3" unique_id=99046939 groups=["FloorTile"]]
+position = Vector2(486, 428)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile11" type="Sprite2D" parent="Floor2" unique_id=549255328]
-position = Vector2(569, 477)
+[node name="Tile12" type="Sprite2D" parent="Floor3" unique_id=675281684 groups=["FloorTile"]]
+position = Vector2(642, 332)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile12" type="Sprite2D" parent="Floor2" unique_id=2096177221]
-position = Vector2(649, 525)
+[node name="Tile13" type="Sprite2D" parent="Floor3" unique_id=1724142717 groups=["FloorTile"]]
+position = Vector2(720, 282)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile18" type="Sprite2D" parent="Floor2" unique_id=296760416]
-position = Vector2(576, 573)
+[node name="Tile14" type="Sprite2D" parent="Floor3" unique_id=928881618 groups=["FloorTile"]]
+position = Vector2(642, 234)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile19" type="Sprite2D" parent="Floor2" unique_id=1089394918]
-position = Vector2(654, 621)
+[node name="Tile15" type="Sprite2D" parent="Floor3" unique_id=1174955025 groups=["FloorTile"]]
+position = Vector2(720, 186)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile20" type="Sprite2D" parent="Floor2" unique_id=1743165071]
-position = Vector2(730, 573)
+[node name="Tile16" type="Sprite2D" parent="Floor3" unique_id=880600947 groups=["FloorTile"]]
+position = Vector2(798, 138)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile21" type="Sprite2D" parent="Floor2" unique_id=1350002939]
-position = Vector2(807, 525)
+[node name="Tile17" type="Sprite2D" parent="Floor3" unique_id=375867008 groups=["FloorTile"]]
+position = Vector2(876, 90)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile13" type="Sprite2D" parent="Floor2" unique_id=1062741537]
-position = Vector2(727, 477)
+[node name="Tile18" type="Sprite2D" parent="Floor3" unique_id=1186654242 groups=["FloorTile"]]
+position = Vector2(954, 138)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile14" type="Sprite2D" parent="Floor2" unique_id=568772838]
-position = Vector2(805, 429)
+[node name="Tile7" type="Sprite2D" parent="Floor3" unique_id=1348376670 groups=["FloorTile"]]
+position = Vector2(1032, 186)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile15" type="Sprite2D" parent="Floor2" unique_id=881849497]
-position = Vector2(883, 381)
+[node name="Tile10" type="Sprite2D" parent="Floor3" unique_id=733053633 groups=["FloorTile"]]
+position = Vector2(1114, 234)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile7" type="Sprite2D" parent="Floor2" unique_id=42928322]
-position = Vector2(961, 333)
+[node name="Tile19" type="Sprite2D" parent="Floor3" unique_id=494158348 groups=["FloorTile"]]
+position = Vector2(1032, 280)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile3" type="Sprite2D" parent="Floor2" unique_id=1683867672]
-position = Vector2(490, 235)
+[node name="Tile3" type="Sprite2D" parent="Floor3" unique_id=1167543182 groups=["FloorTile"]]
+position = Vector2(174, 332)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile10" type="Sprite2D" parent="Floor2" unique_id=1683297483]
-position = Vector2(413, 283)
+[node name="Tile4" type="Sprite2D" parent="Floor3" unique_id=1344716445 groups=["FloorTile"]]
+position = Vector2(252, 284)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile16" type="Sprite2D" parent="Floor2" unique_id=720769515]
-position = Vector2(336, 333)
-texture = ExtResource("10_k6vqf")
-
-[node name="Tile17" type="Sprite2D" parent="Floor2" unique_id=655486199]
-position = Vector2(259, 285)
-texture = ExtResource("10_k6vqf")
-
-[node name="Tile4" type="Sprite2D" parent="Floor2" unique_id=1163359886]
-position = Vector2(411, 188)
-texture = ExtResource("10_k6vqf")
-
-[node name="Tile5" type="Sprite2D" parent="Floor2" unique_id=157303738]
+[node name="Tile5" type="Sprite2D" parent="Floor3" unique_id=1098843116 groups=["FloorTile"]]
 position = Vector2(333, 236)
 texture = ExtResource("10_k6vqf")
 
-[node name="Tile6" type="Sprite2D" parent="Floor2" unique_id=1777983331]
+[node name="Tile6" type="Sprite2D" parent="Floor3" unique_id=1792570188 groups=["FloorTile"]]
 position = Vector2(255, 188)
 texture = ExtResource("10_k6vqf")
 
-[node name="WallA7" type="Sprite2D" parent="Floor2" unique_id=1859838811]
+[node name="WallA7" type="Sprite2D" parent="Floor3" unique_id=1475674995]
 z_index = -1
-position = Vector2(1001, 264)
+position = Vector2(1152, 167)
 texture = ExtResource("2_73a8k")
 
-[node name="TileLevelChange" type="Sprite2D" parent="Floor2" unique_id=805203651]
+[node name="TileLevelChange" type="Sprite2D" parent="Floor3" unique_id=119741401]
 position = Vector2(177, 141)
 texture = ExtResource("6_wyocf")
 
-[node name="LordDungeon" type="Sprite2D" parent="Floor2" unique_id=1865639441]
-position = Vector2(999.99994, 318.99994)
+[node name="LordDungeon" type="Sprite2D" parent="Floor3" unique_id=1208321465]
+position = Vector2(1065.9999, 263.99982)
 rotation = -0.5275147
 scale = Vector2(0.21, 0.20999998)
 skew = 0.51312673
 texture = ExtResource("11_ev6kq")
 
-[node name="Center" type="Marker2D" parent="Floor2" unique_id=1373887226]
+[node name="Center" type="Marker2D" parent="Floor3" unique_id=412905057]
 position = Vector2(576, 324)
 
-[node name="Start" type="Marker2D" parent="Floor2" unique_id=149342638]
+[node name="Start" type="Marker2D" parent="Floor3" unique_id=1323980030]
 position = Vector2(174, 116)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor2" unique_id=756413076]
-navigation_polygon = SubResource("NavigationPolygon_cqekc")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor3" unique_id=864733780]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_hnhmk")
 
-[node name="Tileflag" type="Sprite2D" parent="Floor2" unique_id=234691440]
+[node name="Tileflag" type="Sprite2D" parent="Floor3" unique_id=1046358989]
 z_index = -1
-position = Vector2(491, 429)
+position = Vector2(252, 380)
 texture = ExtResource("17_ny3r6")
 
-[node name="Flag1" parent="Floor2" unique_id=1730512867 instance=ExtResource("18_ny3r6")]
-position = Vector2(491, 397)
+[node name="Tileflag2" type="Sprite2D" parent="Floor3" unique_id=273022603]
+z_index = -1
+position = Vector2(564, 380)
+texture = ExtResource("17_ny3r6")
 
-[node name="Points" type="Node2D" parent="Floor2" unique_id=1255268802]
+[node name="Flag1" parent="Floor3" unique_id=218786216 instance=ExtResource("18_ny3r6")]
+position = Vector2(252, 348)
 
-[node name="End" type="Marker2D" parent="Floor2/Points" unique_id=1368466291]
-position = Vector2(999, 352)
+[node name="Flag2" parent="Floor3" unique_id=2139496704 instance=ExtResource("18_ny3r6")]
+position = Vector2(564, 352)
 
-[node name="Fight1" type="Marker2D" parent="Floor2/Points" unique_id=367983134]
-position = Vector2(492, 427)
+[node name="Points" type="Node2D" parent="Floor3" unique_id=314709739]
+
+[node name="End" type="Marker2D" parent="Floor3/Points" unique_id=1880526749]
+position = Vector2(1028, 282)
+
+[node name="Fight1" type="Marker2D" parent="Floor3/Points" unique_id=1536137881]
+position = Vector2(252, 380)
+
+[node name="Fight2" type="Marker2D" parent="Floor3/Points" unique_id=98140291]
+position = Vector2(564, 381)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=526925156]
 position = Vector2(576, 324)
 skew = -1.3369222
 
 [node name="Chibis" type="Node2D" parent="." unique_id=1237708783]
-position = Vector2(215, 186)
+position = Vector2(-162, 8)
 script = ExtResource("14_wyocf")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Chibis" unique_id=1502002232]
@@ -487,6 +461,11 @@ position = Vector2(28, -2)
 
 [node name="Pos4" type="Marker2D" parent="Chibis" unique_id=2092719309]
 position = Vector2(0, -11)
+
+[node name="Area2D" type="Area2D" parent="Chibis" unique_id=1879933613]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chibis/Area2D" unique_id=1600004031]
+shape = SubResource("CircleShape2D_lcmar")
 
 [node name="Player" type="Node2D" parent="." unique_id=942317630]
 script = ExtResource("36_3ijh3")
@@ -530,22 +509,38 @@ theme_override_font_sizes/font_size = 41
 text = "FLOOR 2"
 horizontal_alignment = 1
 
-[node name="UpButton" type="Button" parent="HUD/FloorUI" unique_id=1870964680]
+[node name="Floor3" type="Label" parent="HUD/FloorUI" unique_id=1131916600]
+visible = false
 layout_mode = 0
-offset_left = 1037.5
-offset_top = 224.0
-offset_right = 1055.5
-offset_bottom = 255.0
-text = "^"
+offset_left = 994.0
+offset_top = 361.0
+offset_right = 1102.0
+offset_bottom = 412.0
+pivot_offset = Vector2(51, 25.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 41
+text = "FLOOR 3"
+horizontal_alignment = 1
 
-[node name="DownButton" type="Button" parent="HUD/FloorUI" unique_id=1743536739]
+[node name="UpButton" type="TextureButton" parent="HUD/FloorUI" unique_id=1487528844]
 layout_mode = 0
-offset_left = 1055.5
-offset_top = 404.0
-offset_right = 1073.5
-offset_bottom = 435.0
-rotation = 3.1415927
-text = "^"
+offset_left = 1028.0
+offset_top = 222.0
+offset_right = 1066.0
+offset_bottom = 256.0
+texture_normal = ExtResource("25_hnhmk")
+texture_hover = ExtResource("26_s11rx")
+
+[node name="DownButton" type="TextureButton" parent="HUD/FloorUI" unique_id=746517625]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 368.0
+offset_right = 1066.0
+offset_bottom = 402.0
+texture_normal = ExtResource("27_4ekvx")
+texture_hover = ExtResource("28_m7vhu")
 
 [node name="Shop" type="Control" parent="HUD" unique_id=9068246]
 visible = false
@@ -839,31 +834,33 @@ offset_right = 49.0
 offset_bottom = 586.0
 text = "Open Dungeon"
 
-[node name="Units" type="Control" parent="HUD" unique_id=489771842]
+[node name="TopBar" type="Control" parent="HUD" unique_id=489771842]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("43_s11rx")
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Units" unique_id=494191383]
+[node name="UnitsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=494191383]
 layout_mode = 0
 offset_right = 977.0
 offset_bottom = 119.0
 mouse_filter = 2
 theme = SubResource("Theme_wn26v")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Units/ScrollContainer" unique_id=1278770368]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar/UnitsContainer" unique_id=1278770368]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Template" type="TextureButton" parent="HUD/Units/ScrollContainer/HBoxContainer" unique_id=1563729243]
+[node name="Template" type="TextureButton" parent="HUD/TopBar/UnitsContainer/HBoxContainer" unique_id=1563729243]
 visible = false
 z_index = 1
 layout_mode = 2
 texture_normal = ExtResource("21_fgk2h")
 
-[node name="Cost" type="Label" parent="HUD/Units/ScrollContainer/HBoxContainer/Template" unique_id=876021064]
+[node name="Cost" type="Label" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=876021064]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 67.0
@@ -878,7 +875,7 @@ text = "10"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Amount" type="Label" parent="HUD/Units/ScrollContainer/HBoxContainer/Template" unique_id=1911491561]
+[node name="Amount" type="Label" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1911491561]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -7.0
@@ -892,7 +889,7 @@ theme_override_font_sizes/font_size = 33
 text = "10"
 vertical_alignment = 1
 
-[node name="Locked" type="ColorRect" parent="HUD/Units/ScrollContainer/HBoxContainer/Template" unique_id=1425974790]
+[node name="Locked" type="ColorRect" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1425974790]
 visible = false
 modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
 self_modulate = Color(1, 1, 1, 0.5372549)
@@ -907,7 +904,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Icon" type="TextureRect" parent="HUD/Units/ScrollContainer/HBoxContainer/Template" unique_id=1183633452]
+[node name="Icon" type="TextureRect" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1183633452]
 z_index = -1
 layout_mode = 0
 offset_left = 10.0
@@ -915,6 +912,93 @@ offset_top = 12.0
 offset_right = 92.0
 offset_bottom = 94.0
 texture = ExtResource("34_ny3r6")
+
+[node name="TrapsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=1480373633]
+visible = false
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 119.0
+mouse_filter = 2
+theme = SubResource("Theme_wn26v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar/TrapsContainer" unique_id=169890434]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Template" type="TextureButton" parent="HUD/TopBar/TrapsContainer/HBoxContainer" unique_id=1409747189]
+visible = false
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("21_fgk2h")
+
+[node name="Cost" type="Label" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1433479795]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1524648538]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 69.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+vertical_alignment = 1
+
+[node name="Locked" type="ColorRect" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1564962680]
+visible = false
+modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
+self_modulate = Color(1, 1, 1, 0.5372549)
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1231488709]
+z_index = -1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.0
+texture = ExtResource("34_ny3r6")
+
+[node name="Units" type="Button" parent="HUD/TopBar" unique_id=13021746]
+layout_mode = 0
+offset_top = 108.0
+offset_right = 49.0
+offset_bottom = 139.0
+text = "Units"
+
+[node name="Traps" type="Button" parent="HUD/TopBar" unique_id=1837840852]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 108.0
+offset_right = 102.0
+offset_bottom = 139.0
+text = "Traps
+"
 
 [node name="ChibiPlace" type="Node2D" parent="." unique_id=564463514]
 
@@ -928,6 +1012,7 @@ script = ExtResource("40_cqekc")
 [node name="Enemies" type="Node2D" parent="Combat" unique_id=8162375]
 
 [node name="HUD" type="CanvasLayer" parent="Combat" unique_id=87021241]
+visible = false
 
 [node name="SkillsMenu" type="TextureRect" parent="Combat/HUD" unique_id=624617219]
 visible = false
@@ -949,7 +1034,6 @@ visible = false
 layout_mode = 2
 texture_normal = ExtResource("42_1u2qj")
 texture_hover = ExtResource("43_hnhmk")
-script = ExtResource("44_s11rx")
 
 [node name="OnCooldown" type="TextureRect" parent="Combat/HUD/SkillsMenu/GridContainer/Template" unique_id=1202586504]
 visible = false
@@ -1110,6 +1194,7 @@ position = Vector2(1018, 242)
 [connection signal="pressed" from="HUD/ShopOpener" to="HUD/Shop" method="_on_shop_opener_pressed"]
 [connection signal="pressed" from="HUD/UnitsOpener" to="HUD/Shop" method="_on_units_opener_pressed"]
 [connection signal="pressed" from="HUD/DungeonOpener" to="Chibis" method="_on_dungeon_opener_pressed"]
-[connection signal="button_down" from="Combat/HUD/SkillsMenu/GridContainer/Template" to="Combat/HUD/SkillsMenu/GridContainer/Template" method="_on_button_down"]
+[connection signal="pressed" from="HUD/TopBar/Units" to="HUD/TopBar" method="_on_units_pressed"]
+[connection signal="pressed" from="HUD/TopBar/Traps" to="HUD/TopBar" method="_on_traps_pressed"]
 [connection signal="button_down" from="Combat/HUD/Buttons/Attack" to="Combat/HUD/Buttons/Attack" method="_on_button_down"]
 [connection signal="button_down" from="Combat/HUD/Buttons/Skill" to="Combat/HUD/Buttons/Skill" method="_on_button_down"]

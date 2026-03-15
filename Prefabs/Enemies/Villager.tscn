@@ -1,38 +1,20 @@
 [gd_scene format=3 uid="uid://lykroysjhv02"]
 
 [ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_82pef"]
-[ext_resource type="Script" uid="uid://b8gxlimwdmtug" path="res://Scripts/Moves/test_move.gd" id="2_kg66v"]
+[ext_resource type="PackedScene" uid="uid://bpfo7wk2i41qj" path="res://Prefabs/Moves/TestMove.tscn" id="2_82pef"]
 [ext_resource type="Texture2D" uid="uid://c4cbt4mo4ejup" path="res://Sprites/Enemies/Fodder1.png" id="3_qpi5v"]
 [ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="4_fqca0"]
 [ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="5_3viyb"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_kg66v"]
 
 [node name="Villager" type="CharacterBody2D" unique_id=1572280592]
 script = ExtResource("1_82pef")
 
 [node name="Moves" type="Node2D" parent="." unique_id=1957935201]
 
-[node name="TestMove" type="Node2D" parent="Moves" unique_id=850821571]
-script = ExtResource("2_kg66v")
+[node name="TestMove" parent="Moves" unique_id=1111325172 instance=ExtResource("2_82pef")]
 
 [node name="Status" type="Node2D" parent="." unique_id=640576991]
-
-[node name="GUI" type="Node2D" parent="." unique_id=1135556290]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="GUI" unique_id=49134817]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="GUI" unique_id=268202938]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
 
 [node name="Fodder" type="Sprite2D" parent="." unique_id=657085201]
 position = Vector2(-19, -11)
@@ -44,3 +26,5 @@ z_index = 7
 position = Vector2(-6, -158)
 texture = ExtResource("4_fqca0")
 script = ExtResource("5_3viyb")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_kg66v")]

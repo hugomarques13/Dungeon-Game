@@ -1,5 +1,7 @@
 extends Node2D
 
+const BURN_DAMAGE = 10
+
 @onready var Allies = $Allies
 @onready var Enemies = $Enemies
 @onready var HUD = $HUD
@@ -22,11 +24,10 @@ extends Node2D
 ]
 @onready var RegularHUD = $"../HUD"
 @onready var EnemyChibis = $"../Chibis"
-@onready var Floors = [
-	$"../Floor1",
-	$"../Floor2"
-]
 @onready var FloorUI = $"../HUD/FloorUI"
+
+
+var Floors = []
 
 var turn_order = []
 var turn_taken = []
@@ -45,6 +46,8 @@ var enemy_scenes = {}
 var HUD_visibility = {}
 
 func _ready() -> void:
+	await get_tree().process_frame
+	Floors = FloorUI.floors
 	TargetGetter.Allies = Allies
 	TargetGetter.Enemies = Enemies
 	
@@ -90,6 +93,7 @@ func start_combat():
 	position = Floors[FloorUI.current_floor].position
 	
 	visible = true
+	HUD.visible = true
 	disable_regular_hud()
 	is_fighting = true
 	
@@ -137,6 +141,7 @@ func _process(delta) -> void:
 func perform_turn(character: CharacterBody2D):
 	print(character.name, " is taking their turn")
 	var moves = character.get_node_or_null("Moves")
+	await handle_start_of_turn_status(character)
 	
 	current_character = character
 	
@@ -214,7 +219,7 @@ func lower_cooldowns(moves):
 	for move in moves.get_children():
 		if move.current_cooldown <= 0:
 			continue
-			
+		
 		move.current_cooldown -= 1
 
 func handle_ai_turn(character):
@@ -234,6 +239,8 @@ func handle_ai_turn(character):
 func handle_player_turn(character):
 	var moves = character.get_node_or_null("Moves")
 	
+	await clean_old_moves()
+
 	set_up_turn_ui()
 	create_move_buttons(moves)
 
@@ -270,6 +277,10 @@ func create_move_buttons(moves):
 					Description.visible = false
 			)
 			
+			newMoveIcon.pressed.connect(func():
+				move_button_pressed(move.name)
+			)
+			
 			SkillsContainer.add_child(newMoveIcon)
 
 func set_up_turn_ui():
@@ -286,7 +297,7 @@ func clean_old_moves():
 	for move in SkillsContainer.get_children():
 		if move.name != "Template":
 			move.queue_free()
-			
+	
 	return
 
 func character_died(character):
@@ -354,6 +365,7 @@ func end_fight(player_won: bool):
 	current_round = 0
 	is_fighting = false
 	visible = false
+	HUD.visible = false
 	reenable_regular_hud()
 
 func move_button_pressed(name):
@@ -449,3 +461,17 @@ func cancel_action():
 	elif current_action == "SelectingSkills":
 		SkillsMenu.visible = false
 		Buttons.visible = true
+		
+func handle_start_of_turn_status(character):
+	var status = character.get_node_or_null("Status")
+	if not status:
+		print("No status found")
+		return
+	
+	for effect in status.get_children():
+		if effect.name == "Burn":
+			character.take_damage(BURN_DAMAGE)
+			
+		StatusHandler.remove_status(character, effect.name, 1)
+	
+	return

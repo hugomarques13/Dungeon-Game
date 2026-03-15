@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dorna4bih8b3e"]
+
+[ext_resource type="Script" uid="uid://deeaa43qmju7s" path="res://Scripts/Moves/fire_move.gd" id="1_6ahj8"]
+
+[node name="FireMove" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_6ahj8")

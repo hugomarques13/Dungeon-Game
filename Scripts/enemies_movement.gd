@@ -1,9 +1,6 @@
 extends Node2D
 
-@onready var Floors = [
-	$"../Floor1",
-	$"../Floor2"
-]
+@onready var FloorUI = $"../HUD/FloorUI"
 @onready var NavigationAgent = $NavigationAgent2D
 @onready var CombatManager = $"../Combat"
 @onready var Shop = $"../HUD/Shop"
@@ -13,6 +10,7 @@ extends Node2D
 	$Pos3,
 	$Pos4
 ]
+@onready var FloorHandler = $"../HUD/FloorUI"
 
 var enemies = {
 	squad = {
@@ -21,7 +19,20 @@ var enemies = {
 		3: "Villager",
 		4: null
 	},
-	info = {}
+	info = {
+		1: {
+			"health": 0
+		},
+		2: {
+			"health": 0
+		},
+		3: {
+			"health": 0
+		},
+		4: {
+			"health": 0
+		},
+	}
 }
 
 var world_chibis = {
@@ -32,6 +43,8 @@ var world_chibis = {
 }
 
 var chibis = {}
+var enemy_prefabs = {}
+var enemy_max_health = {}
 
 var speed = 100.0  # pixels per second
 
@@ -39,11 +52,19 @@ var current_floor = 0
 var current_target = null
 var points_list = []
 var is_moving = false
+var Floors = []
 
 func _ready() -> void:
+	await get_tree().process_frame
+	Floors = FloorUI.floors
+	print("Floors are ", Floors)
 	NavigationAgent.connect("target_reached", Callable(self, "_on_target_reached"))
 	
 	CombatManager.load_assets("res://Prefabs/Chibis/", chibis)
+	await CombatManager.load_assets("res://Prefabs/Enemies/", enemy_prefabs)
+	
+	set_enemies_max_hp()
+	
 	#$"../Floor1/NavigationRegion2D".bake_navigation_polygon(true) # this is used if we use barricades to block pathfinding
 
 func _physics_process(delta: float) -> void:
@@ -99,15 +120,15 @@ func update_points_list():
 			fight_markers.append({"marker": marker, "num": num})
 
 	# Sort fight markers by number
-	fight_markers.sort_custom(_sort_markers_by_num)
+	fight_markers.sort()
 	
 	for item in fight_markers:
 		points_list.append(item["marker"])
 	if end_marker:
 		points_list.append(end_marker)
+		
+	print("Points list is ", points_list)
 
-func _sort_markers_by_num(a, b):
-	return a["num"] - b["num"]
 	
 func start_fight():
 	var num = int(current_target.name.substr(5, current_target.name.length() - 5))
@@ -133,7 +154,7 @@ func start_fight():
 	CombatManager.new_combat(allies, enemies.squad, enemies.info)
 
 func change_floor():
-	if current_floor + 1 == len(Floors):
+	if current_floor == FloorUI.unlocked_floors:
 		print("Dungeon finished!")
 		return
 	current_floor += 1
@@ -164,6 +185,8 @@ func place_at_start():
 	global_position = start.global_position
 
 func spawn_enemies():
+	current_floor = 0
+	current_target = null
 	place_at_start()
 	
 	for pos in enemies.squad.keys():
@@ -181,8 +204,14 @@ func spawn_enemies():
 			
 			start_chibi_bob(chibi, pos)
 		else:
-			print("No chibi found for unit")
+			print("No chibi found for ", enemy)
+			
+		if enemy in enemy_max_health:
+			enemies.info[pos].health = enemy_max_health[enemy]
+		else:
+			print("No prefab found for ", enemy)
 		
+	print(enemies)
 	update_points_list()
 	get_next_target()
 
@@ -191,9 +220,8 @@ func fight_ended(results_info, player_won: bool):
 	for pos in results_info.live_enemies:
 		var enemy = results_info.live_enemies[pos]
 		if enemy == null and enemies.squad[pos] != null:
-			world_chibis[pos].queue_free()
-			world_chibis[pos] = null
-			
+			enemy_died(enemy, pos)
+	
 	enemies.info = results_info.info
 	
 	var num = int(current_target.name.substr(5, current_target.name.length() - 5))
@@ -210,8 +238,17 @@ func fight_ended(results_info, player_won: bool):
 		if ally == null and allies[pos] != null:
 			flag.unit_died(allies[pos], pos)
 			
-	get_next_target()
+	if player_won:
+		FloorHandler.unlock_floor()
+	else:
+		get_next_target()
 	
+func enemy_died(enemy, pos):
+	# place blood effect
+	enemies.squad[pos] = null
+	world_chibis[pos].queue_free()
+	world_chibis[pos] = null
+
 func start_chibi_bob(chibi: Node2D, pos: int):
 	var base_y = chibi.position.y
 	var delay = (pos - 1) * 0.1
@@ -233,16 +270,22 @@ func set_chibis_bobbing(active: bool):
 		if not chibi:
 			continue
 		if active:
-			print("started tweening")
 			start_chibi_bob(chibi, pos)
 		else:
-			# Kill tween and snap back to base Y
-			print("stopped tweening")
 			var tween = chibi.create_tween()
 			tween.set_loops()
 			tween.tween_property(chibi, "position:y", ChibiPositions[pos-1].position.y, 0.1)\
 				.set_trans(Tween.TRANS_SINE)\
 				.set_ease(Tween.EASE_OUT)
+				
+func set_enemies_max_hp():
+	for enemyName in enemy_prefabs:
+		var enemy = enemy_prefabs[enemyName].instantiate()
+		
+		enemy_max_health[enemyName] = enemy.max_health
+		
+		enemy.queue_free()
+		
 
 func _on_dungeon_opener_pressed() -> void:
 	spawn_enemies()

@@ -17,6 +17,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 TargetGetter="*uid://bcutmf1h00hw1"
+StatusHandler="*uid://b8e04daisev51"
 
 [display]
 
@@ -34,6 +35,7 @@ folder_colors={
 [global_group]
 
 Flag=""
+FloorTile=""
 
 [input]
 

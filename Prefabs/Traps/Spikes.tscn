@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dw604q5safy4c"]
+
+[ext_resource type="Texture2D" uid="uid://bano8m5q4o0vj" path="res://Sprites/Rooms/Traps/tileblades1.png" id="1_xv7f1"]
+[ext_resource type="Texture2D" uid="uid://b7ewjjnpg368l" path="res://Sprites/Rooms/Traps/tileblades2.png" id="2_n3dd4"]
+[ext_resource type="Texture2D" uid="uid://btavelkygboyp" path="res://Sprites/Rooms/Traps/tileblades3.png" id="3_puddx"]
+[ext_resource type="Texture2D" uid="uid://d0f1eo7cqcvb2" path="res://Sprites/Rooms/Traps/tileblades4.png" id="4_7ht48"]
+[ext_resource type="Texture2D" uid="uid://7rbu08qm80pj" path="res://Sprites/Rooms/Traps/tileblades5.png" id="5_5gl24"]
+[ext_resource type="Script" uid="uid://c3anlba4mi36s" path="res://Scripts/Traps/SpikeTrap.gd" id="6_n3dd4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76w8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xv7f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n3dd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_puddx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ht48")
+}, {
+"duration": 8.0,
+"texture": ExtResource("5_5gl24")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="SpikeTrap" type="AnimatedSprite2D" unique_id=429765080]
+sprite_frames = SubResource("SpriteFrames_76w8d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1751312997]
+collision_layer = 0
+script = ExtResource("6_n3dd4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=493927177]
+polygon = PackedVector2Array(-53, 1, 6, -33, 52, -5, -3, 29)
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=408918043]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickBox" unique_id=1285463235]
+modulate = Color(1.3568124, 1.175139, 0.75589246, 0.07058824)
+light_mask = 0
+visibility_layer = 0
+polygon = PackedVector2Array(0, -46, 75, 0, 0, 46, -75, 0)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

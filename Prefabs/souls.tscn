@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bsc1ltlimehli"]
+
+[ext_resource type="Texture2D" uid="uid://dppx46dj40q0v" path="res://Sprites/HUD/SoulCurrencyHUD.png" id="1_reo1g"]
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="2_ov6s0"]
+
+[node name="Souls" type="Control" unique_id=1481786055]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2088204764]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 2.0
+offset_right = 1121.0
+offset_bottom = 69.0
+texture = ExtResource("1_reo1g")
+
+[node name="Amount" type="Label" parent="." unique_id=1142698596]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = -5.0
+offset_right = 1221.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_ov6s0")
+theme_override_font_sizes/font_size = 37
+text = "130"
+vertical_alignment = 1

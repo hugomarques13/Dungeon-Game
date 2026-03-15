@@ -23,11 +23,11 @@ func die():
 	print(name, " has died!")
 	Combat_Manager.character_died(character)
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.1).timeout
 	
 	queue_free()
 
 func update_hp_bar():
-	var hp_percentage = health / max_health
+	var hp_percentage = clamp(health / max_health,0,1)
 	
 	hp_bar.scale.x = hp_percentage

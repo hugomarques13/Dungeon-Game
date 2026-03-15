@@ -1,27 +1,24 @@
 extends Node2D
 
-var cooldown := 2
+var cooldown := 0
 var current_cooldown := 0
-var damage: float = 50
-var has_no_target = true
-var description = "A test move used by developers."
+var damage: float = 10
 
 @onready var character = $"../.."
 
-func use(false_target):
+func use(target):
 	# extra safety
 	if current_cooldown > 0:
 		print("test move on cooldown, sorry")
 		return
 		
+	if not target:
+		print("no target!")
+		return
+		
 	print("used move!")
 	
 	await get_tree().create_timer(0.5).timeout
-	
-	var target = TargetGetter.get_random_single_enemy_target(character)
-	
-	if not target:
-		return
 	
 	target.take_damage(damage)
 	

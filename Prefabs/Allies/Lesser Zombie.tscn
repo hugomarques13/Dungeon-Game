@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://yrtljopp4bs7"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_fl5ww"]
+[ext_resource type="Texture2D" uid="uid://cblh0p75y1t4s" path="res://Sprites/Allies/lesser_zombie.png" id="2_swkgd"]
+[ext_resource type="Script" uid="uid://b8gxlimwdmtug" path="res://Scripts/Moves/test_move.gd" id="3_k3xjc"]
+[ext_resource type="Script" uid="uid://bqmp4mr8fvbxh" path="res://Scripts/Moves/Attack.gd" id="4_8onqm"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="5_3rclc"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="6_ugavd"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="7_eldlw"]
+
+[node name="Lesser Zombie" type="CharacterBody2D" unique_id=1987457316]
+script = ExtResource("1_fl5ww")
+
+[node name="LesserZombie" type="Sprite2D" parent="." unique_id=1766688533]
+position = Vector2(4, -66)
+texture = ExtResource("2_swkgd")
+
+[node name="Status" type="Node2D" parent="." unique_id=854469323]
+
+[node name="Moves" type="Node2D" parent="." unique_id=1663405482]
+
+[node name="TestMove" type="Node2D" parent="Moves" unique_id=1348539859]
+script = ExtResource("3_k3xjc")
+
+[node name="Attack" type="Node2D" parent="Moves" unique_id=1648911125]
+script = ExtResource("4_8onqm")
+
+[node name="GUI" parent="." unique_id=250530060 instance=ExtResource("5_3rclc")]
+position = Vector2(31, 625)
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=327045536]
+visible = false
+z_index = 7
+position = Vector2(2, -258)
+texture = ExtResource("6_ugavd")
+script = ExtResource("7_eldlw")

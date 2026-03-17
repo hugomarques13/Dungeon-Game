@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bvf7at14up5w6"]
+
+[ext_resource type="Texture2D" uid="uid://d0yocy4pct3gr" path="res://Sprites/Chibis/Allies/ChibiKnight1.png" id="1_q2mhx"]
+
+[node name="Icon" type="Control" unique_id=788059272]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=458832604]
+z_index = -1
+layout_mode = 1
+offset_left = 12.999999
+offset_right = 39.0
+offset_bottom = 43.0
+scale = Vector2(2.05, 2.05)
+mouse_filter = 2
+texture = ExtResource("1_q2mhx")

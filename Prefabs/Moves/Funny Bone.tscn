@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhbvhaec3h5ex"]
+
+[ext_resource type="Script" uid="uid://cgrii87u6ak77" path="res://Scripts/Moves/Funny Bone.gd" id="1_5jj1v"]
+
+[node name="Fireball" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_5jj1v")

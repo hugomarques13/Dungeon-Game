@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0r81e2kd3kc8"]
+
+[ext_resource type="Script" uid="uid://v2dxuhiuptbi" path="res://Scripts/Moves/Vicious Mockery.gd" id="1_u17d4"]
+
+[node name="Vicious Mockery" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_u17d4")

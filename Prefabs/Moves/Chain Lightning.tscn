@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ci6ijo1ualjrv"]
+
+[ext_resource type="Script" uid="uid://db07ayysah0x7" path="res://Scripts/Moves/Chain Lightning.gd" id="1_f3kcr"]
+
+[node name="Chain Lightning" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_f3kcr")

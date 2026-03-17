@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://oorm7y6vlnu2"]
+
+[ext_resource type="Texture2D" uid="uid://bwj8wgraessv8" path="res://Sprites/Chibis/Allies/ChibiNecro2.png" id="1_vkvvg"]
+[ext_resource type="Texture2D" uid="uid://cy0im2t73rluj" path="res://Sprites/Chibis/Allies/ChibiNecro1.png" id="2_sivyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kowxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vkvvg")
+}],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sivyf")
+}],
+"loop": true,
+"name": &"Front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gs5kw"]
+radius = 22.0
+height = 44.0
+
+[node name="Necromancer" type="AnimatedSprite2D" unique_id=108898860]
+sprite_frames = SubResource("SpriteFrames_kowxn")
+animation = &"Back"
+autoplay = "Front"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1869281941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486668974]
+shape = SubResource("CapsuleShape2D_gs5kw")

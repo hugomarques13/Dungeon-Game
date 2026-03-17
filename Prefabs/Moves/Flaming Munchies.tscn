@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcjv2g4i4vj8i"]
+
+[ext_resource type="Script" uid="uid://06tpvmhy6uup" path="res://Scripts/Moves/Flaming Munchies.gd" id="1_58vsn"]
+
+[node name="Flaming Munchies" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_58vsn")

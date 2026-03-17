@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bnotjsnwrbetu"]
+
+[ext_resource type="Texture2D" uid="uid://btmvmue2vmp21" path="res://Sprites/Chibis/Allies/ChibiArchers1.png" id="1_7s0de"]
+
+[node name="Icon" type="Control" unique_id=1797740814]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1428611450]
+z_index = -1
+layout_mode = 1
+offset_left = -5.000001
+offset_top = 20.0
+offset_right = 54.0
+offset_bottom = 61.0
+scale = Vector2(1.575, 1.575)
+mouse_filter = 2
+texture = ExtResource("1_7s0de")

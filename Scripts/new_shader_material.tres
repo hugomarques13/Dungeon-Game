@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dow4ogl61gcv1"]
+
+[sub_resource type="Shader" id="Shader_3tffy"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[resource]
+shader = SubResource("Shader_3tffy")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0

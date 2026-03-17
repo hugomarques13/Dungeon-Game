@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxwc3l3iiw030"]
 
-[ext_resource type="Texture2D" uid="uid://cyd2ti4jmthou" path="res://Sprites/Chibis/Placeholder2.png" id="1_vdjok"]
-[ext_resource type="Texture2D" uid="uid://cweq8yikctgjb" path="res://Sprites/Chibis/Placeholder1.png" id="2_ymil0"]
+[ext_resource type="Texture2D" uid="uid://cwys2k8ij7xgs" path="res://Sprites/Chibis/Enemies/ChibiVill2.png" id="1_vdjok"]
+[ext_resource type="Texture2D" uid="uid://c62tgrouq8o35" path="res://Sprites/Chibis/Enemies/ChibiVill1.png" id="2_ymil0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kowxn"]
 animations = [{

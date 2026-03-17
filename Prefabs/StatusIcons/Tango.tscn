@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bsaspwmfju26o"]
+
+[ext_resource type="Texture2D" uid="uid://balb6puqk72e4" path="res://Sprites/HUD/Shop/IconUnits2.png" id="1_xmxi3"]
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="2_gn6e1"]
+
+[node name="Tango" type="TextureRect" unique_id=1142258867]
+texture = ExtResource("1_xmxi3")
+
+[node name="Amount" type="Label" parent="." unique_id=1138984624]
+layout_mode = 0
+offset_left = 18.75
+offset_top = 31.250122
+offset_right = 101.75
+offset_bottom = 109.25012
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_gn6e1")
+theme_override_font_sizes/font_size = 58
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 2

@@ -2,17 +2,38 @@
 
 [ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_fl5ww"]
 [ext_resource type="Texture2D" uid="uid://cblh0p75y1t4s" path="res://Sprites/Allies/lesser_zombie.png" id="2_swkgd"]
-[ext_resource type="PackedScene" uid="uid://bpfo7wk2i41qj" path="res://Prefabs/Moves/TestMove.tscn" id="3_fl5ww"]
+[ext_resource type="PackedScene" uid="uid://dkbp3krg233y6" path="res://Prefabs/Moves/Bite.tscn" id="4_fl5ww"]
 [ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="4_swkgd"]
 [ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="5_3rclc"]
-[ext_resource type="PackedScene" uid="uid://dorna4bih8b3e" path="res://Prefabs/Moves/FireMove.tscn" id="5_swkgd"]
 [ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="6_ugavd"]
 [ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="7_eldlw"]
 
+[sub_resource type="Shader" id="Shader_swkgd"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3xjc"]
+shader = SubResource("Shader_swkgd")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
 [node name="Lesser Zombie" type="CharacterBody2D" unique_id=1987457316]
 script = ExtResource("1_fl5ww")
+max_health = 50.0
+base_attack_damage = 15.0
 
-[node name="LesserZombie" type="Sprite2D" parent="." unique_id=1766688533]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766688533]
+material = SubResource("ShaderMaterial_k3xjc")
 position = Vector2(4, -66)
 texture = ExtResource("2_swkgd")
 
@@ -20,11 +41,9 @@ texture = ExtResource("2_swkgd")
 
 [node name="Moves" type="Node2D" parent="." unique_id=1663405482]
 
-[node name="TestMove" parent="Moves" unique_id=1111325172 instance=ExtResource("3_fl5ww")]
-
 [node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("4_swkgd")]
 
-[node name="FireMove" parent="Moves" unique_id=717778646 instance=ExtResource("5_swkgd")]
+[node name="Bite" parent="Moves" unique_id=1111325172 instance=ExtResource("4_fl5ww")]
 
 [node name="GUI" parent="." unique_id=250530060 instance=ExtResource("5_3rclc")]
 

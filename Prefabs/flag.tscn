@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c4pokin6p2mt1" path="res://Sprites/Rooms/tileflagtotem.png" id="1_yc6ch"]
 [ext_resource type="Script" uid="uid://dvuh4315uwktk" path="res://Scripts/flag.gd" id="2_rtim5"]
-[ext_resource type="Texture2D" uid="uid://ryf6lrn4yg3g" path="res://Sprites/HUD/Shop/HotbarIcon.png" id="3_p7ego"]
-[ext_resource type="Texture2D" uid="uid://vd3wsvr4q4rv" path="res://Sprites/HUD/Shop/placeh.png" id="4_rakdp"]
 
 [node name="Tileflagtotem" type="Sprite2D" unique_id=1475415467 groups=["Flag"]]
 z_index = 1
@@ -21,79 +19,3 @@ position = Vector2(14, 11)
 
 [node name="Spot4" type="Marker2D" parent="." unique_id=437417115]
 position = Vector2(34, 34)
-
-[node name="Slot1" type="TextureRect" parent="." unique_id=371911704]
-modulate = Color(0.9999998, 0.092996515, 0.3267441, 1)
-offset_left = -43.0
-offset_top = -39.0
-offset_right = 59.0
-offset_bottom = 67.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_p7ego")
-
-[node name="Icon" type="TextureRect" parent="Slot1" unique_id=942211451]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("4_rakdp")
-
-[node name="Slot2" type="TextureRect" parent="." unique_id=1592645074]
-modulate = Color(0.9999998, 0.092996515, 0.3267441, 1)
-offset_left = -23.0
-offset_top = -68.0
-offset_right = 79.0
-offset_bottom = 38.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_p7ego")
-
-[node name="Icon" type="TextureRect" parent="Slot2" unique_id=1380474810]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("4_rakdp")
-
-[node name="Slot3" type="TextureRect" parent="." unique_id=373222141]
-modulate = Color(0.9999998, 0.092996515, 0.3267441, 1)
-offset_left = 4.999997
-offset_top = -68.0
-offset_right = 107.0
-offset_bottom = 38.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_p7ego")
-
-[node name="Icon" type="TextureRect" parent="Slot3" unique_id=14091623]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("4_rakdp")
-
-[node name="Slot4" type="TextureRect" parent="." unique_id=1169846678]
-modulate = Color(0.9999998, 0.092996515, 0.3267441, 1)
-offset_left = 23.999992
-offset_top = -39.0
-offset_right = 125.99999
-offset_bottom = 67.0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_p7ego")
-
-[node name="Icon" type="TextureRect" parent="Slot4" unique_id=992628079]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("4_rakdp")

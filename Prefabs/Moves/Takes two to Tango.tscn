@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://6w08gkw00lja"]
+
+[ext_resource type="Script" uid="uid://dj3a3820dmdl3" path="res://Scripts/Moves/Takes two to Tango.gd" id="1_72kjl"]
+
+[node name="Takes two to Tango" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_72kjl")

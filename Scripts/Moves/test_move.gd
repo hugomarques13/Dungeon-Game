@@ -2,7 +2,7 @@ extends Node2D
 
 var cooldown := 2
 var current_cooldown := 0
-var damage: float = 50
+var damage: float = 10
 var has_no_target = true
 var description = "A test move used by developers."
 
@@ -23,6 +23,6 @@ func use(false_target):
 	if not target:
 		return
 	
-	target.take_damage(damage)
+	DamageHandler.do_damage(character, target, damage, {})
 	
 	return

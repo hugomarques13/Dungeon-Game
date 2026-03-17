@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dhr5o7r4i8fut"]
+
+[ext_resource type="Texture2D" uid="uid://c8pdov7j4d6eq" path="res://Sprites/Chibis/Allies/ChibiFool1.png" id="1_jtvw8"]
+
+[node name="Icon" type="Control" unique_id=1001706582]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=603161921]
+z_index = -1
+layout_mode = 1
+offset_left = 4.999999
+offset_top = -2.0
+offset_right = 41.0
+offset_bottom = 41.0
+scale = Vector2(2.05, 2.05)
+mouse_filter = 2
+texture = ExtResource("1_jtvw8")

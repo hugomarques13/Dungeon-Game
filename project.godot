@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Dungeon Game"
+run/main_scene="uid://bh8elkpeulppw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 
 TargetGetter="*uid://bcutmf1h00hw1"
 StatusHandler="*uid://b8e04daisev51"
+DamageHandler="*uid://g67qow6ml7cl"
 
 [display]
 

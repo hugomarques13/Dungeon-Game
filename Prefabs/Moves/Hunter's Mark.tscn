@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chc0g2max58ua"]
+
+[ext_resource type="Script" uid="uid://dnuyx6lvqumbt" path="res://Scripts/Moves/Hunter's Mark.gd" id="1_p5uli"]
+
+[node name="Hunter\'s Mark" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_p5uli")

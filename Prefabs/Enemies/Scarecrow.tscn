@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ui0rjd8w6pf7"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_ikvqh"]
+[ext_resource type="PackedScene" uid="uid://bpfo7wk2i41qj" path="res://Prefabs/Moves/TestMove.tscn" id="2_0oi5x"]
+[ext_resource type="Texture2D" uid="uid://bgf5di4kmx0ji" path="res://Sprites/Enemies/scary_scarecrow.png" id="3_osf5k"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="4_3k0xg"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="5_c1ojr"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_fvj41"]
+
+[sub_resource type="Shader" id="Shader_ikvqh"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0oi5x"]
+shader = SubResource("Shader_ikvqh")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
+[node name="Scarecrow" type="CharacterBody2D" unique_id=1709385326]
+script = ExtResource("1_ikvqh")
+
+[node name="Moves" type="Node2D" parent="." unique_id=1766135610]
+
+[node name="TestMove" parent="Moves" unique_id=1111325172 instance=ExtResource("2_0oi5x")]
+
+[node name="Status" type="Node2D" parent="." unique_id=1197839903]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1217875136]
+material = SubResource("ShaderMaterial_0oi5x")
+position = Vector2(-11, -87)
+texture = ExtResource("3_osf5k")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=207703030]
+visible = false
+z_index = 7
+position = Vector2(-6, -158)
+texture = ExtResource("4_3k0xg")
+script = ExtResource("5_c1ojr")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_fvj41")]

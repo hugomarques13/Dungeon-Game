@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://c6s2uywrj1uv3"]
 
 [ext_resource type="Script" uid="uid://b5argh51vjriy" path="res://Scripts/combat_manager.gd" id="1_fe60u"]
-[ext_resource type="Script" uid="uid://b8gxlimwdmtug" path="res://Scripts/Moves/test_move.gd" id="2_4ln8h"]
-[ext_resource type="PackedScene" uid="uid://yrtljopp4bs7" path="res://Prefabs/Allies/Lesser Zombie.tscn" id="2_8fshu"]
-[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="2_ubpar"]
-[ext_resource type="Script" uid="uid://bqmp4mr8fvbxh" path="res://Scripts/Moves/Attack.gd" id="4_3cqtn"]
-[ext_resource type="Texture2D" uid="uid://bxnno0jf8ga3v" path="res://Sprites/Allies/undead_archers.png" id="5_twsak"]
-[ext_resource type="Texture2D" uid="uid://dxghpnwjmsgah" path="res://Sprites/Allies/Skeleton.png" id="6_w6tjk"]
-[ext_resource type="Texture2D" uid="uid://b4vw5wmj5u4v4" path="res://Sprites/Allies/GREATER_zombie.png" id="7_xisnc"]
-[ext_resource type="Texture2D" uid="uid://dr34hpw4l1bn0" path="res://Sprites/Enemies/bull.png" id="8_8xcd4"]
+[ext_resource type="PackedScene" uid="uid://ka447k1ckyh4" path="res://Prefabs/Allies/Vexing Fool.tscn" id="2_2n3pb"]
+[ext_resource type="PackedScene" uid="uid://cwvj7xdya824i" path="res://Prefabs/Enemies/Leader.tscn" id="3_5kjvk"]
 [ext_resource type="Texture2D" uid="uid://dd14modn1dc8" path="res://Sprites/Background/Battleback.png" id="9_y8jr2"]
-[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="10_8fshu"]
-[ext_resource type="Texture2D" uid="uid://bgf5di4kmx0ji" path="res://Sprites/Enemies/scary_scarecrow.png" id="10_50454"]
-[ext_resource type="Texture2D" uid="uid://bfgii0lm64w46" path="res://Sprites/Enemies/FodderThatBurnsPeople1.png" id="11_ceo1n"]
-[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="11_qwuba"]
 [ext_resource type="PackedScene" uid="uid://lykroysjhv02" path="res://Prefabs/Enemies/Villager.tscn" id="12_8fshu"]
-[ext_resource type="Texture2D" uid="uid://bo8b6wl2lh4dv" path="res://Sprites/Enemies/FodderThatBurnsPeople2.png" id="12_jcm61"]
 [ext_resource type="Script" uid="uid://dvkmnd6wicm01" path="res://Scripts/attack_button.gd" id="16_ley77"]
 [ext_resource type="Script" uid="uid://v5ut3l1j6v5r" path="res://Scripts/skill.gd" id="19_tmuf1"]
 [ext_resource type="Texture2D" uid="uid://dyr55hkvnwomk" path="res://Sprites/HUD/Combat/SkillList.png" id="21_5g3cp"]
@@ -30,275 +19,30 @@
 [ext_resource type="Texture2D" uid="uid://0c733tps0unr" path="res://Sprites/HUD/Combat/SkillMenu.png" id="27_ycqky"]
 [ext_resource type="Texture2D" uid="uid://0tewfcotqwes" path="res://Sprites/HUD/Combat/Action0.png" id="29_1rebt"]
 [ext_resource type="PackedScene" uid="uid://bsc1ltlimehli" path="res://Prefabs/souls.tscn" id="29_8fshu"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ley77"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_ceo1n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_jcm61")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
+[ext_resource type="Texture2D" uid="uid://dtn3m7fyrsltx" path="res://Sprites/Enemies/PartySpearman.png" id="31_iv3ie"]
+[ext_resource type="Texture2D" uid="uid://c5qxpjyjbgi83" path="res://Sprites/Background/bg1.png" id="33_m7mm0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2n3pb"]
 load_path = "res://.godot/imported/Action2.png-d188bf93f3e1c6b588cafd8fb28c83d5.ctex"
 
 [node name="Combat" type="Node2D" unique_id=1639644408]
 script = ExtResource("1_fe60u")
+metadata/_edit_vertical_guides_ = [451.0]
+metadata/_edit_horizontal_guides_ = [418.0]
 
 [node name="Allies" type="Node2D" parent="." unique_id=2112165524]
+z_index = 5
 
-[node name="Lesser Zombie" parent="Allies" unique_id=1987457316 instance=ExtResource("2_8fshu")]
+[node name="Vexing Fool" parent="Allies" unique_id=1555409193 instance=ExtResource("2_2n3pb")]
 position = Vector2(93, 573)
-
-[node name="Undead Archers" type="CharacterBody2D" parent="Allies" unique_id=677923384]
-position = Vector2(298, 572)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Allies/Undead Archers" unique_id=1931759662]
-
-[node name="TestMove" type="Node2D" parent="Allies/Undead Archers/Moves" unique_id=1077227644]
-script = ExtResource("2_4ln8h")
-
-[node name="Attack" type="Node2D" parent="Allies/Undead Archers/Moves" unique_id=1964893984]
-script = ExtResource("4_3cqtn")
-
-[node name="GUI" type="Node2D" parent="Allies/Undead Archers" unique_id=1135881911]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Allies/Undead Archers/GUI" unique_id=822231667]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Allies/Undead Archers/GUI" unique_id=2109520295]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="UndeadArchers" type="Sprite2D" parent="Allies/Undead Archers" unique_id=1752009772]
-position = Vector2(-26, -67)
-texture = ExtResource("5_twsak")
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Allies/Undead Archers" unique_id=1497413619]
-visible = false
-z_index = 7
-position = Vector2(-9, -252)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
-
-[node name="Skeleton" type="CharacterBody2D" parent="Allies" unique_id=1835302501]
-position = Vector2(489, 571)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Allies/Skeleton" unique_id=1442396029]
-
-[node name="TestMove" type="Node2D" parent="Allies/Skeleton/Moves" unique_id=1531801770]
-script = ExtResource("2_4ln8h")
-
-[node name="Attack" type="Node2D" parent="Allies/Skeleton/Moves" unique_id=398776318]
-script = ExtResource("4_3cqtn")
-
-[node name="GUI" type="Node2D" parent="Allies/Skeleton" unique_id=1927988144]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Allies/Skeleton/GUI" unique_id=613821696]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Allies/Skeleton/GUI" unique_id=482807975]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="Skeleton" type="Sprite2D" parent="Allies/Skeleton" unique_id=697807846]
-position = Vector2(27, -94)
-texture = ExtResource("6_w6tjk")
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Allies/Skeleton" unique_id=602168451]
-visible = false
-z_index = 7
-position = Vector2(-9, -252)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
-
-[node name="Greater Zombie" type="CharacterBody2D" parent="Allies" unique_id=1020677804]
-position = Vector2(723, 573)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Allies/Greater Zombie" unique_id=637779505]
-
-[node name="TestMove" type="Node2D" parent="Allies/Greater Zombie/Moves" unique_id=1793723588]
-script = ExtResource("2_4ln8h")
-
-[node name="Attack" type="Node2D" parent="Allies/Greater Zombie/Moves" unique_id=1390545996]
-script = ExtResource("4_3cqtn")
-
-[node name="GUI" type="Node2D" parent="Allies/Greater Zombie" unique_id=1750969619]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Allies/Greater Zombie/GUI" unique_id=875994243]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Allies/Greater Zombie/GUI" unique_id=961463695]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="GreaterZombie" type="Sprite2D" parent="Allies/Greater Zombie" unique_id=371405574]
-position = Vector2(31, -71)
-texture = ExtResource("7_xisnc")
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Allies/Greater Zombie" unique_id=1155338956]
-visible = false
-z_index = 7
-position = Vector2(-9, -252)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=8162375]
 
-[node name="Bull" type="CharacterBody2D" parent="Enemies" unique_id=92748328]
-position = Vector2(205, 236)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Enemies/Bull" unique_id=415670339]
-
-[node name="TestMove" type="Node2D" parent="Enemies/Bull/Moves" unique_id=389034178]
-script = ExtResource("2_4ln8h")
-
-[node name="GUI" type="Node2D" parent="Enemies/Bull" unique_id=1268641498]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Enemies/Bull/GUI" unique_id=48811373]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Enemies/Bull/GUI" unique_id=1590941637]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="Bull" type="Sprite2D" parent="Enemies/Bull" unique_id=603561888]
-position = Vector2(-17, -16)
-texture = ExtResource("8_8xcd4")
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Enemies/Bull" unique_id=2002747692]
-visible = false
-z_index = 7
-position = Vector2(3, -158)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
+[node name="Leader" parent="Enemies" unique_id=1798780239 instance=ExtResource("3_5kjvk")]
+position = Vector2(476, 267)
 
 [node name="Villager" parent="Enemies" unique_id=1572280592 instance=ExtResource("12_8fshu")]
-position = Vector2(476, 233)
-
-[node name="Scarecrow" type="CharacterBody2D" parent="Enemies" unique_id=1751892949]
-position = Vector2(745, 233)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Enemies/Scarecrow" unique_id=467340953]
-
-[node name="TestMove" type="Node2D" parent="Enemies/Scarecrow/Moves" unique_id=1155049987]
-script = ExtResource("2_4ln8h")
-
-[node name="GUI" type="Node2D" parent="Enemies/Scarecrow" unique_id=41062775]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Enemies/Scarecrow/GUI" unique_id=1040425667]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Enemies/Scarecrow/GUI" unique_id=1602314307]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="ScaryScarecrow" type="Sprite2D" parent="Enemies/Scarecrow" unique_id=1460569372]
-position = Vector2(-6, -38)
-texture = ExtResource("10_50454")
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Enemies/Scarecrow" unique_id=438274544]
-visible = false
-z_index = 7
-position = Vector2(-17, -184)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
-
-[node name="Fodder Burn" type="CharacterBody2D" parent="Enemies" unique_id=1947303070]
-position = Vector2(1018, 230)
-script = ExtResource("2_ubpar")
-
-[node name="Moves" type="Node2D" parent="Enemies/Fodder Burn" unique_id=48341944]
-
-[node name="TestMove" type="Node2D" parent="Enemies/Fodder Burn/Moves" unique_id=192118205]
-script = ExtResource("2_4ln8h")
-
-[node name="GUI" type="Node2D" parent="Enemies/Fodder Burn" unique_id=1671720067]
-z_index = 5
-position = Vector2(31, 625)
-
-[node name="BarBackground" type="ColorRect" parent="Enemies/Fodder Burn/GUI" unique_id=1484664602]
-offset_left = -93.0
-offset_top = -573.0
-offset_right = 37.0
-offset_bottom = -561.0
-color = Color(0, 0, 0, 1)
-
-[node name="Bar" type="ColorRect" parent="Enemies/Fodder Burn/GUI" unique_id=658106542]
-offset_left = -92.0
-offset_top = -572.0
-offset_right = 36.0
-offset_bottom = -562.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
-
-[node name="Fodder Burn" type="AnimatedSprite2D" parent="Enemies/Fodder Burn" unique_id=3595356]
-position = Vector2(16, -45)
-sprite_frames = SubResource("SpriteFrames_ley77")
-autoplay = "default"
-frame_progress = 0.67613035
-
-[node name="TargetSelectArrow" type="Sprite2D" parent="Enemies/Fodder Burn" unique_id=845709894]
-visible = false
-z_index = 7
-position = Vector2(9, -154)
-texture = ExtResource("10_8fshu")
-script = ExtResource("11_qwuba")
+position = Vector2(664, 267)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=87021241]
 
@@ -465,16 +209,27 @@ position = Vector2(722, 573)
 [node name="Enemies" type="Node2D" parent="Slots" unique_id=1570328787]
 
 [node name="Slot1" type="Marker2D" parent="Slots/Enemies" unique_id=1512667147]
-position = Vector2(205, 236)
+position = Vector2(205, 267)
 
 [node name="Slot2" type="Marker2D" parent="Slots/Enemies" unique_id=1875881421]
-position = Vector2(476, 236)
+position = Vector2(476, 267)
 
 [node name="Slot3" type="Marker2D" parent="Slots/Enemies" unique_id=296313350]
-position = Vector2(745, 242)
+position = Vector2(745, 273)
 
 [node name="Slot4" type="Marker2D" parent="Slots/Enemies" unique_id=1423184429]
-position = Vector2(1018, 242)
+position = Vector2(1018, 273)
+
+[node name="PartySpearman" type="Sprite2D" parent="." unique_id=685656686]
+visible = false
+z_index = -1
+position = Vector2(498, 209)
+texture = ExtResource("31_iv3ie")
+
+[node name="Bg1" type="Sprite2D" parent="." unique_id=1359977574]
+z_index = 2
+position = Vector2(576, 324)
+texture = ExtResource("33_m7mm0")
 
 [connection signal="button_down" from="HUD/SkillsMenu/GridContainer/Template" to="HUD/SkillsMenu/GridContainer/Template" method="_on_button_down"]
 [connection signal="button_down" from="HUD/Buttons/Attack" to="HUD/Buttons/Attack" method="_on_button_down"]

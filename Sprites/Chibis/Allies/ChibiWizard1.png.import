@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4f2m8xwohvlu"
-path="res://.godot/imported/Lord_Dungeon.png-3f4464fcf870c54779cba7ad08891bb4.ctex"
+uid="uid://cpq2owjdq5ax4"
+path="res://.godot/imported/ChibiWizard1.png-cd35949415977df9f5f5645d6bc868a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Enemies/Lord_Dungeon.png"
-dest_files=["res://.godot/imported/Lord_Dungeon.png-3f4464fcf870c54779cba7ad08891bb4.ctex"]
+source_file="res://Sprites/Chibis/Allies/ChibiWizard1.png"
+dest_files=["res://.godot/imported/ChibiWizard1.png-cd35949415977df9f5f5645d6bc868a3.ctex"]
 
 [params]
 

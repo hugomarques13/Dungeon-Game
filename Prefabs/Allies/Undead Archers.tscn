@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://n04wolvxein7"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_2pqd1"]
+[ext_resource type="Texture2D" uid="uid://bxnno0jf8ga3v" path="res://Sprites/Allies/undead_archers.png" id="3_57i4b"]
+[ext_resource type="PackedScene" uid="uid://bs6blspp4o0y3" path="res://Prefabs/Moves/Barrage.tscn" id="4_nvnr3"]
+[ext_resource type="PackedScene" uid="uid://chc0g2max58ua" path="res://Prefabs/Moves/Hunter's Mark.tscn" id="5_2pqd1"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="5_x48om"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_yv5pv"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_16lsr"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_qudrh"]
+
+[sub_resource type="Shader" id="Shader_nvnr3"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pqd1"]
+shader = SubResource("Shader_nvnr3")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
+[node name="Undead Archers" type="CharacterBody2D" unique_id=1679019184]
+script = ExtResource("1_2pqd1")
+base_attack_damage = 25.0
+base_attack_amount = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999595096]
+material = SubResource("ShaderMaterial_2pqd1")
+position = Vector2(-6, -67)
+texture = ExtResource("3_57i4b")
+
+[node name="Status" type="Node2D" parent="." unique_id=1380697300]
+
+[node name="Moves" type="Node2D" parent="." unique_id=152280806]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("5_x48om")]
+
+[node name="Barrage" parent="Moves" unique_id=1111325172 instance=ExtResource("4_nvnr3")]
+
+[node name="Hunter\'s Mark" parent="Moves" unique_id=1221603265 instance=ExtResource("5_2pqd1")]
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_yv5pv")]
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=2049785672]
+visible = false
+z_index = 7
+position = Vector2(2, -258)
+texture = ExtResource("7_16lsr")
+script = ExtResource("8_qudrh")

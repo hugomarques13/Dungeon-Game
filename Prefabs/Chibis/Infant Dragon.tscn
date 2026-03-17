@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c72os1lffdivr"]
+
+[ext_resource type="Texture2D" uid="uid://cxy5epk3ojebs" path="res://Sprites/Chibis/Allies/ChibiBaby2.png" id="1_jdh7k"]
+[ext_resource type="Texture2D" uid="uid://bilkr5y3gijy" path="res://Sprites/Chibis/Allies/ChibiBaby.png" id="2_hh4sq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kowxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdh7k")
+}],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hh4sq")
+}],
+"loop": true,
+"name": &"Front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gs5kw"]
+radius = 22.0
+height = 44.0
+
+[node name="Infant Dragon" type="AnimatedSprite2D" unique_id=108898860]
+sprite_frames = SubResource("SpriteFrames_kowxn")
+animation = &"Back"
+autoplay = "Front"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1869281941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486668974]
+shape = SubResource("CapsuleShape2D_gs5kw")

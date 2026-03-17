@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://beyauwjphsk1l"]
+
+[ext_resource type="Script" uid="uid://bwceii1pa8t3" path="res://Scripts/Moves/Soul Sacrifice.gd" id="1_dmkui"]
+
+[node name="Soul Sacrifice" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_dmkui")

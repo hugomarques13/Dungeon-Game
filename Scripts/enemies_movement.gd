@@ -14,25 +14,62 @@ extends Node2D
 
 var enemies = {
 	squad = {
-		1: "Villager",
+		1: null,
 		2: null,
-		3: "Villager",
+		3: null,
 		4: null
 	},
 	info = {
 		1: {
-			"health": 0
+			"health": 0,
+			"status": {}
 		},
 		2: {
-			"health": 0
+			"health": 0,
+			"status": {}
 		},
 		3: {
-			"health": 0
+			"health": 0,
+			"status": {}
 		},
 		4: {
-			"health": 0
+			"health": 0,
+			"status": {}
 		},
 	}
+}
+
+const first_fight = {
+	1: "Leader",
+	2: "Barbarian",
+	3: "Spearman",
+	4: "Fighter"
+}
+
+var base_info = {
+	1: {
+		"health": 0,
+		"status": {}
+	},
+	2: {
+		"health": 0,
+		"status": {}
+	},
+	3: {
+		"health": 0,
+		"status": {}
+	},
+	4: {
+		"health": 0,
+		"status": {}
+	},
+}
+
+var ZIndexes = {
+	1: 2,
+	2: 1,
+	3: 1,
+	4: 0,
 }
 
 var world_chibis = {
@@ -69,11 +106,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var next_pos = NavigationAgent.get_next_path_position()
-
 	var direction = (next_pos - global_position)
+
 	if direction.length() > 1.0:
 		direction = direction.normalized()
 		global_position += direction * speed * delta
+
+		_update_chibi_directions(direction)
+
 		if not is_moving:
 			is_moving = true
 			set_chibis_bobbing(true)
@@ -81,6 +121,27 @@ func _physics_process(delta: float) -> void:
 		if is_moving:
 			is_moving = false
 			set_chibis_bobbing(false)
+			
+func _update_chibi_directions(direction: Vector2) -> void:
+	var iso_dir = direction.rotated(deg_to_rad(-45))
+
+	var anim_name: String
+	var flip_h: bool = false
+
+	if abs(iso_dir.x) > abs(iso_dir.y):
+		anim_name = "Front"
+		flip_h = iso_dir.x > 0
+	else:
+		anim_name = "Front" if iso_dir.y > 0 else "Back"
+
+	for pos in world_chibis.keys():
+		var chibi = world_chibis[pos]
+		if not chibi:
+			continue
+
+		chibi.flip_h = not flip_h
+		if chibi.animation != anim_name:
+			chibi.play(anim_name)
 		
 func move_to_next_target():
 	NavigationAgent.set_velocity(Vector2.ZERO)
@@ -146,7 +207,7 @@ func start_fight():
 		if ally != null:
 			isEmpty = false
 			break
-			
+	
 	if isEmpty:
 		get_next_target()
 		return
@@ -185,6 +246,9 @@ func place_at_start():
 	global_position = start.global_position
 
 func spawn_enemies():
+	enemies.squad = first_fight.duplicate()
+	enemies.info = base_info.duplicate()
+	
 	current_floor = 0
 	current_target = null
 	place_at_start()
@@ -200,6 +264,7 @@ func spawn_enemies():
 			add_child(chibi)
 			
 			chibi.position = ChibiPositions[pos-1].position
+			chibi.z_index = ZIndexes[pos]
 			world_chibis[pos] = chibi
 			
 			start_chibi_bob(chibi, pos)
@@ -237,6 +302,10 @@ func fight_ended(results_info, player_won: bool):
 		var ally = results_info.live_allies[pos]
 		if ally == null and allies[pos] != null:
 			flag.unit_died(allies[pos], pos)
+		
+		if ally != null and allies[pos] == null:
+			var info = Shop.units[ally]
+			flag.add_unit(ally, info)
 			
 	if player_won:
 		FloorHandler.unlock_floor()

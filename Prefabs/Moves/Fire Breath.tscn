@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6km8aj0o4kr7"]
+
+[ext_resource type="Script" uid="uid://bt751ri8eyeg3" path="res://Scripts/Moves/Fire Breath.gd" id="1_x63l7"]
+
+[node name="Fire Breath" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_x63l7")

@@ -7,8 +7,28 @@
 [ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="5_3viyb"]
 [ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_kg66v"]
 
+[sub_resource type="Shader" id="Shader_kg66v"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qpi5v"]
+shader = SubResource("Shader_kg66v")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
 [node name="Villager" type="CharacterBody2D" unique_id=1572280592]
 script = ExtResource("1_82pef")
+breath_scale_y = 1.02
 
 [node name="Moves" type="Node2D" parent="." unique_id=1957935201]
 
@@ -16,8 +36,9 @@ script = ExtResource("1_82pef")
 
 [node name="Status" type="Node2D" parent="." unique_id=640576991]
 
-[node name="Fodder" type="Sprite2D" parent="." unique_id=657085201]
-position = Vector2(-19, -11)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657085201]
+material = SubResource("ShaderMaterial_qpi5v")
+position = Vector2(-16, -60)
 texture = ExtResource("3_qpi5v")
 
 [node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=686715958]

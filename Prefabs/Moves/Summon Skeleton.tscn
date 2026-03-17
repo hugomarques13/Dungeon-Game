@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckavd13lgitfo"]
+
+[ext_resource type="Script" uid="uid://b7iwxqa8qmobd" path="res://Scripts/Moves/Summon Skeleton.gd" id="1_68jjy"]
+
+[node name="Summon Skeleton" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_68jjy")

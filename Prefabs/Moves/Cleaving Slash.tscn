@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsbet5dlwl5st"]
+
+[ext_resource type="Script" uid="uid://bindamf20i5jb" path="res://Scripts/Moves/Cleaving Slash.gd" id="1_j6tf3"]
+
+[node name="Cleaving Slash" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_j6tf3")

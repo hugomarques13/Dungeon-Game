@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsbks2pp5qfyd"]
+
+[ext_resource type="Script" uid="uid://bymtv0mxko70s" path="res://Scripts/Moves/Chomp.gd" id="1_t2xso"]
+
+[node name="Chomp" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_t2xso")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ecce32pnn266"]
+
+[ext_resource type="Texture2D" uid="uid://rjuwlc6lalpw" path="res://Sprites/Chibis/Allies/ChibiThief1.png" id="1_6kdjn"]
+
+[node name="Icon" type="Control" unique_id=1566362648]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=648565]
+z_index = -1
+layout_mode = 1
+offset_left = 6.999999
+offset_top = 5.000002
+offset_right = 37.0
+offset_bottom = 40.0
+scale = Vector2(2.215, 2.215)
+mouse_filter = 2
+texture = ExtResource("1_6kdjn")

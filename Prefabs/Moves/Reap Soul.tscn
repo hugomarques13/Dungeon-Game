@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cauxbuwtuw865"]
+
+[ext_resource type="Script" uid="uid://dbcwdry04htjq" path="res://Scripts/Moves/Reap Soul.gd" id="1_cis1l"]
+
+[node name="Reap Soul" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_cis1l")

@@ -12,7 +12,7 @@ func apply_status(character, statusName, amount):
 		print("No Status folder found for ", character.name)
 		return
 		
-	var found_status = statusFolder.get_node_or_null(statusName)
+	var found_status = statusFolder.get_node_or_null(NodePath(statusName))
 	if found_status:
 		var old_amount = found_status.get_meta("Amount")
 		old_amount += amount
@@ -75,7 +75,7 @@ func remove_status_icon(character, statusName):
 		print("No StatusContainer found for ", character.name)
 		return
 	
-	var found_icon = StatusContainer.get_node_or_null(statusName)
+	var found_icon = StatusContainer.get_node_or_null(NodePath(statusName))
 	
 	if not found_icon:
 		print("No icon found for ", statusName, " on ", character.name)

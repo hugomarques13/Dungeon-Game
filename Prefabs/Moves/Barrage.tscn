@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bs6blspp4o0y3"]
+
+[ext_resource type="Script" uid="uid://dyme3lenpmgh1" path="res://Scripts/Moves/Barrage.gd" id="1_mcnyn"]
+
+[node name="Barrage" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_mcnyn")

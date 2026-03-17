@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkbp3krg233y6"]
+
+[ext_resource type="Script" uid="uid://cxm8kkfh3n3uw" path="res://Scripts/Moves/Bite.gd" id="1_5eaql"]
+
+[node name="Bite" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_5eaql")

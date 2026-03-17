@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bhgy7wdi4dkt"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_j60eu"]
+[ext_resource type="Texture2D" uid="uid://dpophjmr8ktit" path="res://Sprites/Allies/FullDragon.png" id="3_6gpy2"]
+[ext_resource type="PackedScene" uid="uid://c6km8aj0o4kr7" path="res://Prefabs/Moves/Fire Breath.tscn" id="4_stci3"]
+[ext_resource type="PackedScene" uid="uid://bsbks2pp5qfyd" path="res://Prefabs/Moves/Chomp.tscn" id="5_6gpy2"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="5_pw7do"]
+[ext_resource type="PackedScene" uid="uid://fj22k1sqhqim" path="res://Prefabs/Moves/Tail Swipe.tscn" id="6_d13cg"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_e0e47"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_8ft5n"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_rl068"]
+
+[sub_resource type="Shader" id="Shader_rmy2y"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j60eu"]
+shader = SubResource("Shader_rmy2y")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
+[node name="Full Dragon" type="CharacterBody2D" unique_id=597556138]
+script = ExtResource("1_j60eu")
+max_health = 300.0
+base_attack_damage = 80.0
+metadata/BurnImmunity = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=576385911]
+material = SubResource("ShaderMaterial_j60eu")
+position = Vector2(27, -71)
+texture = ExtResource("3_6gpy2")
+
+[node name="Status" type="Node2D" parent="." unique_id=992216194]
+
+[node name="Moves" type="Node2D" parent="." unique_id=27590703]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("5_pw7do")]
+
+[node name="Fire Breath" parent="Moves" unique_id=1111325172 instance=ExtResource("4_stci3")]
+
+[node name="Chomp" parent="Moves" unique_id=621245268 instance=ExtResource("5_6gpy2")]
+
+[node name="Tail Swipe" parent="Moves" unique_id=1885154079 instance=ExtResource("6_d13cg")]
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_e0e47")]
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=806261411]
+visible = false
+z_index = 7
+position = Vector2(2, -258)
+texture = ExtResource("7_8ft5n")
+script = ExtResource("8_rl068")

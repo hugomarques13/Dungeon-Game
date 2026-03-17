@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpmc7qw6tbbla"]
+
+[ext_resource type="Script" uid="uid://bvxu12l2djid0" path="res://Scripts/Moves/Fireball.gd" id="1_mp3v2"]
+
+[node name="Fireball" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_mp3v2")

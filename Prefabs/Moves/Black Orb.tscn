@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://capig2gsyf344"]
+
+[ext_resource type="Script" uid="uid://bqjwkuj24nxxm" path="res://Scripts/Moves/Black Orb.gd" id="1_2eet0"]
+
+[node name="Black Orb" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_2eet0")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btm36qnnhswho"]
+
+[ext_resource type="Texture2D" uid="uid://b7ahuctp678xq" path="res://Sprites/Chibis/Allies/ChibiLesserZombies.png" id="1_0dgu8"]
+
+[node name="Icon" type="Control" unique_id=327597741]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1875932515]
+z_index = -1
+layout_mode = 1
+offset_left = 13.0
+offset_right = 40.0
+offset_bottom = 35.0
+scale = Vector2(2.35, 2.35)
+mouse_filter = 2
+texture = ExtResource("1_0dgu8")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dklsko84wvbuv"]
+
+[ext_resource type="Script" uid="uid://icnahufgqg1v" path="res://Scripts/Moves/Burning Barf.gd" id="1_hnesk"]
+
+[node name="Burning Barf" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_hnesk")

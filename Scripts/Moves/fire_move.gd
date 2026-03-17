@@ -24,7 +24,6 @@ func use(false_target):
 	if not target:
 		return
 	
-	target.take_damage(damage)
-	StatusHandler.apply_status(target, "Burn", burn_amount)
+	DamageHandler.do_damage(character, target, damage, {"Burn": burn_amount})
 	
 	return

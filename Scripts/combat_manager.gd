@@ -16,7 +16,7 @@ const BURN_DAMAGE = 10
 	$Slots/Allies/Slot3,
 	$Slots/Allies/Slot4
 ]
-@onready var EnemyPosition = [
+@onready var EnemyPositions = [
 	$Slots/Enemies/Slot1,
 	$Slots/Enemies/Slot2,
 	$Slots/Enemies/Slot3,
@@ -50,9 +50,26 @@ func _ready() -> void:
 	Floors = FloorUI.floors
 	TargetGetter.Allies = Allies
 	TargetGetter.Enemies = Enemies
+	TargetGetter.AllyPositions = AllyPositions
+	TargetGetter.EnemyPositions = EnemyPositions
 	
 	load_assets("res://Prefabs/Allies/", ally_scenes)
 	load_assets("res://Prefabs/Enemies/", enemy_scenes)
+	
+func summon_character(scene_name: String, slot: int, summoner: CharacterBody2D):
+	var scenes = ally_scenes if summoner.get_parent() == Allies else enemy_scenes
+	var positions = AllyPositions if summoner.get_parent() == Allies else EnemyPositions
+	var parent = Allies if summoner.get_parent() == Allies else Enemies
+	
+	if not scene_name in scenes:
+		print("Scene not found: ", scene_name)
+		return
+	
+	var character = scenes[scene_name].instantiate()
+	parent.add_child(character)
+	character.global_position = positions[slot - 1].global_position
+	
+	turn_order.append(character)
 
 func new_combat(allies_dict, enemies_dict, enemies_info):
 	print("New combat started with ", allies_dict, "\n", enemies_dict, "\n", enemies_info)
@@ -80,12 +97,15 @@ func new_combat(allies_dict, enemies_dict, enemies_info):
 		print("Added enemy ", character)
 		Enemies.add_child(character)
 		
-		character.global_position = EnemyPosition[pos-1].global_position
+		character.global_position = EnemyPositions[pos-1].global_position
 		
 		if pos in enemies_info and enemies_info[pos] != null:
 			character.health = enemies_info[pos].health
 			character.update_hp_bar()
 		
+			for statusName in enemies_info[pos].status:
+				var amount = enemies_info[pos].status[statusName]
+				StatusHandler.apply_status(character, statusName, amount)
 	
 	start_combat()
 
@@ -141,24 +161,25 @@ func _process(delta) -> void:
 func perform_turn(character: CharacterBody2D):
 	print(character.name, " is taking their turn")
 	var moves = character.get_node_or_null("Moves")
+	current_character = character
 	await handle_start_of_turn_status(character)
 	
-	current_character = character
+	# Character might die from status effect and it is no longer their turn
+	if current_character != character:
+		return
 	
 	if moves:
 		lower_cooldowns(moves)
 	
 	if character.get_parent() == Allies:
-		var result = await handle_player_turn(character)
-		if not result:
-			return
+		handle_player_turn(character)
 	else:
 		await handle_ai_turn(character)
 		
-	if not character:
-		return
-	
-	end_turn(character)
+		if not character:
+			return
+		
+		end_turn(character)
 
 func end_turn(character: CharacterBody2D):
 	clean_old_moves()
@@ -179,7 +200,7 @@ func next_turn():
 	if turn_order == []:
 		start_round()
 		return
-		
+	
 	perform_turn(turn_order[0])
 
 func start_round():
@@ -243,15 +264,8 @@ func handle_player_turn(character):
 
 	set_up_turn_ui()
 	create_move_buttons(moves)
-
-	var old_round = current_round
 	
-	await get_tree().create_timer(10).timeout
 	
-	if not (current_character == character and old_round == current_round):
-		return false
-	
-	return true
 
 func create_move_buttons(moves):
 	for move in moves.get_children():
@@ -301,24 +315,33 @@ func clean_old_moves():
 	return
 
 func character_died(character):
-	if current_character == character:
-		end_turn(character)
-	
 	if character in turn_order:
-		turn_order.remove_at(turn_order.find(character))
+		turn_order.erase(character)
 		
 	if character in turn_taken:
-		turn_taken.remove_at(turn_taken.find(character))
-		
-	if character.get_parent() == Allies and Allies.get_child_count() == 1:
+		turn_taken.erase(character)
+	
+	var was_current = (current_character == character)
+	var parent = character.get_parent()
+	var alive_allies = Allies.get_children().filter(func(a): return not a.is_dead)
+	var alive_enemies = Enemies.get_children().filter(func(e): return not e.is_dead)
+	
+	if parent == Allies and alive_allies.size() <= 0:
 		print("Player lost")
 		end_fight(false)
 		return
 		
-	if character.get_parent() == Enemies and Enemies.get_child_count() == 1:
+	if parent == Enemies and alive_enemies.size() <= 0:
 		print("Player won")
 		end_fight(true)
 		return
+	
+	if was_current:
+		current_character = null
+		hide_arrow(current_target)
+		current_target = null
+		await get_tree().create_timer(0.2).timeout
+		next_turn()
 
 func end_fight(player_won: bool):
 	await get_tree().create_timer(0.6).timeout
@@ -345,11 +368,17 @@ func end_fight(player_won: bool):
 				break
 	
 	for enemy in Enemies.get_children():
-		for i in range(EnemyPosition.size()):
-			if enemy.global_position == EnemyPosition[i].global_position:
+		for i in range(EnemyPositions.size()):
+			if enemy.global_position == EnemyPositions[i].global_position:
 				results_info.live_enemies[i + 1] = enemy.name
 				results_info.info[i + 1] = {}
 				results_info.info[i + 1].health = enemy.health
+				
+				results_info.info[i+1].status = {}
+				
+				for status in enemy.get_node("Status").get_children():
+					results_info.info[i + 1].status[status.name] = status.get_meta("Amount")
+				
 				break
 	
 	EnemyChibis.fight_ended(results_info, player_won)
@@ -381,6 +410,24 @@ func move_button_pressed(name):
 	if "has_no_target" in move and move.has_no_target == true:
 		await use_move(move, null)
 		end_turn(current_character)
+		return
+		
+	if "is_aoe" in move and move.is_aoe == true:
+		selected_move = move
+		current_action = "TargetSkill"
+		show_arrows(get_living_enemies())
+		SkillsMenu.visible = false
+		Buttons.visible = false
+		return
+	
+	if "hits_all_except_self" in move and move.hits_all_except_self == true:
+		selected_move = move
+		current_action = "TargetSkill"
+		var targets = Allies.get_children().filter(func(a): return a != current_character and not a.is_dead)
+		targets.append_array(get_living_enemies())
+		show_arrows(targets)
+		SkillsMenu.visible = false
+		Buttons.visible = false
 		return
 		
 	first_target()
@@ -415,48 +462,83 @@ func hide_arrow(character):
 		
 	arrow.visible = false
 	
-func first_target():
-	current_target = Enemies.get_child(0)
+func get_living_enemies() -> Array:
+	return Enemies.get_children().filter(func(e): return not e.is_dead)
 	
+func first_target():
+	var living = get_living_enemies()
+	if living.is_empty():
+		return
+	current_target = living[0]
 	show_select_arrow()
 
 func right_target():
 	if not current_target:
 		return
-	var index = current_target.get_index()
-	if index < Enemies.get_child_count() - 1:
+	var living = get_living_enemies()
+	var index = living.find(current_target)
+	if index < living.size() - 1:
 		hide_arrow(current_target)
-		current_target = Enemies.get_child(index + 1)
-	
+		current_target = living[index + 1]
 	show_select_arrow()
-	
+
 func left_target():
 	if not current_target:
 		return
-	var index = current_target.get_index()
+	var living = get_living_enemies()
+	var index = living.find(current_target)
 	if index > 0:
 		hide_arrow(current_target)
-		current_target = Enemies.get_child(index - 1)
-		
+		current_target = living[index - 1]
 	show_select_arrow()
 	
 func select_target():
-	if not current_target:
-		print("No current target")
+	if not selected_move:
+		print("No selected move")
 		return
 	
-	hide_arrow(current_target)
+	var move_to_use = selected_move
+	selected_move = null
 	
-	await use_move(selected_move, current_target)
+	if current_target:
+		hide_arrow(current_target)
+	else:
+		# AOE / hits_all_except_self — hide all arrows
+		hide_arrows(Allies.get_children() + Enemies.get_children())
 	
+	await use_move(move_to_use, current_target)
 	end_turn(current_character)
+	
+func show_arrows(targets: Array):
+	for target in targets:
+		var arrow = target.get_node_or_null("TargetSelectArrow")
+		if arrow:
+			arrow.visible = true
+
+func hide_arrows(targets: Array):
+	for target in targets:
+		var arrow = target.get_node_or_null("TargetSelectArrow")
+		if arrow:
+			arrow.visible = false
 	
 func cancel_action():
 	if current_action == "TargetAttack":
-		hide_arrow(current_target)
+		if current_target:
+			hide_arrow(current_target)
+		else:
+			hide_arrows(Allies.get_children() + Enemies.get_children())
+		current_target = null
+		selected_move = null
+		current_action = null
 		Buttons.visible = true
-	elif current_action == "TargetSkills":
-		hide_arrow(current_target)
+	elif current_action == "TargetSkill":
+		if current_target:
+			hide_arrow(current_target)
+		else:
+			hide_arrows(Allies.get_children() + Enemies.get_children())
+		current_target = null
+		selected_move = null
+		current_action = null
 		SkillsMenu.visible = true
 	elif current_action == "SelectingSkills":
 		SkillsMenu.visible = false
@@ -470,7 +552,17 @@ func handle_start_of_turn_status(character):
 	
 	for effect in status.get_children():
 		if effect.name == "Burn":
-			character.take_damage(BURN_DAMAGE)
+			if character.has_meta("BurnImmunity") and character.get_meta("BurnImmunity") == true:
+				print("character is immune to burn damage")
+			else:
+				character.take_damage(BURN_DAMAGE)
+			
+		if effect.name == "Flaming Munchies":
+			var targets = TargetGetter.get_aoe_enemy_targets(character)
+			for target in targets:
+				DamageHandler.do_damage(character, target, 80, {"Burn": 5})
+			
+			DamageHandler.do_damage(character, character, 999, {})
 			
 		StatusHandler.remove_status(character, effect.name, 1)
 	

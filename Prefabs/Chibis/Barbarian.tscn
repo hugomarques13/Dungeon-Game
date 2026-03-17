@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://eiwy6585liqv"]
+
+[ext_resource type="Texture2D" uid="uid://lh8yn0u4ghom" path="res://Sprites/Chibis/Enemies/ChibiBarbarian2.png" id="1_4xfak"]
+[ext_resource type="Texture2D" uid="uid://bh0tyrr3icslr" path="res://Sprites/Chibis/Enemies/ChibiBarbarian.png" id="2_xecc0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kowxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4xfak")
+}],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xecc0")
+}],
+"loop": true,
+"name": &"Front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gs5kw"]
+radius = 22.0
+height = 44.0
+
+[node name="Barbarian" type="AnimatedSprite2D" unique_id=108898860]
+sprite_frames = SubResource("SpriteFrames_kowxn")
+animation = &"Front"
+autoplay = "Front"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1869281941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486668974]
+shape = SubResource("CapsuleShape2D_gs5kw")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b8t8es5i40adu"]
+
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="1_4w2qy"]
+[ext_resource type="Script" uid="uid://bbuwyj1b0yvs7" path="res://Scripts/damage_text.gd" id="2_1bacy"]
+
+[node name="Amount" type="Label" unique_id=2074542406]
+z_index = 20
+offset_left = 214.0
+offset_top = 121.0
+offset_right = 297.0
+offset_bottom = 199.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_4w2qy")
+theme_override_font_sizes/font_size = 58
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_1bacy")

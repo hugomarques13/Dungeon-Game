@@ -14,6 +14,7 @@ extends Control
 @onready var TrapsHudContainer = $"../TopBar/TrapsContainer/HBoxContainer"
 @onready var TrapsHudTemplate = $"../TopBar/TrapsContainer/HBoxContainer/Template"
 @onready var ChibiPlace = $"../../ChibiPlace"
+@onready var CombatManager = $"../../Combat"
 
 const FLAG_DROP_RANGE = 90
 
@@ -35,46 +36,72 @@ const iconTitles = {
 	"Fields" = "Like Yu-Gi-Oh"
 }
 
-const units = {
+var units = {
 	"Lesser Zombie" = {
 		LoreDescription = "\"Cheap souls long cast aside, taken in by neither Heaven nor Hell. Lowest of the low. Thus perfect for our uses.\"",
 		SkillsDescription = "He hits people with his nasty aaa hands.",
 		Cost = 1,
-		UnlockCost = 2,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
-		Chibi = preload("res://Prefabs/Chibis/placeholder.tscn")
+		UnlockCost = 2
 	},
 	"Greater Zombie" = {
-		LoreDescription = "TO DO",
+		LoreDescription = "\"We took a zombie... And added another zombie. Positive meets negative. Ingenius of you to come up with that Grand Majesty. You're so right!\"",
 		SkillsDescription = "TO DO SKILLS",
 		Cost = 5,
-		UnlockCost = 10,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
-		Chibi = preload("res://Prefabs/Chibis/placeholder.tscn")
-	},
-	"Grave Thief" = {
-		LoreDescription = "TO DO",
-		SkillsDescription = "TO DO SKILLS",
-		Cost = 5,
-		UnlockCost = 20,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
-		Chibi = preload("res://Prefabs/Chibis/placeholder.tscn")
+		UnlockCost = 10
 	},
 	"Skeleton" = {
-		LoreDescription = "TO DO",
+		LoreDescription = "\"As lowly as creatures as the Zombies, however their bare form makes for excellent vessels for the Dark Arts.\"",
 		SkillsDescription = "TO DO SKILLS",
 		Cost = 5,
-		UnlockCost = 30,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
-		Chibi = preload("res://Prefabs/Chibis/placeholder.tscn")
+		UnlockCost = 30
+	},
+	"Grave Thief" = {
+		LoreDescription = "\"A mind-controlled mortal for your bidding, Grand Majesty. Well, they actually submitted himself willingly. Was tired of work, he said.\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 5,
+		UnlockCost = 20
 	},
 	"Undead Archers" = {
-		LoreDescription = "TO DO",
+		LoreDescription = "\"These ladies always hit their mark, and have had hundreds of years of target practice.. Hmmm I wonder if they're free after the Dungeon Raids...\"",
 		SkillsDescription = "TO DO SKILLS",
 		Cost = 10,
-		UnlockCost = 40,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
-		Chibi = preload("res://Prefabs/Chibis/placeholder.tscn")
+		UnlockCost = 40
+	},
+	"Necromancer" = {
+		LoreDescription = "\"A tainted practitioner of the Dark Arts who specializes in raising the dead. Essential for any dark civilization looking to up their numbers.\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
+	},
+	"Haunted Knight" = {
+		LoreDescription = "\"Old Warriors who couldn't let go of the ways of combat, brought back for your amusement. All they do is fight. Not very personable...\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
+	},
+	"Vexing Fool" = {
+		LoreDescription = "\"An ancient creat....\nI hate this one. I can't stand her. Get her out of here. So unserious. Grand Majesty Sir look at her! She's playing with my dentures again!\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
+	},
+	"Infant Dragon" = {
+		LoreDescription = "\"Just a little hatchling. Still a greater lifeform than most, even this early into it's life. Very much tamper prone... Handle with care.\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
+	},
+	"Malice Wizard" = {
+		LoreDescription = "\"Deranged, charred and disfigured practitioners of the Dark Arts only kept alive by the very force they dabble in. Their ways of undress are quite uncouth, Sir.\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
+	},
+	"Full Dragon" = {
+		LoreDescription = "\"Now we're talking. An absolutely monstrosity of nature, born through adequate breeding and extended rituals. Enough to put a kingdom on it's knees.\"",
+		SkillsDescription = "TO DO SKILLS",
+		Cost = 10,
+		UnlockCost = 40
 	},
 }
 
@@ -84,10 +111,11 @@ const traps = {
 		SkillsDescription = "Does damage to the party",
 		Cost = 5,
 		UnlockCost = 20,
-		Icon = preload("res://Sprites/HUD/Shop/placeh.png"),
 		Scene = preload("res://Prefabs/Traps/Spikes.tscn")
 	},
 }
+
+var ally_characters = {}
 
 var current_button = null
 
@@ -98,8 +126,10 @@ var last_mouse_pos = Vector2.ZERO
 var cached_nearest_tile = null
 
 func _ready():
+	load_unit_assets()
 	pressed_icon(Units)
-
+	CombatManager.load_assets("res://Prefabs/Allies/", ally_characters)
+	
 func _process(delta):
 	if currently_dragging:
 		currently_dragging.position = get_global_mouse_position()
@@ -145,7 +175,11 @@ func generate_units():
 		var new_button = Template.duplicate()
 		new_button.name = unit
 		new_button.visible = true
-		new_button.get_node("Icon").texture = info.Icon
+		
+		var icon_instance = info.Icon.instantiate()
+		var icon_marker = new_button.get_node("IconMarker")
+		new_button.add_child(icon_instance)
+		icon_instance.position = icon_marker.position
 		
 		if is_unlocked:
 			new_button.get_node("Locked").visible = false
@@ -173,9 +207,22 @@ func generate_units():
 			else:
 				SidePanel.get_node("SoulsBackground/Cost").text = str(info.UnlockCost)
 				SidePanel.get_node("SoulsBackground/Label").text = "Unlock"
+				
+			clean_side_panel_character()
+			
+			if ally_characters.has(unit):
+				var ally_character = ally_characters[unit].instantiate()
+				ally_character.global_position = SidePanel.get_node("Character/CharacterSpot").global_position
+				ally_character.get_node("GUI").visible = false
+				SidePanel.get_node("Character").add_child(ally_character)
 		)
 		
 		VContainer.add_child(new_button)
+		
+func clean_side_panel_character():
+	for child in SidePanel.get_node("Character").get_children():
+		if child.name != "CharacterSpot":
+			child.queue_free()
 		
 func update_unit_amount(unit: String, new_amount):
 	var unit_node = VContainer.get_node_or_null(unit)
@@ -241,10 +288,14 @@ func create_placement_unit_icon(unit):
 	new_button.name = unit
 	new_button.visible = true
 	
-	new_button.get_node("Icon").texture = info.Icon
 	new_button.get_node("Amount").visible = true
 	new_button.get_node("Amount").text = str(Player.get_unit_amount(unit))
 	new_button.get_node("Cost").text = str(info.Cost)
+	
+	var icon_instance = info.Icon.instantiate()
+	var icon_marker = new_button.get_node("IconMarker")
+	new_button.add_child(icon_instance)
+	icon_instance.position = icon_marker.position
 	
 	new_button.button_down.connect(func():
 		if Player.get_unit_amount(unit) == 0:
@@ -533,3 +584,22 @@ func clear_trap_preview():
 	if placement_preview:
 		placement_preview.queue_free()
 		placement_preview = null
+
+func load_unit_assets():
+	var chibi_dir = "res://Prefabs/Chibis/"
+	var icon_dir = "res://Prefabs/Icons/"
+
+	for unit in units.keys():
+		# Load chibi
+		var chibi_path = chibi_dir + unit + ".tscn"
+		if ResourceLoader.exists(chibi_path):
+			units[unit]["Chibi"] = load(chibi_path)
+		else:
+			units[unit]["Chibi"] = preload("res://Prefabs/Chibis/placeholder.tscn")
+
+		# Load icon
+		var icon_path = icon_dir + unit + ".tscn"
+		if ResourceLoader.exists(icon_path):
+			units[unit]["Icon"] = load(icon_path)
+		else:
+			units[unit]["Icon"] = preload("res://Sprites/HUD/Shop/placeh.png")

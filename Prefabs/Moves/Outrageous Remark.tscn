@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://degny75psmvxd"]
+
+[ext_resource type="Script" uid="uid://dg511o7ott7g7" path="res://Scripts/Moves/Outrageous Remark.gd" id="1_sjaau"]
+
+[node name="Outrageous Remark" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_sjaau")

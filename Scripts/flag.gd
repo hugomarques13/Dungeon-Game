@@ -8,13 +8,6 @@ var Units = {
 	4: null
 }
 
-@onready var Slots = [
-	$Slot1,
-	$Slot2,
-	$Slot3,
-	$Slot4
-]
-
 @onready var Spots = [
 	$Spot1,
 	$Spot2,
@@ -48,11 +41,6 @@ func add_unit(unit: String, info):
 	var index = get_first_empty_slot()
 	Units[index] = unit
 	
-	var slot = Slots[index-1]
-	
-	slot.get_node("Icon").texture = info.Icon
-	slot.get_node("Icon").visible = true
-	
 	var spot = Spots[index-1]
 	
 	var chibi = info.Chibi.instantiate()
@@ -60,6 +48,8 @@ func add_unit(unit: String, info):
 	spot.add_child(chibi)
 	
 	chibi.global_position = spot.global_position
+	
+	print("Placed ", unit)
 	
 	chibi.get_node("Area2D").input_event.connect(func(viewport, event, shape_idx):
 		if event is InputEventMouseButton and event.pressed:
@@ -72,9 +62,6 @@ func remove_unit(unit: String, index):
 		return
 	
 	Units[index] = null
-	
-	var slot = Slots[index-1]
-	slot.get_node("Icon").visible = false
 	
 	var spot = Spots[index-1]
 	
@@ -91,9 +78,6 @@ func unit_died(unit: String, index):
 		return
 	
 	Units[index] = null
-	
-	var slot = Slots[index-1]
-	slot.get_node("Icon").visible = false
 	
 	var spot = Spots[index-1]
 	

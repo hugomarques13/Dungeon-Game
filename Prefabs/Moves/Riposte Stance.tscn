@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cpbaavvmoo8k7"]
+
+[ext_resource type="Script" uid="uid://bs20qb3k883l6" path="res://Scripts/Moves/Riposte Stance.gd" id="1_7pcy5"]
+
+[node name="Riposte Stance" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_7pcy5")

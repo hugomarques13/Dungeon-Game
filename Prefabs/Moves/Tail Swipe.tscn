@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://fj22k1sqhqim"]
+
+[ext_resource type="Script" uid="uid://deqnry2ltm4aj" path="res://Scripts/Moves/Tail Swipe.gd" id="1_fkpv3"]
+
+[node name="Tail Swipe" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_fkpv3")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crmell5oar2cy"]
+
+[ext_resource type="Script" uid="uid://cufgbagjv1lxn" path="res://Scripts/Moves/Heavy Slash.gd" id="1_c5lxk"]
+
+[node name="Heavy Slash" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_c5lxk")

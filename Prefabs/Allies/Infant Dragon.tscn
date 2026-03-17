@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://brt1obyrhaptt"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_0fkmp"]
+[ext_resource type="Texture2D" uid="uid://cy2wugykj1wv1" path="res://Sprites/Allies/InfantDragon.png" id="3_d2tx1"]
+[ext_resource type="PackedScene" uid="uid://dklsko84wvbuv" path="res://Prefabs/Moves/Burning Barf.tscn" id="4_0fkmp"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="5_5fmd3"]
+[ext_resource type="PackedScene" uid="uid://dpmc7qw6tbbla" path="res://Prefabs/Moves/Fireball.tscn" id="5_da2ge"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_a876n"]
+[ext_resource type="PackedScene" uid="uid://dcjv2g4i4vj8i" path="res://Prefabs/Moves/Flaming Munchies.tscn" id="6_da2ge"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_agt31"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_nagrg"]
+
+[sub_resource type="Shader" id="Shader_uftxu"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec4 solid = vec4(flash_color.rgb, tex.a);
+
+    COLOR = mix(tex, solid, flash_amount);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fkmp"]
+shader = SubResource("Shader_uftxu")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+
+[node name="Infant Dragon" type="CharacterBody2D" unique_id=1113271276]
+script = ExtResource("1_0fkmp")
+base_attack_damage = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808824327]
+material = SubResource("ShaderMaterial_0fkmp")
+position = Vector2(17, -61)
+texture = ExtResource("3_d2tx1")
+
+[node name="Status" type="Node2D" parent="." unique_id=729191174]
+
+[node name="Moves" type="Node2D" parent="." unique_id=1672839012]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("5_5fmd3")]
+
+[node name="Burning Barf" parent="Moves" unique_id=1111325172 instance=ExtResource("4_0fkmp")]
+
+[node name="Fireball" parent="Moves" unique_id=327437986 instance=ExtResource("5_da2ge")]
+
+[node name="Flaming Munchies" parent="Moves" unique_id=1250549701 instance=ExtResource("6_da2ge")]
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_a876n")]
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=1667138895]
+visible = false
+z_index = 7
+position = Vector2(2, -258)
+texture = ExtResource("7_agt31")
+script = ExtResource("8_nagrg")

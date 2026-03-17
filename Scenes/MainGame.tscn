@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bn1237dd8dt7g" path="res://Sprites/Rooms/WallB1.png" id="9_yc6xl"]
 [ext_resource type="Texture2D" uid="uid://6somnfo68207" path="res://Sprites/Rooms/tile1.png" id="10_k6vqf"]
 [ext_resource type="Texture2D" uid="uid://cwttu2l43dspi" path="res://Sprites/Rooms/tilesbottom1.png" id="10_r5sjn"]
-[ext_resource type="Texture2D" uid="uid://b4f2m8xwohvlu" path="res://Sprites/Enemies/Lord_Dungeon.png" id="11_ev6kq"]
+[ext_resource type="Texture2D" uid="uid://b4f2m8xwohvlu" path="res://Sprites/Lord_Dungeon.png" id="11_ev6kq"]
 [ext_resource type="Texture2D" uid="uid://dillut2scdnxl" path="res://Sprites/Rooms/tilesbottom2.png" id="11_yc6xl"]
 [ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="12_q8sds"]
 [ext_resource type="Script" uid="uid://c4h8y7kek513i" path="res://Scripts/floor_handler.gd" id="12_yr2pg"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://bmmyt1t25oqmq" path="res://Sprites/HUD/FloorDownA.png" id="27_4ekvx"]
 [ext_resource type="Texture2D" uid="uid://2ta0jnej328" path="res://Sprites/HUD/FloorDownB.png" id="28_m7vhu"]
 [ext_resource type="PackedScene" uid="uid://bsc1ltlimehli" path="res://Prefabs/souls.tscn" id="33_o6tew"]
-[ext_resource type="Texture2D" uid="uid://vd3wsvr4q4rv" path="res://Sprites/HUD/Shop/placeh.png" id="34_ny3r6"]
 [ext_resource type="Script" uid="uid://s52ujt22d3ak" path="res://Scripts/player.gd" id="36_3ijh3"]
 [ext_resource type="Script" uid="uid://b5argh51vjriy" path="res://Scripts/combat_manager.gd" id="40_cqekc"]
 [ext_resource type="Texture2D" uid="uid://dyr55hkvnwomk" path="res://Sprites/HUD/Combat/SkillList.png" id="41_50m7d"]
@@ -50,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6c8kvbu3cfd" path="res://Sprites/HUD/Combat/Action2B.png" id="50_fg0ar"]
 [ext_resource type="Script" uid="uid://v5ut3l1j6v5r" path="res://Scripts/skill.gd" id="51_oeqnk"]
 [ext_resource type="Texture2D" uid="uid://0tewfcotqwes" path="res://Sprites/HUD/Combat/Action0.png" id="52_ih23b"]
+[ext_resource type="Texture2D" uid="uid://c5qxpjyjbgi83" path="res://Sprites/Background/bg1.png" id="52_lcmar"]
 [ext_resource type="Texture2D" uid="uid://dd14modn1dc8" path="res://Sprites/Background/Battleback.png" id="53_ptfdn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ktwve"]
@@ -450,10 +450,10 @@ simplify_path = true
 avoidance_enabled = true
 radius = 30.0
 
-[node name="Pos1" type="Marker2D" parent="Chibis" unique_id=1344667136]
+[node name="Pos2" type="Marker2D" parent="Chibis" unique_id=1344667136]
 position = Vector2(-15, 8)
 
-[node name="Pos2" type="Marker2D" parent="Chibis" unique_id=2016766828]
+[node name="Pos1" type="Marker2D" parent="Chibis" unique_id=2016766828]
 position = Vector2(11, 13)
 
 [node name="Pos3" type="Marker2D" parent="Chibis" unique_id=2128169870]
@@ -664,14 +664,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Icon" type="TextureRect" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=1460652522]
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("34_ny3r6")
+[node name="IconMarker" type="Marker2D" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=500440028]
+position = Vector2(10, 12)
 
 [node name="SidePanel" type="Control" parent="HUD/Shop" unique_id=1464531051]
 anchors_preset = 0
@@ -679,6 +673,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Description" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=250876923]
+z_index = 1
 layout_mode = 0
 offset_left = 362.0
 offset_top = 190.0
@@ -700,6 +695,7 @@ text = "\"Cheap souls long cast aside, taken in by neither Heaven nor Hell. Lowe
 autowrap_mode = 2
 
 [node name="UseDescription" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=1114179436]
+z_index = 1
 layout_mode = 0
 offset_left = 362.0
 offset_top = 416.0
@@ -721,6 +717,7 @@ text = "Zombie-like things idk we did not discuss this yet but like graawhh brai
 autowrap_mode = 2
 
 [node name="ThingName" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=604044114]
+z_index = 1
 layout_mode = 0
 offset_left = 383.0
 offset_top = 126.0
@@ -744,6 +741,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UseName" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=2039794209]
+z_index = 1
 layout_mode = 0
 offset_left = 397.0
 offset_top = 359.0
@@ -767,6 +765,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SoulsBackground" type="TextureButton" parent="HUD/Shop/SidePanel" unique_id=1174478955]
+z_index = 1
 layout_mode = 0
 offset_left = 397.0
 offset_top = 562.0
@@ -809,6 +808,14 @@ theme_override_font_sizes/font_size = 64
 text = "10"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Character" type="Control" parent="HUD/Shop/SidePanel" unique_id=597772143]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterSpot" type="Marker2D" parent="HUD/Shop/SidePanel/Character" unique_id=1701281266]
+position = Vector2(977, 573)
 
 [node name="Souls" parent="HUD" unique_id=1481786055 instance=ExtResource("33_o6tew")]
 metadata/_edit_use_anchors_ = true
@@ -904,14 +911,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Icon" type="TextureRect" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1183633452]
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("34_ny3r6")
+[node name="IconMarker" type="Marker2D" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=34994153]
+position = Vector2(10, 12)
 
 [node name="TrapsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=1480373633]
 visible = false
@@ -975,14 +976,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Icon" type="TextureRect" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1231488709]
-z_index = -1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 94.0
-texture = ExtResource("34_ny3r6")
+[node name="IconMarker" type="Marker2D" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=522186183]
+position = Vector2(10, 12)
 
 [node name="Units" type="Button" parent="HUD/TopBar" unique_id=13021746]
 layout_mode = 0
@@ -1008,6 +1003,7 @@ z_index = 9
 script = ExtResource("40_cqekc")
 
 [node name="Allies" type="Node2D" parent="Combat" unique_id=2112165524]
+z_index = 5
 
 [node name="Enemies" type="Node2D" parent="Combat" unique_id=8162375]
 
@@ -1160,30 +1156,35 @@ texture = ExtResource("53_ptfdn")
 [node name="Allies" type="Node2D" parent="Combat/Slots" unique_id=2017970571]
 
 [node name="Slot1" type="Marker2D" parent="Combat/Slots/Allies" unique_id=106698824]
-position = Vector2(93, 573)
+position = Vector2(100, 573)
 
-[node name="Slot2" type="Marker2D" parent="Combat/Slots/Allies" unique_id=896259739]
-position = Vector2(297, 573)
+[node name="Slot2" type="Marker2D" parent="Combat/Slots/Allies" unique_id=1315241494]
+position = Vector2(300, 573)
 
-[node name="Slot3" type="Marker2D" parent="Combat/Slots/Allies" unique_id=118533126]
-position = Vector2(488, 573)
+[node name="Slot3" type="Marker2D" parent="Combat/Slots/Allies" unique_id=1080198704]
+position = Vector2(500, 573)
 
-[node name="Slot4" type="Marker2D" parent="Combat/Slots/Allies" unique_id=1345091270]
-position = Vector2(722, 573)
+[node name="Slot4" type="Marker2D" parent="Combat/Slots/Allies" unique_id=585529985]
+position = Vector2(700, 573)
 
 [node name="Enemies" type="Node2D" parent="Combat/Slots" unique_id=1224722822]
 
 [node name="Slot1" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1025039174]
-position = Vector2(205, 236)
+position = Vector2(200, 288)
 
-[node name="Slot2" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=2029693756]
-position = Vector2(476, 236)
+[node name="Slot2" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=246697091]
+position = Vector2(400, 288)
 
-[node name="Slot3" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1223299539]
-position = Vector2(745, 242)
+[node name="Slot3" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1864940860]
+position = Vector2(600, 288)
 
-[node name="Slot4" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=698980711]
-position = Vector2(1018, 242)
+[node name="Slot4" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1480822559]
+position = Vector2(800, 288)
+
+[node name="Bg1" type="Sprite2D" parent="Combat" unique_id=1196929416]
+z_index = 2
+position = Vector2(576, 324)
+texture = ExtResource("52_lcmar")
 
 [connection signal="button_down" from="HUD/FloorUI/UpButton" to="HUD/FloorUI" method="_on_up_button_button_down"]
 [connection signal="button_down" from="HUD/FloorUI/DownButton" to="HUD/FloorUI" method="_on_down_button_button_down"]

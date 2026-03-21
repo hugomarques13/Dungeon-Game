@@ -100,12 +100,18 @@ func update_icon(character, statusName, amount):
 
 func load_assets(folder_path: String, dir_to_store_them: Dictionary) -> void:
 	var dir = DirAccess.open(folder_path)
-	if dir:
-		for file_name in dir.get_files():
-			if not file_name.ends_with(".tscn"):
-				continue
-			var scene: PackedScene = load(folder_path + file_name)
+	if not dir:
+		push_error("Could not open folder: " + folder_path)
+		return
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.ends_with(".tscn") or file_name.ends_with(".tscn.remap"):
+			var load_path = folder_path + file_name.replace(".remap", "")
+			var scene: PackedScene = ResourceLoader.load(load_path)
 			if scene:
 				var state = scene.get_state()
 				var scene_name = state.get_node_name(0)
 				dir_to_store_them[scene_name] = scene
+		file_name = dir.get_next()
+	dir.list_dir_end()

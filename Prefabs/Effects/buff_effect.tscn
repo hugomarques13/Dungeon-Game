@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ba64nngqwlrdh"]
+
+[ext_resource type="Texture2D" uid="uid://46gxw3eeanfl" path="res://Sprites/Effects/Buff/Buffed1.png" id="1_jdnmj"]
+[ext_resource type="Texture2D" uid="uid://grmgcyd5ba02" path="res://Sprites/Effects/Buff/Buffed2.png" id="2_hebva"]
+[ext_resource type="Texture2D" uid="uid://by663fxecpo6u" path="res://Sprites/Effects/Buff/Buffed3.png" id="3_8usth"]
+[ext_resource type="Texture2D" uid="uid://43xvsqwoqtfl" path="res://Sprites/Effects/Buff/Buffed4.png" id="4_odv55"]
+[ext_resource type="Texture2D" uid="uid://d2uuaryewosqk" path="res://Sprites/Effects/Buff/Buffed5.png" id="5_4yuda"]
+[ext_resource type="Texture2D" uid="uid://ciqynu5xlorq2" path="res://Sprites/Effects/Buff/Buffed6.png" id="6_spi0k"]
+[ext_resource type="Texture2D" uid="uid://cme3yda41wd2n" path="res://Sprites/Effects/Buff/Buffed7.png" id="7_vboxw"]
+[ext_resource type="Texture2D" uid="uid://dissva0fp0krp" path="res://Sprites/Effects/Buff/Buffed8.png" id="8_7evix"]
+[ext_resource type="Texture2D" uid="uid://gqg0ramkguwg" path="res://Sprites/Effects/Buff/Buffed9.png" id="9_mljuv"]
+[ext_resource type="Texture2D" uid="uid://mkeovit8gwah" path="res://Sprites/Effects/Buff/Buffed10.png" id="10_p5lyh"]
+[ext_resource type="Texture2D" uid="uid://cpn547sjqsxc0" path="res://Sprites/Effects/Buff/Buffed11.png" id="11_q1fyk"]
+[ext_resource type="Texture2D" uid="uid://b5yieyl0cmqfj" path="res://Sprites/Effects/Buff/Buffed12.png" id="12_0k4g4"]
+[ext_resource type="Texture2D" uid="uid://cgn4p2g17wuw7" path="res://Sprites/Effects/Buff/Buffed13.png" id="13_cwt77"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdnmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hebva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8usth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_odv55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4yuda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_spi0k")
+}, {
+"duration": 0.6,
+"texture": ExtResource("7_vboxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7evix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mljuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p5lyh")
+}, {
+"duration": 1.2,
+"texture": ExtResource("11_q1fyk")
+}, {
+"duration": 1.3,
+"texture": ExtResource("12_0k4g4")
+}, {
+"duration": 1.3,
+"texture": ExtResource("13_cwt77")
+}],
+"loop": false,
+"name": &"default",
+"speed": 23.0
+}]
+
+[node name="BuffEffect" type="AnimatedSprite2D" unique_id=217190639]
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 12
+frame_progress = 1.0
+centered = false
+offset = Vector2(-259.5, -470)

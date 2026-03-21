@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ddrg1qx7x4sm2"]
+
+[ext_resource type="Script" uid="uid://15pq7kk7ltr8" path="res://Scripts/Moves/Marked for Death.gd" id="1_cio7o"]
+
+[node name="Marked for Death" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_cio7o")

@@ -5,7 +5,7 @@ var current_cooldown := 0
 var damage: float = 10
 var status_amount = 3
 
-var description = "TO DO"
+var description = "Question their life choices, dealing low damage and weakening a target."
 
 @onready var character = $"../.."
 
@@ -14,14 +14,14 @@ func use(target):
 	if current_cooldown > 0:
 		print("test move on cooldown, sorry")
 		return
-		
-	print("used move!")
 	
-	await get_tree().create_timer(0.5).timeout
+	await VisualsHandler.make_visual(target, "Dark")
 	
 	if not target:
 		return
 	
 	DamageHandler.do_damage(character, target, damage, {"Weakened": status_amount})
+	
+	VisualsHandler.make_visual(target, "Debuff")
 	
 	return

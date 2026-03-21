@@ -24,6 +24,24 @@ func get_random_single_enemy_target(character):
 	
 	return possible_targets[0]
 
+func get_random_single_ally_target(character):
+	var where_to_get = Allies
+	
+	if character.get_parent() == Enemies:
+		where_to_get = Enemies
+	
+	var possible_targets = []
+	
+	for eligible_character in where_to_get.get_children():
+		possible_targets.append(eligible_character)
+	
+	if possible_targets == []:
+		return null
+	
+	possible_targets.shuffle()
+	
+	return possible_targets[0]
+
 func get_random_empty_ally_slot(character):
 	var where_to_get = Allies
 	var positions_to_check = AllyPositions
@@ -56,6 +74,18 @@ func get_aoe_enemy_targets(character):
 	if character.get_parent() == Allies:
 		where_to_get = Enemies
 		
+	var targets = []
+	for eligible_character in where_to_get.get_children():
+		targets.append(eligible_character)
+		
+	return targets
+	
+func get_aoe_ally_targets(character):
+	var where_to_get = Allies
+	
+	if character.get_parent() == Enemies:
+		where_to_get = Enemies
+	
 	var targets = []
 	for eligible_character in where_to_get.get_children():
 		targets.append(eligible_character)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvpilpymtisoc"
+path="res://.godot/imported/Main Menu and Tutorial.mp3-4bbcdc4f44f6427844fb421cff8c9f34.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Main Menu and Tutorial.mp3"
+dest_files=["res://.godot/imported/Main Menu and Tutorial.mp3-4bbcdc4f44f6427844fb421cff8c9f34.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

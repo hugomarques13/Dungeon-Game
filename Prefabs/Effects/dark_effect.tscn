@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dxwectolv16q6"]
+
+[ext_resource type="Texture2D" uid="uid://tu6ontihg3l7" path="res://Sprites/Effects/Dark/debuff2.png" id="1_jr1lj"]
+[ext_resource type="Texture2D" uid="uid://cjb6psxnhweqx" path="res://Sprites/Effects/Dark/debuff3.png" id="2_xop71"]
+[ext_resource type="Texture2D" uid="uid://4hkgxpyq6fbe" path="res://Sprites/Effects/Dark/debuff4.png" id="3_xt6xo"]
+[ext_resource type="Texture2D" uid="uid://cy8bd8cxpg5wk" path="res://Sprites/Effects/Dark/debuff5.png" id="4_jrcbj"]
+[ext_resource type="Texture2D" uid="uid://bci35qrdc0s0l" path="res://Sprites/Effects/Dark/debuff6.png" id="5_r3hmy"]
+[ext_resource type="Texture2D" uid="uid://bpbshjhkw63p5" path="res://Sprites/Effects/Dark/debuff7.png" id="6_2hxis"]
+[ext_resource type="Texture2D" uid="uid://by01b6u4yn8rd" path="res://Sprites/Effects/Dark/debuff8.png" id="7_jemrx"]
+[ext_resource type="Texture2D" uid="uid://d6i38ddnimoa" path="res://Sprites/Effects/Dark/debuff9.png" id="8_7cobv"]
+[ext_resource type="Texture2D" uid="uid://ilbf2gmsagim" path="res://Sprites/Effects/Dark/debuff10.png" id="9_orqep"]
+[ext_resource type="Texture2D" uid="uid://dlx68f6uape4h" path="res://Sprites/Effects/Dark/debuff11.png" id="10_oh8l0"]
+[ext_resource type="Texture2D" uid="uid://cfjdw6de3y67" path="res://Sprites/Effects/Dark/debuff12.png" id="11_6wfey"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jr1lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xop71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xt6xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jrcbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r3hmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2hxis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jemrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7cobv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_orqep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oh8l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6wfey")
+}],
+"loop": false,
+"name": &"default",
+"speed": 17.0
+}]
+
+[node name="DarkEffect" type="AnimatedSprite2D" unique_id=217190639]
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 10
+frame_progress = 1.0
+centered = false
+offset = Vector2(-259.5, -430)

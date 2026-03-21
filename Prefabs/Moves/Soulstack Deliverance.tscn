@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcnfwmqr07x2p"]
+
+[ext_resource type="Script" uid="uid://ii0g3vkinuru" path="res://Scripts/Moves/Soulstack Deliverance.gd" id="1_2lrg7"]
+
+[node name="Soulstack Deliverance" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_2lrg7")

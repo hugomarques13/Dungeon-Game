@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c11oy2wfkfilq"]
+
+[ext_resource type="Script" uid="uid://xmp30h15tupt" path="res://Scripts/Moves/Leap.gd" id="1_010ra"]
+
+[node name="Leap" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_010ra")

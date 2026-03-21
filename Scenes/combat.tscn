@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://c6s2uywrj1uv3"]
 
-[ext_resource type="Script" uid="uid://b5argh51vjriy" path="res://Scripts/combat_manager.gd" id="1_fe60u"]
-[ext_resource type="PackedScene" uid="uid://ka447k1ckyh4" path="res://Prefabs/Allies/Vexing Fool.tscn" id="2_2n3pb"]
-[ext_resource type="PackedScene" uid="uid://cwvj7xdya824i" path="res://Prefabs/Enemies/Leader.tscn" id="3_5kjvk"]
+[ext_resource type="PackedScene" uid="uid://bkm8qbgpnxi6q" path="res://Prefabs/Allies/Truestill Reaper.tscn" id="1_tmuf1"]
+[ext_resource type="PackedScene" uid="uid://dn4ep202v7ihr" path="res://Prefabs/Enemies/Lord Dungeonkin.tscn" id="2_ley77"]
 [ext_resource type="Texture2D" uid="uid://dd14modn1dc8" path="res://Sprites/Background/Battleback.png" id="9_y8jr2"]
-[ext_resource type="PackedScene" uid="uid://lykroysjhv02" path="res://Prefabs/Enemies/Villager.tscn" id="12_8fshu"]
 [ext_resource type="Script" uid="uid://dvkmnd6wicm01" path="res://Scripts/attack_button.gd" id="16_ley77"]
 [ext_resource type="Script" uid="uid://v5ut3l1j6v5r" path="res://Scripts/skill.gd" id="19_tmuf1"]
 [ext_resource type="Texture2D" uid="uid://dyr55hkvnwomk" path="res://Sprites/HUD/Combat/SkillList.png" id="21_5g3cp"]
@@ -26,23 +24,19 @@
 load_path = "res://.godot/imported/Action2.png-d188bf93f3e1c6b588cafd8fb28c83d5.ctex"
 
 [node name="Combat" type="Node2D" unique_id=1639644408]
-script = ExtResource("1_fe60u")
 metadata/_edit_vertical_guides_ = [451.0]
 metadata/_edit_horizontal_guides_ = [418.0]
 
 [node name="Allies" type="Node2D" parent="." unique_id=2112165524]
 z_index = 5
 
-[node name="Vexing Fool" parent="Allies" unique_id=1555409193 instance=ExtResource("2_2n3pb")]
-position = Vector2(93, 573)
+[node name="The Reaper" parent="Allies" unique_id=62447184 instance=ExtResource("1_tmuf1")]
+position = Vector2(93, 572)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=8162375]
 
-[node name="Leader" parent="Enemies" unique_id=1798780239 instance=ExtResource("3_5kjvk")]
-position = Vector2(476, 267)
-
-[node name="Villager" parent="Enemies" unique_id=1572280592 instance=ExtResource("12_8fshu")]
-position = Vector2(664, 267)
+[node name="Lord Dungeonkin" parent="Enemies" unique_id=1002063201 instance=ExtResource("2_ley77")]
+position = Vector2(532, 394)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=87021241]
 
@@ -190,36 +184,6 @@ z_index = -5
 position = Vector2(576, 324)
 texture = ExtResource("9_y8jr2")
 
-[node name="Slots" type="Node2D" parent="." unique_id=688786628]
-
-[node name="Allies" type="Node2D" parent="Slots" unique_id=1953661159]
-
-[node name="Slot1" type="Marker2D" parent="Slots/Allies" unique_id=2104853325]
-position = Vector2(93, 573)
-
-[node name="Slot2" type="Marker2D" parent="Slots/Allies" unique_id=791450295]
-position = Vector2(297, 573)
-
-[node name="Slot3" type="Marker2D" parent="Slots/Allies" unique_id=1886676100]
-position = Vector2(488, 573)
-
-[node name="Slot4" type="Marker2D" parent="Slots/Allies" unique_id=321068619]
-position = Vector2(722, 573)
-
-[node name="Enemies" type="Node2D" parent="Slots" unique_id=1570328787]
-
-[node name="Slot1" type="Marker2D" parent="Slots/Enemies" unique_id=1512667147]
-position = Vector2(205, 267)
-
-[node name="Slot2" type="Marker2D" parent="Slots/Enemies" unique_id=1875881421]
-position = Vector2(476, 267)
-
-[node name="Slot3" type="Marker2D" parent="Slots/Enemies" unique_id=296313350]
-position = Vector2(745, 273)
-
-[node name="Slot4" type="Marker2D" parent="Slots/Enemies" unique_id=1423184429]
-position = Vector2(1018, 273)
-
 [node name="PartySpearman" type="Sprite2D" parent="." unique_id=685656686]
 visible = false
 z_index = -1
@@ -230,6 +194,39 @@ texture = ExtResource("31_iv3ie")
 z_index = 2
 position = Vector2(576, 324)
 texture = ExtResource("33_m7mm0")
+
+[node name="Slots" type="Node2D" parent="." unique_id=107239628]
+
+[node name="Allies" type="Node2D" parent="Slots" unique_id=533815415]
+
+[node name="Slot1" type="Marker2D" parent="Slots/Allies" unique_id=884049516]
+position = Vector2(100, 573)
+
+[node name="Slot2" type="Marker2D" parent="Slots/Allies" unique_id=1295807453]
+position = Vector2(300, 573)
+
+[node name="Slot3" type="Marker2D" parent="Slots/Allies" unique_id=452149385]
+position = Vector2(500, 573)
+
+[node name="Slot4" type="Marker2D" parent="Slots/Allies" unique_id=276688584]
+position = Vector2(700, 573)
+
+[node name="Enemies" type="Node2D" parent="Slots" unique_id=871411400]
+
+[node name="Slot1" type="Marker2D" parent="Slots/Enemies" unique_id=1502436876]
+position = Vector2(200, 288)
+
+[node name="LordSpot" type="Marker2D" parent="Slots/Enemies" unique_id=1538202891]
+position = Vector2(533, 394)
+
+[node name="Slot2" type="Marker2D" parent="Slots/Enemies" unique_id=951347780]
+position = Vector2(400, 288)
+
+[node name="Slot3" type="Marker2D" parent="Slots/Enemies" unique_id=329858234]
+position = Vector2(600, 288)
+
+[node name="Slot4" type="Marker2D" parent="Slots/Enemies" unique_id=401713861]
+position = Vector2(800, 288)
 
 [connection signal="button_down" from="HUD/SkillsMenu/GridContainer/Template" to="HUD/SkillsMenu/GridContainer/Template" method="_on_button_down"]
 [connection signal="button_down" from="HUD/Buttons/Attack" to="HUD/Buttons/Attack" method="_on_button_down"]

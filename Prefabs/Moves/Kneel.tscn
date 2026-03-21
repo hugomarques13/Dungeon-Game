@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cq3nyxkx71p6q"]
+
+[ext_resource type="Script" uid="uid://yttd6lel2wmb" path="res://Scripts/Moves/Kneel.gd" id="1_xqxno"]
+
+[node name="Kneel" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_xqxno")

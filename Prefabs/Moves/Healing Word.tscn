@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dyhgsehrl2r3a"]
+
+[ext_resource type="Script" uid="uid://bvk0kovyoibpl" path="res://Scripts/Moves/Healing Word.gd" id="1_fkbk0"]
+
+[node name="Healing Word" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_fkbk0")

@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cl6n4ghfr8wit"]
+
+[ext_resource type="Texture2D" uid="uid://ty3likn7gwqo" path="res://Sprites/Rooms/Traps/tilesstuntrap.png" id="1_tfduy"]
+[ext_resource type="Texture2D" uid="uid://uu5fvxca65kv" path="res://Sprites/Effects/StunTrap/stun1.png" id="2_b5ea1"]
+[ext_resource type="Script" uid="uid://2s55ak1mrppv" path="res://Scripts/Traps/StunTrap.gd" id="2_heaom"]
+[ext_resource type="Texture2D" uid="uid://c36t5pvddjwea" path="res://Sprites/Effects/StunTrap/stun2.png" id="3_heaom"]
+[ext_resource type="Texture2D" uid="uid://cr5jsb3u6guaa" path="res://Sprites/Effects/StunTrap/stun3.png" id="4_0wy23"]
+[ext_resource type="Texture2D" uid="uid://bpol0weieh5a3" path="res://Sprites/Effects/StunTrap/stun4.png" id="5_okh0t"]
+[ext_resource type="Texture2D" uid="uid://cshuns7bgw486" path="res://Sprites/Effects/StunTrap/stun5.png" id="6_qqsyb"]
+[ext_resource type="Texture2D" uid="uid://byam8d0n1sx04" path="res://Sprites/Effects/StunTrap/stun6.png" id="7_s4r0a"]
+[ext_resource type="Texture2D" uid="uid://dsvhsqqccesh8" path="res://Sprites/Effects/StunTrap/stun7.png" id="8_08nj1"]
+[ext_resource type="Texture2D" uid="uid://biotdjfmo2lwb" path="res://Sprites/Effects/StunTrap/stun8.png" id="9_v8twk"]
+[ext_resource type="Texture2D" uid="uid://cwwj3p1i55fjj" path="res://Sprites/Effects/StunTrap/stun9.png" id="10_spllr"]
+[ext_resource type="Texture2D" uid="uid://8fnuog8mh87v" path="res://Sprites/Effects/StunTrap/stun10.png" id="11_tml3d"]
+[ext_resource type="Texture2D" uid="uid://c5fssvkesb7y6" path="res://Sprites/Effects/StunTrap/stun11.png" id="12_aeyy8"]
+[ext_resource type="Texture2D" uid="uid://trmmrtf5fs2k" path="res://Sprites/Effects/StunTrap/stun12.png" id="13_q82kp"]
+[ext_resource type="Texture2D" uid="uid://dmmlqynipvvsp" path="res://Sprites/Effects/StunTrap/stun13.png" id="14_io4ae"]
+[ext_resource type="Texture2D" uid="uid://wfb6jt3bt2uh" path="res://Sprites/Effects/StunTrap/stun14.png" id="15_esayr"]
+[ext_resource type="Texture2D" uid="uid://da32bdsaswtnd" path="res://Sprites/Effects/StunTrap/stun15.png" id="16_ubp78"]
+[ext_resource type="Texture2D" uid="uid://c7vm4a0ehut2a" path="res://Sprites/Effects/StunTrap/stun16.png" id="17_kam62"]
+[ext_resource type="Texture2D" uid="uid://bcjjl1aewekcx" path="res://Sprites/Effects/StunTrap/stun17.png" id="18_5snum"]
+[ext_resource type="Texture2D" uid="uid://cpgnvc3d0k5rw" path="res://Sprites/Effects/StunTrap/stun18.png" id="19_2gh3n"]
+[ext_resource type="Texture2D" uid="uid://wyberkq4rrcy" path="res://Sprites/Effects/StunTrap/stun19.png" id="20_b3me5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tlxbc"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("2_b5ea1")
+}, {
+"duration": 0.7,
+"texture": ExtResource("3_heaom")
+}, {
+"duration": 0.7,
+"texture": ExtResource("4_0wy23")
+}, {
+"duration": 0.7,
+"texture": ExtResource("5_okh0t")
+}, {
+"duration": 0.7,
+"texture": ExtResource("6_qqsyb")
+}, {
+"duration": 1.1,
+"texture": ExtResource("7_s4r0a")
+}, {
+"duration": 1.1,
+"texture": ExtResource("8_08nj1")
+}, {
+"duration": 1.1,
+"texture": ExtResource("9_v8twk")
+}, {
+"duration": 1.1,
+"texture": ExtResource("10_spllr")
+}, {
+"duration": 1.1,
+"texture": ExtResource("11_tml3d")
+}, {
+"duration": 1.1,
+"texture": ExtResource("12_aeyy8")
+}, {
+"duration": 1.1,
+"texture": ExtResource("13_q82kp")
+}, {
+"duration": 1.1,
+"texture": ExtResource("14_io4ae")
+}, {
+"duration": 1.1,
+"texture": ExtResource("15_esayr")
+}, {
+"duration": 0.7,
+"texture": ExtResource("16_ubp78")
+}, {
+"duration": 0.7,
+"texture": ExtResource("17_kam62")
+}, {
+"duration": 0.7,
+"texture": ExtResource("18_5snum")
+}, {
+"duration": 0.7,
+"texture": ExtResource("19_2gh3n")
+}, {
+"duration": 0.7,
+"texture": ExtResource("20_b3me5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="StunTrap" type="Sprite2D" unique_id=847994451]
+texture = ExtResource("1_tfduy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1751312997]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_heaom")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=493927177]
+polygon = PackedVector2Array(-53, 1, 6, -33, 52, -5, -3, 29)
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=408918043]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickBox" unique_id=1285463235]
+modulate = Color(1.3568124, 1.175139, 0.75589246, 0.07058824)
+light_mask = 0
+visibility_layer = 0
+polygon = PackedVector2Array(0, -46, 75, 0, 0, 46, -75, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1899603890]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_tlxbc")
+frame = 18
+frame_progress = 1.0
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

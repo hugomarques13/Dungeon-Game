@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bfg2kre3kfg8q"]
+
+[ext_resource type="Texture2D" uid="uid://cut4qei3biaw" path="res://Sprites/Effects/Fire/fire2.png" id="1_abu31"]
+[ext_resource type="Texture2D" uid="uid://debysgxu7vfch" path="res://Sprites/Effects/Fire/fire3.png" id="2_q6kdu"]
+[ext_resource type="Texture2D" uid="uid://cr64gu3uqspw4" path="res://Sprites/Effects/Fire/fire4.png" id="3_12a73"]
+[ext_resource type="Texture2D" uid="uid://crbe27uvso3ee" path="res://Sprites/Effects/Fire/fire5.png" id="4_jib6m"]
+[ext_resource type="Texture2D" uid="uid://b8xigmkjn0ym" path="res://Sprites/Effects/Fire/fire6.png" id="5_vqhgb"]
+[ext_resource type="Texture2D" uid="uid://bvsrlm4g58tfe" path="res://Sprites/Effects/Fire/fire7.png" id="6_7fffa"]
+[ext_resource type="Texture2D" uid="uid://cvqp3udhgugts" path="res://Sprites/Effects/Fire/fire8.png" id="7_rdk2d"]
+[ext_resource type="Texture2D" uid="uid://b3g3jpc0bk6yv" path="res://Sprites/Effects/Fire/fire9.png" id="8_jnl50"]
+[ext_resource type="Texture2D" uid="uid://ncwlljbw0p6f" path="res://Sprites/Effects/Fire/fire10.png" id="9_umhmo"]
+[ext_resource type="Texture2D" uid="uid://8ac1c8f8dvfv" path="res://Sprites/Effects/Fire/fire11.png" id="10_cp4un"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("1_abu31")
+}, {
+"duration": 0.8,
+"texture": ExtResource("2_q6kdu")
+}, {
+"duration": 0.9,
+"texture": ExtResource("3_12a73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jib6m")
+}, {
+"duration": 1.2,
+"texture": ExtResource("5_vqhgb")
+}, {
+"duration": 1.5,
+"texture": ExtResource("6_7fffa")
+}, {
+"duration": 1.6,
+"texture": ExtResource("7_rdk2d")
+}, {
+"duration": 1.4,
+"texture": ExtResource("8_jnl50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_umhmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cp4un")
+}],
+"loop": false,
+"name": &"default",
+"speed": 17.0
+}]
+
+[node name="ChibiFire" type="AnimatedSprite2D" unique_id=178446878]
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 9
+frame_progress = 1.0
+centered = false
+offset = Vector2(-48, -121)

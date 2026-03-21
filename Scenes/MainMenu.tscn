@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b4akrjx31so5c"]
+
+[ext_resource type="Script" uid="uid://p014lxg6n6xj" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://dr0nu2fwrq88n" path="res://Sprites/MainMenu/menub1.png" id="2_8um5k"]
+[ext_resource type="Texture2D" uid="uid://6onp4fm1lh23" path="res://Sprites/MainMenu/menub2.png" id="3_xim88"]
+[ext_resource type="Texture2D" uid="uid://b6q188ckqrt67" path="res://Sprites/MainMenu/menub3.png" id="4_koqhg"]
+[ext_resource type="Texture2D" uid="uid://c3xu5hduhss4q" path="res://Sprites/MainMenu/menub4.png" id="5_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://6ja18wpdhqp1" path="res://Sprites/MainMenu/Menu.png" id="6_loo7a"]
+
+[node name="MainMenu" type="Control" unique_id=1692279795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="NewGameButton" type="TextureButton" parent="." unique_id=1415681103]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 595.0
+offset_right = 680.0
+offset_bottom = 637.0
+texture_normal = ExtResource("2_8um5k")
+texture_hover = ExtResource("3_xim88")
+
+[node name="ContinueButton" type="TextureButton" parent="." unique_id=122258448]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 546.0
+offset_right = 680.0
+offset_bottom = 587.0
+texture_normal = ExtResource("4_koqhg")
+texture_hover = ExtResource("5_cmrfp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=686963502]
+z_index = -1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_loo7a")

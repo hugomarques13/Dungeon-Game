@@ -5,7 +5,7 @@ var current_cooldown := 0
 
 const damage = 25
 
-var description = "TO DO"
+var description = "A fast bite that deals low damage to a target."
 
 @onready var character = $"../.."
 
@@ -19,7 +19,7 @@ func use(target):
 		print("no target!")
 		return
 	
-	await get_tree().create_timer(0.5).timeout
+	await VisualsHandler.make_visual(target, "DarkBite")
 	
 	DamageHandler.do_damage(character, target, damage, {})
 	

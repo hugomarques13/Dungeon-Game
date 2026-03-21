@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dvsjt3lskrhie"]
+
+[ext_resource type="Texture2D" uid="uid://d1hxit7q42hoq" path="res://Sprites/Effects/DarkBite/dbite1.png" id="1_t0tb3"]
+[ext_resource type="Texture2D" uid="uid://bdwojudpk2mme" path="res://Sprites/Effects/DarkBite/dbite2.png" id="2_7nqsi"]
+[ext_resource type="Texture2D" uid="uid://dlsrljib24f88" path="res://Sprites/Effects/DarkBite/dbite3.png" id="3_4mwxd"]
+[ext_resource type="Texture2D" uid="uid://vh3nsnhu7cax" path="res://Sprites/Effects/DarkBite/dbite4.png" id="4_yqsov"]
+[ext_resource type="Texture2D" uid="uid://bqifl1evm82e2" path="res://Sprites/Effects/DarkBite/dbite5.png" id="5_fotg6"]
+[ext_resource type="Texture2D" uid="uid://cqjnyumgah7mn" path="res://Sprites/Effects/DarkBite/dbite6.png" id="6_st0p8"]
+[ext_resource type="Texture2D" uid="uid://ubqlimvvfh6b" path="res://Sprites/Effects/DarkBite/dbite7.png" id="7_qu4ph"]
+[ext_resource type="Texture2D" uid="uid://b8ua4wamgdaot" path="res://Sprites/Effects/DarkBite/dbite8.png" id="8_agy5n"]
+[ext_resource type="Texture2D" uid="uid://yeskj6yx3v70" path="res://Sprites/Effects/DarkBite/dbite9.png" id="9_uub5v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("1_t0tb3")
+}, {
+"duration": 0.9,
+"texture": ExtResource("2_7nqsi")
+}, {
+"duration": 0.9,
+"texture": ExtResource("3_4mwxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yqsov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fotg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_st0p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qu4ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_agy5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uub5v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 19.0
+}]
+
+[node name="DarkBiteEffect" type="AnimatedSprite2D" unique_id=217190639]
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 8
+frame_progress = 1.0
+centered = false
+offset = Vector2(-268.5, -323)

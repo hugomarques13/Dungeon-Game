@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c15rpoedf4uui"]
+
+[ext_resource type="Texture2D" uid="uid://bq551yqfruc11" path="res://Sprites/StatusIcons/StatusBleed.png" id="1_t3sol"]
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="2_uyefo"]
+
+[node name="Bleed" type="TextureRect" unique_id=1142258867]
+texture = ExtResource("1_t3sol")
+
+[node name="Amount" type="Label" parent="." unique_id=1138984624]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 43.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_uyefo")
+theme_override_font_sizes/font_size = 31
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 2

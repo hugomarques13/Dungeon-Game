@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://di3m5fh3ykhyo"]
+
+[ext_resource type="Script" uid="uid://dsqarpqkrtm4g" path="res://Scripts/Moves/Burning Hands.gd" id="1_cn04j"]
+
+[node name="Burning Hands" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_cn04j")

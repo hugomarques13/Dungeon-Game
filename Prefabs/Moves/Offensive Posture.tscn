@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8gf4nhn87p7w"]
+
+[ext_resource type="Script" uid="uid://dlr1dtlmmgfc7" path="res://Scripts/Moves/Offensive Posture.gd" id="1_yy8hu"]
+
+[node name="Offensive Posture" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_yy8hu")

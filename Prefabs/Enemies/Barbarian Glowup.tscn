@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ex57qbrqarh1"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_0fhyi"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_43u5i"]
+[ext_resource type="PackedScene" uid="uid://wbbt8x6ahuog" path="res://Prefabs/Moves/Reckless Attack.tscn" id="3_6g4tm"]
+[ext_resource type="PackedScene" uid="uid://ophmy8pnavvt" path="res://Prefabs/Moves/Cleave.tscn" id="4_xvw13"]
+[ext_resource type="PackedScene" uid="uid://bbtaog80vu6v2" path="res://Prefabs/Moves/Provoke.tscn" id="5_bi63r"]
+[ext_resource type="PackedScene" uid="uid://dckb3ugo05uas" path="res://Prefabs/Moves/Nine Lives.tscn" id="6_43u5i"]
+[ext_resource type="Texture2D" uid="uid://vg00nbcfgbis" path="res://Sprites/Enemies/PartyBarbarian2.png" id="7_43u5i"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_f3odr"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_1ms56"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="9_h01r2"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="12_6ttob"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnv5a"]
+shader = ExtResource("12_6ttob")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+
+[node name="Barbarian Glowup" type="CharacterBody2D" unique_id=1575825976]
+script = ExtResource("1_0fhyi")
+soul_reward = 750
+max_health = 500.0
+base_attack_damage = 40.0
+
+[node name="Moves" type="Node2D" parent="." unique_id=1402611142]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("2_43u5i")]
+
+[node name="Reckless Attack" parent="Moves" unique_id=1111325172 instance=ExtResource("3_6g4tm")]
+
+[node name="Cleave" parent="Moves" unique_id=164478347 instance=ExtResource("4_xvw13")]
+
+[node name="Provoke" parent="Moves" unique_id=1638803143 instance=ExtResource("5_bi63r")]
+
+[node name="Nine Lives" parent="Moves" unique_id=37765477 instance=ExtResource("6_43u5i")]
+
+[node name="Status" type="Node2D" parent="." unique_id=1199587269]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122964225]
+material = SubResource("ShaderMaterial_pnv5a")
+position = Vector2(8, -55)
+texture = ExtResource("7_43u5i")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=508257644]
+visible = false
+z_index = 7
+position = Vector2(0, -244)
+texture = ExtResource("7_f3odr")
+script = ExtResource("8_1ms56")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("9_h01r2")]

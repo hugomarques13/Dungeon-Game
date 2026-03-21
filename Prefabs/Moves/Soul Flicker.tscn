@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcpgm4c20k6sk"]
+
+[ext_resource type="Script" uid="uid://c7dpc6a5akm8a" path="res://Scripts/Moves/Soul Flicker.gd" id="1_ce4qj"]
+
+[node name="Soul Flicker" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_ce4qj")

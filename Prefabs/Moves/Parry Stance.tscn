@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfvinvg2qr8e6"]
+
+[ext_resource type="Script" uid="uid://b1awry4ure7ia" path="res://Scripts/Moves/Parry Stance.gd" id="1_isn3e"]
+
+[node name="Parry Stance" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_isn3e")

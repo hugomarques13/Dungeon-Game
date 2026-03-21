@@ -12,8 +12,10 @@ func use(target):
 		return
 	
 	if not target:
-		print("no target!")
-		return
+		target = TargetGetter.get_random_single_enemy_target(character)
+		if not target:
+			print("no target even after re picking")
+			return
 	
 	for i in range(character.base_attack_amount):
 		
@@ -21,7 +23,7 @@ func use(target):
 		
 		var damage = character.base_attack_damage
 		
-		await get_tree().create_timer(0.5).timeout
+		await VisualsHandler.make_visual(target, character.base_attack_effect)
 		
 		DamageHandler.do_damage(character, target, damage, {})
 	

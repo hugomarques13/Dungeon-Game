@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dyc47teufjgmf"]
+
+[ext_resource type="Script" uid="uid://drxu46itfhc6s" path="res://Scripts/Moves/Prayer of Healing.gd" id="1_jpqj3"]
+
+[node name="Prayer of Healing" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_jpqj3")

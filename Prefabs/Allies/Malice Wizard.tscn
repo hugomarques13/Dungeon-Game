@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://47fr83pbdhyo"]
 
 [ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_dmr3l"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="2_8cr5i"]
 [ext_resource type="Texture2D" uid="uid://retoxn3luqae" path="res://Sprites/Allies/Malice_Wizard.png" id="3_che7j"]
 [ext_resource type="PackedScene" uid="uid://ci6ijo1ualjrv" path="res://Prefabs/Moves/Chain Lightning.tscn" id="4_ltpas"]
 [ext_resource type="PackedScene" uid="uid://beyauwjphsk1l" path="res://Prefabs/Moves/Soul Sacrifice.tscn" id="5_che7j"]
@@ -10,32 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_8cr5i"]
 [ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_xgq44"]
 
-[sub_resource type="Shader" id="Shader_57h1k"]
-code = "shader_type canvas_item;
-
-uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
-uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
-
-void fragment() {
-    vec4 tex = texture(TEXTURE, UV);
-
-    vec4 solid = vec4(flash_color.rgb, tex.a);
-
-    COLOR = mix(tex, solid, flash_amount);
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmr3l"]
-shader = SubResource("Shader_57h1k")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay4y8"]
+shader = ExtResource("2_8cr5i")
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
 
 [node name="Malice Wizard" type="CharacterBody2D" unique_id=678410421]
 script = ExtResource("1_dmr3l")
 max_health = 140.0
 base_attack_damage = 30.0
+base_attack_effect = "Dark"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1659746680]
-material = SubResource("ShaderMaterial_dmr3l")
+material = SubResource("ShaderMaterial_ay4y8")
 position = Vector2(58, -116)
 texture = ExtResource("3_che7j")
 

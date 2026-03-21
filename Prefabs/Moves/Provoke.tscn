@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbtaog80vu6v2"]
+
+[ext_resource type="Script" uid="uid://b8j7cmglda8f0" path="res://Scripts/Moves/Provoke.gd" id="1_pmvd4"]
+
+[node name="Provoke" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_pmvd4")

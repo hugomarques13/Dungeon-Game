@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c2pxgufw3a5lr"]
+
+[ext_resource type="Script" uid="uid://cyjpo8hbl7rlg" path="res://Scripts/Moves/I Take It All Back.gd" id="1_528bm"]
+
+[node name="I Take It All Back" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_528bm")

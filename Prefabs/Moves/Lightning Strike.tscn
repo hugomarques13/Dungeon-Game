@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctya612tyvu3v"]
+
+[ext_resource type="Script" uid="uid://dac8ix7ye33q6" path="res://Scripts/Moves/Lightning Strike.gd" id="1_p077b"]
+
+[node name="Lightning Strike" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_p077b")

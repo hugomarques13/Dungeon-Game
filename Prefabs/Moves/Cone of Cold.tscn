@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://csq7d04imxh86"]
+
+[ext_resource type="Script" uid="uid://chuvxexx56ard" path="res://Scripts/Moves/Cone of Cold.gd" id="1_v2svf"]
+
+[node name="Cone of Cold" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_v2svf")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4k2hf83vp1gr"]
+
+[ext_resource type="Script" uid="uid://c2x6fgs0r3vgi" path="res://Scripts/Moves/Burn em'.gd" id="1_afmty"]
+
+[node name="Burn em\'" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_afmty")

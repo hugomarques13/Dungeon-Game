@@ -4,7 +4,7 @@ var cooldown := 5
 var current_cooldown := 0
 var status_amount = 3
 
-var description = "TO DO"
+var description = "Mark a target, causing them to take more damage when hit."
 
 @onready var character = $"../.."
 
@@ -16,7 +16,7 @@ func use(target):
 		
 	print("used move!")
 	
-	await get_tree().create_timer(0.5).timeout
+	await VisualsHandler.make_visual(target, "Debuff")
 	
 	if not target:
 		return

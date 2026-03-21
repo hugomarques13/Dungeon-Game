@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1x86tvys24gg"]
+
+[ext_resource type="Script" uid="uid://dsgui8ue3cd06" path="res://Scenes/ending.gd" id="1_7ra7e"]
+[ext_resource type="Texture2D" uid="uid://jlblu44psf6q" path="res://Sprites/Outro1.png" id="1_sbbak"]
+[ext_resource type="Texture2D" uid="uid://diflq42p824mr" path="res://Sprites/credits.png" id="3_5lsk1"]
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="4_m0wyw"]
+
+[node name="Ending" type="Control" unique_id=2093899553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ra7e")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2125806294]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sbbak")
+
+[node name="Credits" type="TextureRect" parent="." unique_id=2009207826]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_5lsk1")
+
+[node name="Label" type="Label" parent="." unique_id=1277793431]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 0
+offset_top = 4.0
+offset_right = 784.0
+offset_bottom = 648.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_m0wyw")
+theme_override_font_sizes/font_size = 40
+autowrap_mode = 2

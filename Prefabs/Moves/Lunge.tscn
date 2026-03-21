@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwrsq4gutbeau"]
+
+[ext_resource type="Script" uid="uid://b5l3bat6kvgh3" path="res://Scripts/Moves/Lunge.gd" id="1_5hp0g"]
+
+[node name="Lunge" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_5hp0g")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwyg2sw6p02ej"]
+
+[ext_resource type="Script" uid="uid://jtrgt81lyedc" path="res://Scripts/Moves/Soul Impact.gd" id="1_7363q"]
+
+[node name="Soul Impact" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_7363q")

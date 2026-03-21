@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4e0dqf2r11w"]
+
+[ext_resource type="Script" uid="uid://cqm1l6rtyure1" path="res://Scripts/Moves/REAP.gd" id="1_2vo8n"]
+
+[node name="REAP" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_2vo8n")

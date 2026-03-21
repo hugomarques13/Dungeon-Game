@@ -9,7 +9,7 @@ var description = "A move that applies burn"
 
 @onready var character = $"../.."
 
-func use(false_target):
+func use(_false_target):
 	# extra safety
 	if current_cooldown > 0:
 		print("test move on cooldown, sorry")

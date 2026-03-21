@@ -5,7 +5,7 @@ var current_cooldown := 0
 
 const damage = 999
 
-var description = "TO DO"
+var description = "Devour a fool, just be careful to chew."
 
 @onready var character = $"../.."
 
@@ -19,7 +19,7 @@ func use(target):
 		print("no target!")
 		return
 	
-	await get_tree().create_timer(0.5).timeout
+	await VisualsHandler.make_visual(target, "Bite")
 	
 	DamageHandler.do_damage(character, target, damage, {})
 	

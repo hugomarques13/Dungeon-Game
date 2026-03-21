@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://lwyjhhfcv7yn"]
+
+[ext_resource type="Script" uid="uid://ct6m023xaqiek" path="res://Scripts/Moves/Guiding Bolt.gd" id="1_8awwe"]
+
+[node name="Guiding Bolt" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_8awwe")

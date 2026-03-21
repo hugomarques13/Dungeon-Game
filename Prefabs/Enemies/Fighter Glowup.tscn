@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cmqwphmff74m8"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_ja64p"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_ey0w0"]
+[ext_resource type="PackedScene" uid="uid://cxudoh7ayvmrr" path="res://Prefabs/Moves/Punch Barrage.tscn" id="3_15iyq"]
+[ext_resource type="PackedScene" uid="uid://bsa2mru0qfm3j" path="res://Prefabs/Moves/Wholeness of Body.tscn" id="4_avtg4"]
+[ext_resource type="PackedScene" uid="uid://brnilmesblusu" path="res://Prefabs/Moves/Tripping Strike.tscn" id="5_ood8t"]
+[ext_resource type="PackedScene" uid="uid://vujaqli77jh6" path="res://Prefabs/Moves/Stunning Strike.tscn" id="6_ey0w0"]
+[ext_resource type="Texture2D" uid="uid://cowt4l6p3nky0" path="res://Sprites/Enemies/PartyFighter2.png" id="7_ey0w0"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_ual04"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_sq0hm"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="9_hxyqy"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="12_sh0g2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gukr1"]
+shader = ExtResource("12_sh0g2")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+
+[node name="Fighter Glowup" type="CharacterBody2D" unique_id=1166773369]
+script = ExtResource("1_ja64p")
+soul_reward = 750
+max_health = 300.0
+base_attack_damage = 20.0
+base_attack_amount = 3
+base_attack_effect = "Blunt"
+
+[node name="Moves" type="Node2D" parent="." unique_id=2096812879]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("2_ey0w0")]
+
+[node name="Punch Barrage" parent="Moves" unique_id=1111325172 instance=ExtResource("3_15iyq")]
+
+[node name="Wholeness of Body" parent="Moves" unique_id=1173095411 instance=ExtResource("4_avtg4")]
+
+[node name="Tripping Strike" parent="Moves" unique_id=148786571 instance=ExtResource("5_ood8t")]
+
+[node name="Stunning Strike" parent="Moves" unique_id=177995314 instance=ExtResource("6_ey0w0")]
+
+[node name="Status" type="Node2D" parent="." unique_id=1954948203]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1317499501]
+material = SubResource("ShaderMaterial_gukr1")
+position = Vector2(7, -68)
+texture = ExtResource("7_ey0w0")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=466489743]
+visible = false
+z_index = 7
+position = Vector2(-17, -254)
+texture = ExtResource("7_ual04")
+script = ExtResource("8_sq0hm")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("9_hxyqy")]

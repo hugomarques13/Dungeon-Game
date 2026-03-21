@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://up2p7owobjge"
+path="res://.godot/imported/03- Soul Party.mp3-6e87c1b0a43daacf56f18c50971270c8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/03- Soul Party.mp3"
+dest_files=["res://.godot/imported/03- Soul Party.mp3-6e87c1b0a43daacf56f18c50971270c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

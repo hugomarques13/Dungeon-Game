@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ct55odmesopra"]
+
+[ext_resource type="Texture2D" uid="uid://cpoigla337n3n" path="res://Sprites/Rooms/Traps/tilesfiretrap.png" id="1_0lxct"]
+[ext_resource type="Script" uid="uid://bu4tjs85kxy50" path="res://Scripts/Traps/FireTrap.gd" id="2_ppm2e"]
+[ext_resource type="Texture2D" uid="uid://cut4qei3biaw" path="res://Sprites/Effects/Fire/fire2.png" id="3_q3tty"]
+[ext_resource type="Texture2D" uid="uid://debysgxu7vfch" path="res://Sprites/Effects/Fire/fire3.png" id="4_yinh4"]
+[ext_resource type="Texture2D" uid="uid://cr64gu3uqspw4" path="res://Sprites/Effects/Fire/fire4.png" id="5_es4b5"]
+[ext_resource type="Texture2D" uid="uid://crbe27uvso3ee" path="res://Sprites/Effects/Fire/fire5.png" id="6_ycr32"]
+[ext_resource type="Texture2D" uid="uid://b8xigmkjn0ym" path="res://Sprites/Effects/Fire/fire6.png" id="7_13jht"]
+[ext_resource type="Texture2D" uid="uid://bvsrlm4g58tfe" path="res://Sprites/Effects/Fire/fire7.png" id="8_eoaqs"]
+[ext_resource type="Texture2D" uid="uid://cvqp3udhgugts" path="res://Sprites/Effects/Fire/fire8.png" id="9_xbb08"]
+[ext_resource type="Texture2D" uid="uid://b3g3jpc0bk6yv" path="res://Sprites/Effects/Fire/fire9.png" id="10_xw1gs"]
+[ext_resource type="Texture2D" uid="uid://ncwlljbw0p6f" path="res://Sprites/Effects/Fire/fire10.png" id="11_7qr6i"]
+[ext_resource type="Texture2D" uid="uid://8ac1c8f8dvfv" path="res://Sprites/Effects/Fire/fire11.png" id="12_xf4rl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("3_q3tty")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_yinh4")
+}, {
+"duration": 0.9,
+"texture": ExtResource("5_es4b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ycr32")
+}, {
+"duration": 1.2,
+"texture": ExtResource("7_13jht")
+}, {
+"duration": 1.5,
+"texture": ExtResource("8_eoaqs")
+}, {
+"duration": 1.6,
+"texture": ExtResource("9_xbb08")
+}, {
+"duration": 1.4,
+"texture": ExtResource("10_xw1gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7qr6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xf4rl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 17.0
+}]
+
+[node name="FireTrap" type="Sprite2D" unique_id=847994451]
+texture = ExtResource("1_0lxct")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1751312997]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_ppm2e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=493927177]
+polygon = PackedVector2Array(-53, 1, 6, -33, 52, -5, -3, 29)
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=408918043]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickBox" unique_id=1285463235]
+modulate = Color(1.3568124, 1.175139, 0.75589246, 0.07058824)
+light_mask = 0
+visibility_layer = 0
+polygon = PackedVector2Array(0, -46, 75, 0, 0, 46, -75, 0)
+
+[node name="FireVisual" type="AnimatedSprite2D" parent="." unique_id=178446878]
+visible = false
+position = Vector2(0, 1)
+scale = Vector2(0.795, 0.795)
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 9
+frame_progress = 1.0
+centered = false
+offset = Vector2(-48, -121)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

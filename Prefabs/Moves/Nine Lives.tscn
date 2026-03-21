@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dckb3ugo05uas"]
+
+[ext_resource type="Script" uid="uid://b08s7pawqbvkm" path="res://Scripts/Moves/Nine Lives.gd" id="1_0ymwc"]
+
+[node name="Nine Lives" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_0ymwc")

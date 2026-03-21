@@ -1,50 +1,60 @@
 [gd_scene format=3 uid="uid://cwvj7xdya824i"]
 
 [ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_sm2v6"]
-[ext_resource type="PackedScene" uid="uid://bpfo7wk2i41qj" path="res://Prefabs/Moves/TestMove.tscn" id="2_aowsw"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_b5e0i"]
+[ext_resource type="PackedScene" uid="uid://qneew17dx746" path="res://Prefabs/Moves/Inspire.tscn" id="3_gb5b1"]
+[ext_resource type="Script" uid="uid://bqmp4mr8fvbxh" path="res://Scripts/Moves/Attack.gd" id="3_jdygg"]
 [ext_resource type="Texture2D" uid="uid://blcp78evkujp4" path="res://Sprites/Enemies/PartyLeader.png" id="3_ju0jl"]
 [ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="4_b5e0i"]
+[ext_resource type="PackedScene" uid="uid://bwrsq4gutbeau" path="res://Prefabs/Moves/Lunge.tscn" id="4_b8c50"]
+[ext_resource type="PackedScene" uid="uid://dvw2aatkt1u76" path="res://Prefabs/Moves/Molotov.tscn" id="5_1xwh2"]
 [ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="5_gb5b1"]
+[ext_resource type="Script" uid="uid://bbhcrx3tqqe5m" path="res://Scripts/Moves/Inspire.gd" id="5_tmic1"]
 [ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="6_b8c50"]
+[ext_resource type="Script" uid="uid://b5l3bat6kvgh3" path="res://Scripts/Moves/Lunge.gd" id="7_1f3bb"]
+[ext_resource type="Script" uid="uid://d4i2oxa1s8n2k" path="res://Scripts/Moves/Molotov.gd" id="9_lmn5h"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="10_0j3al"]
 
-[sub_resource type="Shader" id="Shader_1xwh2"]
-code = "shader_type canvas_item;
-
-uniform vec4 flash_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
-uniform float flash_amount : hint_range(0.0, 1.0) = 0.0;
-
-void fragment() {
-    vec4 tex = texture(TEXTURE, UV);
-
-    vec4 solid = vec4(flash_color.rgb, tex.a);
-
-    COLOR = mix(tex, solid, flash_amount);
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jum23"]
-shader = SubResource("Shader_1xwh2")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rsggc"]
+shader = ExtResource("10_0j3al")
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
 
 [node name="Leader" type="CharacterBody2D" unique_id=1798780239]
 script = ExtResource("1_sm2v6")
+soul_reward = 500
+max_health = 300.0
+base_attack_damage = 40.0
 
 [node name="Moves" type="Node2D" parent="." unique_id=1330074379]
 
-[node name="TestMove" parent="Moves" unique_id=1111325172 instance=ExtResource("2_aowsw")]
+[node name="Attack" type="Node2D" parent="Moves" unique_id=79268630 instance=ExtResource("2_b5e0i")]
+script = ExtResource("3_jdygg")
+
+[node name="Inspire" type="Node2D" parent="Moves" unique_id=1111325172 instance=ExtResource("3_gb5b1")]
+script = ExtResource("5_tmic1")
+
+[node name="Lunge" type="Node2D" parent="Moves" unique_id=692376582 instance=ExtResource("4_b8c50")]
+script = ExtResource("7_1f3bb")
+
+[node name="Molotov" type="Node2D" parent="Moves" unique_id=608254231 instance=ExtResource("5_1xwh2")]
+script = ExtResource("9_lmn5h")
 
 [node name="Status" type="Node2D" parent="." unique_id=119230325]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=943883184]
-material = SubResource("ShaderMaterial_jum23")
+material = SubResource("ShaderMaterial_rsggc")
 position = Vector2(-5, -101)
 texture = ExtResource("3_ju0jl")
 
 [node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=938947088]
 visible = false
 z_index = 7
-position = Vector2(-6, -158)
+position = Vector2(10, -305)
 texture = ExtResource("4_b5e0i")
 script = ExtResource("5_gb5b1")
 
-[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("6_b8c50")]
+[node name="GUI" type="Node2D" parent="." unique_id=1570402446 instance=ExtResource("6_b8c50")]
+z_index = 5

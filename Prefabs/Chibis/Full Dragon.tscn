@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://colg0hpgiofbw"]
+
+[ext_resource type="Texture2D" uid="uid://yjkubbqjcvlb" path="res://Sprites/Chibis/Allies/ChibiDragon.png" id="1_rlsds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kowxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rlsds")
+}],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rlsds")
+}],
+"loop": true,
+"name": &"Front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gs5kw"]
+radius = 22.0
+height = 44.0
+
+[node name="Full Dragon" type="AnimatedSprite2D" unique_id=108898860]
+sprite_frames = SubResource("SpriteFrames_kowxn")
+animation = &"Front"
+autoplay = "Front"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1869281941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486668974]
+shape = SubResource("CapsuleShape2D_gs5kw")

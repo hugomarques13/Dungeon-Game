@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://lk3wnmxhuedc"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_7guql"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_2h1e6"]
+[ext_resource type="PackedScene" uid="uid://b8gf4nhn87p7w" path="res://Prefabs/Moves/Offensive Posture.tscn" id="3_clns2"]
+[ext_resource type="PackedScene" uid="uid://bm1m2qthsvi0s" path="res://Prefabs/Moves/Impale.tscn" id="4_ki3cg"]
+[ext_resource type="PackedScene" uid="uid://0eat8orv840w" path="res://Prefabs/Moves/Triple Strike.tscn" id="5_chiqc"]
+[ext_resource type="Texture2D" uid="uid://frwnx5pvy7aa" path="res://Sprites/Enemies/PartySpearman2.png" id="6_7guql"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_lw6sc"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_lmnud"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="9_53ync"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="10_d7hk2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oaru5"]
+shader = ExtResource("10_d7hk2")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+
+[node name="Spearman Glowup" type="CharacterBody2D" unique_id=1020255242]
+script = ExtResource("1_7guql")
+soul_reward = 750
+max_health = 350.0
+base_attack_damage = 60.0
+
+[node name="Moves" type="Node2D" parent="." unique_id=1685191316]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("2_2h1e6")]
+
+[node name="Offensive Posture" parent="Moves" unique_id=1111325172 instance=ExtResource("3_clns2")]
+
+[node name="Impale" parent="Moves" unique_id=1211148240 instance=ExtResource("4_ki3cg")]
+
+[node name="Triple Strike" parent="Moves" unique_id=2101910484 instance=ExtResource("5_chiqc")]
+
+[node name="Status" type="Node2D" parent="." unique_id=1432146928]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=40454405]
+material = SubResource("ShaderMaterial_oaru5")
+position = Vector2(14, -58)
+texture = ExtResource("6_7guql")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=860622823]
+visible = false
+z_index = 7
+position = Vector2(28, -211)
+texture = ExtResource("7_lw6sc")
+script = ExtResource("8_lmnud")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("9_53ync")]

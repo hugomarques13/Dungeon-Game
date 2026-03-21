@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://vujaqli77jh6"]
+
+[ext_resource type="Script" uid="uid://dj2u4opm8fts0" path="res://Scripts/Moves/Stunning Strike.gd" id="1_4t2v1"]
+
+[node name="Stunning Strike" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_4t2v1")

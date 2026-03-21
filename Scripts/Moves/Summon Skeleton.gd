@@ -4,12 +4,12 @@ var cooldown := 4
 var current_cooldown := 0
 var has_no_target = true
 
-var description = "TO DO"
+var description = "Summon a skeleton on an empty spot, will fail if there are no slots available."
 
 @onready var character = $"../.."
 @onready var CombatManager = $"../../../.."
 
-func use(false_target):
+func use(_false_target):
 	# extra safety
 	if current_cooldown > 0:
 		print("test move on cooldown, sorry")

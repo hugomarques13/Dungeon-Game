@@ -4,8 +4,9 @@ var cooldown := 2
 var current_cooldown := 0
 
 const damage = 15
+const MULTIPLIER = 1.5
 
-var description = "TO DO"
+var description = "Reap the target's soul, dealing low damage, if this attack kills the enemy, more souls are extracted."
 
 @onready var character = $"../.."
 
@@ -18,11 +19,9 @@ func use(target):
 	if not target:
 		print("no target!")
 		return
-		
-	print("used basic attack!")
 	
-	await get_tree().create_timer(0.5).timeout
+	await VisualsHandler.make_visual(target, "Slash")
 	
-	DamageHandler.do_damage(character, target, damage, {})
+	DamageHandler.do_damage(character, target, damage, {}, MULTIPLIER)
 
 	return

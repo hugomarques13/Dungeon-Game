@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ophmy8pnavvt"]
+
+[ext_resource type="Script" uid="uid://btv8ralkia6jm" path="res://Scripts/Moves/Cleave.gd" id="1_54m1y"]
+
+[node name="Cleave" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_54m1y")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bhuunb73m1cq5"]
+
+[ext_resource type="Texture2D" uid="uid://dg464a4trw1sd" path="res://Sprites/Rooms/Fields/TileImpair.png" id="1_p8heu"]
+
+[node name="Impair" type="Sprite2D" unique_id=847994451]
+z_index = -1
+texture = ExtResource("1_p8heu")
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=408918043]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickBox" unique_id=1285463235]
+modulate = Color(1.3568124, 1.175139, 0.75589246, 0.07058824)
+light_mask = 0
+visibility_layer = 0
+polygon = PackedVector2Array(0, -46, 75, 0, 0, 46, -75, 0)

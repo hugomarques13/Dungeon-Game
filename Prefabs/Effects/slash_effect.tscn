@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://jmv6us8xuk7q"]
+
+[ext_resource type="Texture2D" uid="uid://onhr51loj3fy" path="res://Sprites/Effects/SlashAnim.png" id="1_xbx11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doge8"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(0, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_outtb"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(52, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_646h4"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(104, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5giqg"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(156, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tpjy"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(208, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71wk7"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(260, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gmjt"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(312, 0, 52, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov6r6"]
+atlas = ExtResource("1_xbx11")
+region = Rect2(364, 0, 52, 197)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jw3n"]
+animations = [{
+"frames": [{
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_doge8")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_outtb")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_646h4")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_5giqg")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_1tpjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71wk7")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_5gmjt")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_ov6r6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="SlashEffect" type="AnimatedSprite2D" unique_id=1543498683]
+sprite_frames = SubResource("SpriteFrames_4jw3n")
+frame = 7
+frame_progress = 1.0
+centered = false
+offset = Vector2(-26, -197)

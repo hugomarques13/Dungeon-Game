@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxjt40viuf4os"]
+
+[ext_resource type="Script" uid="uid://drr1ie1oqowv0" path="res://Scripts/Moves/Trim.gd" id="1_d03px"]
+
+[node name="Trim" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_d03px")

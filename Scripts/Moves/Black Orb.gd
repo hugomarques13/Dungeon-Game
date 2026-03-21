@@ -6,7 +6,7 @@ var current_cooldown := 0
 const damage = 50
 const hit_amount = 3
 
-var description = "TO DO"
+var description = "\"A concentrated negative energy that can be hurled at your oppenents.\""
 
 @onready var character = $"../.."
 
@@ -22,7 +22,7 @@ func use(target):
 	
 	for i in range(hit_amount):
 		
-		await get_tree().create_timer(0.5).timeout
+		await VisualsHandler.make_visual(target, "Magic")
 		
 		DamageHandler.do_damage(character, target, damage, {})
 	

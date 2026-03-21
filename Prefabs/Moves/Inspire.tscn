@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://qneew17dx746"]
+
+[ext_resource type="Script" uid="uid://bbhcrx3tqqe5m" path="res://Scripts/Moves/Inspire.gd" id="1_r6ed5"]
+
+[node name="Inspire" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_r6ed5")

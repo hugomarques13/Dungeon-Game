@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Dungeon Game"
-run/main_scene="uid://bh8elkpeulppw"
+run/main_scene="uid://b4akrjx31so5c"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://6ja18wpdhqp1"
 config/icon="res://Sprites/icon.svg"
 
 [autoload]
@@ -20,6 +21,10 @@ config/icon="res://Sprites/icon.svg"
 TargetGetter="*uid://bcutmf1h00hw1"
 StatusHandler="*uid://b8e04daisev51"
 DamageHandler="*uid://g67qow6ml7cl"
+VisualsHandler="*uid://bg0cjv66kx674"
+TransitionScreen="*uid://cxg2utjwuk4v8"
+SaveManager="*uid://ca6m32a0d2574"
+MusicManager="*uid://byuhkbf3tftwp"
 
 [display]
 
@@ -31,6 +36,7 @@ folder_colors={
 "res://Prefabs/": "green",
 "res://Scenes/": "red",
 "res://Scripts/": "orange",
+"res://Sounds/": "purple",
 "res://Sprites/": "yellow"
 }
 
@@ -38,6 +44,7 @@ folder_colors={
 
 Flag=""
 FloorTile=""
+FlagTile=""
 
 [input]
 

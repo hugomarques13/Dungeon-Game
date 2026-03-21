@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cxommayi70mb0"]
+
+[ext_resource type="Texture2D" uid="uid://cpoigla337n3n" path="res://Sprites/Rooms/Traps/tilesfiretrap.png" id="1_paah2"]
+[ext_resource type="Texture2D" uid="uid://b3g3jpc0bk6yv" path="res://Sprites/Effects/Fire/fire9.png" id="2_beoaf"]
+
+[node name="Icon" type="Control" unique_id=1953536414]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1438911153]
+z_index = -1
+layout_mode = 1
+offset_left = -122.0
+offset_top = -3.0
+offset_right = -4.0
+offset_bottom = 81.0
+scale = Vector2(1.73, 1.73)
+mouse_filter = 2
+texture = ExtResource("1_paah2")
+
+[node name="Texture2" type="TextureRect" parent="." unique_id=1649313752]
+z_index = -1
+layout_mode = 1
+offset_left = -31.000008
+offset_top = 12.999999
+offset_right = 86.99999
+offset_bottom = 134.0
+scale = Vector2(0.595, 0.595)
+mouse_filter = 2
+texture = ExtResource("2_beoaf")

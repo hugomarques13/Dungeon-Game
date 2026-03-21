@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvw2aatkt1u76"]
+
+[ext_resource type="Script" uid="uid://d4i2oxa1s8n2k" path="res://Scripts/Moves/Molotov.gd" id="1_cee3p"]
+
+[node name="Molotov" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_cee3p")

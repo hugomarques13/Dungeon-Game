@@ -35,6 +35,7 @@ sprite_frames = SubResource("SpriteFrames_76w8d")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1751312997]
 collision_layer = 0
+collision_mask = 4
 script = ExtResource("6_n3dd4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=493927177]

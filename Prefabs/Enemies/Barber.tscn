@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cuidjhqxsmbna"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_ldd0x"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_76ulp"]
+[ext_resource type="PackedScene" uid="uid://bxjt40viuf4os" path="res://Prefabs/Moves/Trim.tscn" id="3_a5gc0"]
+[ext_resource type="Script" uid="uid://bqmp4mr8fvbxh" path="res://Scripts/Moves/Attack.gd" id="3_sc8ra"]
+[ext_resource type="Texture2D" uid="uid://bcyqbafbawt77" path="res://Sprites/Enemies/Fodder_Barber.png" id="3_urepo"]
+[ext_resource type="PackedScene" uid="uid://j0lvq4gcp5ro" path="res://Prefabs/Moves/Stylize.tscn" id="4_m02ku"]
+[ext_resource type="PackedScene" uid="uid://x1gdtpst2fdw" path="res://Prefabs/Moves/Unlimited Jib Works.tscn" id="5_3nv3m"]
+[ext_resource type="Script" uid="uid://drr1ie1oqowv0" path="res://Scripts/Moves/Trim.gd" id="5_a24fm"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="5_sntd6"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="6_3nv3m"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="7_dsa6f"]
+[ext_resource type="Script" uid="uid://bdxxl33uh58pq" path="res://Scripts/Moves/Stylize.gd" id="7_ncisl"]
+[ext_resource type="Script" uid="uid://by8mw3bsrxk38" path="res://Scripts/Moves/Unlimited Jib Works.gd" id="9_rso0k"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="10_b3jx3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqxp6"]
+shader = ExtResource("10_b3jx3")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+
+[node name="Barber" type="CharacterBody2D" unique_id=1572280592]
+script = ExtResource("1_ldd0x")
+soul_reward = 750
+max_health = 250.0
+base_attack_damage = 10.0
+base_attack_amount = 4
+breath_scale_y = 1.02
+
+[node name="Moves" type="Node2D" parent="." unique_id=1957935201]
+
+[node name="Attack" type="Node2D" parent="Moves" unique_id=79268630 instance=ExtResource("2_76ulp")]
+script = ExtResource("3_sc8ra")
+
+[node name="Trim" type="Node2D" parent="Moves" unique_id=1111325172 instance=ExtResource("3_a5gc0")]
+script = ExtResource("5_a24fm")
+
+[node name="Stylize" type="Node2D" parent="Moves" unique_id=322997789 instance=ExtResource("4_m02ku")]
+script = ExtResource("7_ncisl")
+
+[node name="Unlimited Jib Works" type="Node2D" parent="Moves" unique_id=1691644908 instance=ExtResource("5_3nv3m")]
+script = ExtResource("9_rso0k")
+
+[node name="Status" type="Node2D" parent="." unique_id=640576991]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657085201]
+material = SubResource("ShaderMaterial_bqxp6")
+position = Vector2(-16, -60)
+texture = ExtResource("3_urepo")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=686715958]
+visible = false
+z_index = 7
+position = Vector2(2, -168)
+texture = ExtResource("5_sntd6")
+script = ExtResource("6_3nv3m")
+
+[node name="GUI" type="Node2D" parent="." unique_id=1570402446 instance=ExtResource("7_dsa6f")]
+z_index = 5

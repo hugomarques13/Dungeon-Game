@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0eat8orv840w"]
+
+[ext_resource type="Script" uid="uid://cag32rarxfb7p" path="res://Scripts/Moves/Triple Strike.gd" id="1_78ngo"]
+
+[node name="Triple Strike" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_78ngo")

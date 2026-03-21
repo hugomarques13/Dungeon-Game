@@ -1,0 +1,1415 @@
+[gd_scene format=3 uid="uid://bh8elkpeulppw"]
+
+[ext_resource type="Texture2D" uid="uid://ckm1x5ywkw0j4" path="res://Sprites/Rooms/tile2.png" id="1_8etcy"]
+[ext_resource type="Texture2D" uid="uid://bxnmuiti0fek1" path="res://Sprites/Rooms/WallA1.png" id="2_73a8k"]
+[ext_resource type="Texture2D" uid="uid://b8lrph605rilx" path="res://Sprites/Rooms/EntrancePath.png" id="4_yr2pg"]
+[ext_resource type="Texture2D" uid="uid://b78fljlu0jyqv" path="res://Sprites/Rooms/tilesStairs.png" id="5_ylpyt"]
+[ext_resource type="Texture2D" uid="uid://dbipumlqn7vnm" path="res://Sprites/Rooms/tileLevelChange.png" id="6_wyocf"]
+[ext_resource type="Texture2D" uid="uid://dbfwcd0qt4dby" path="res://Sprites/Rooms/WallsCornerInwards.png" id="7_ktwve"]
+[ext_resource type="Texture2D" uid="uid://db6dxf3qatubc" path="res://Sprites/Rooms/tilesbottom.png" id="8_r5sjn"]
+[ext_resource type="Texture2D" uid="uid://bn1237dd8dt7g" path="res://Sprites/Rooms/WallB1.png" id="9_yc6xl"]
+[ext_resource type="Texture2D" uid="uid://6somnfo68207" path="res://Sprites/Rooms/tile1.png" id="10_k6vqf"]
+[ext_resource type="Texture2D" uid="uid://cwttu2l43dspi" path="res://Sprites/Rooms/tilesbottom1.png" id="10_r5sjn"]
+[ext_resource type="Texture2D" uid="uid://b4f2m8xwohvlu" path="res://Sprites/Lord_Dungeon.png" id="11_ev6kq"]
+[ext_resource type="Texture2D" uid="uid://dillut2scdnxl" path="res://Sprites/Rooms/tilesbottom2.png" id="11_yc6xl"]
+[ext_resource type="FontFile" uid="uid://c66kb8yl8wler" path="res://Orange Kid.otf" id="12_q8sds"]
+[ext_resource type="Script" uid="uid://c4h8y7kek513i" path="res://Scripts/floor_handler.gd" id="12_yr2pg"]
+[ext_resource type="Texture2D" uid="uid://dlrbunaf32cht" path="res://Sprites/Rooms/doorlow.png" id="13_lcmar"]
+[ext_resource type="Texture2D" uid="uid://bbnb1bs7fh6gr" path="res://Sprites/Rooms/doorhigh.png" id="14_cqekc"]
+[ext_resource type="Script" uid="uid://bo85l345u8m1e" path="res://Scripts/enemies_movement.gd" id="14_wyocf"]
+[ext_resource type="Texture2D" uid="uid://b38eo4a3dq5qv" path="res://Sprites/HUD/Shop/iconbackground.png" id="16_jn25s"]
+[ext_resource type="Script" uid="uid://cxjtyj1u0o56a" path="res://Scripts/shop.gd" id="16_yy0n7"]
+[ext_resource type="Texture2D" uid="uid://bwu3f001lbmeb" path="res://Sprites/HUD/Shop/IconTabName.png" id="17_glaac"]
+[ext_resource type="Texture2D" uid="uid://c1ju1fmt5suwi" path="res://Sprites/Rooms/tileflag.png" id="17_ny3r6"]
+[ext_resource type="Texture2D" uid="uid://vuf64jv2gp2m" path="res://Sprites/HUD/Shop/IconUnits.png" id="18_7p2u3"]
+[ext_resource type="PackedScene" uid="uid://8i6r0cndtse5" path="res://Prefabs/flag.tscn" id="18_ny3r6"]
+[ext_resource type="Texture2D" uid="uid://bj6w4fdyuehrs" path="res://Sprites/HUD/Shop/IconTraps.png" id="19_7p2u3"]
+[ext_resource type="Texture2D" uid="uid://5j4auubridoy" path="res://Sprites/HUD/Shop/IconFields.png" id="20_him8o"]
+[ext_resource type="Texture2D" uid="uid://ryf6lrn4yg3g" path="res://Sprites/HUD/Shop/HotbarIcon.png" id="21_fgk2h"]
+[ext_resource type="Texture2D" uid="uid://chsplvixriwqk" path="res://Sprites/HUD/Shop/IconScroll.png" id="21_him8o"]
+[ext_resource type="Texture2D" uid="uid://cx3s6eg4oolbu" path="res://Sprites/HUD/Shop/IconTextSpace.png" id="23_im1vy"]
+[ext_resource type="Texture2D" uid="uid://b3866okum5htt" path="res://Sprites/HUD/Shop/IconNameSpace.png" id="24_yy0n7"]
+[ext_resource type="Texture2D" uid="uid://dpqwa1jwhcgd8" path="res://Sprites/HUD/Shop/IconSoulsSpace.png" id="25_0wdc3"]
+[ext_resource type="Texture2D" uid="uid://csou8l3mg33k8" path="res://Sprites/HUD/FloorUpA.png" id="25_hnhmk"]
+[ext_resource type="Texture2D" uid="uid://pmog3jkh0ahy" path="res://Sprites/HUD/FloorUpB.png" id="26_s11rx"]
+[ext_resource type="Texture2D" uid="uid://cfssjydl0yhe3" path="res://Sprites/HUD/Souls.png" id="26_w42fa"]
+[ext_resource type="Texture2D" uid="uid://bmmyt1t25oqmq" path="res://Sprites/HUD/FloorDownA.png" id="27_4ekvx"]
+[ext_resource type="Texture2D" uid="uid://2ta0jnej328" path="res://Sprites/HUD/FloorDownB.png" id="28_m7vhu"]
+[ext_resource type="PackedScene" uid="uid://bsc1ltlimehli" path="res://Prefabs/souls.tscn" id="33_o6tew"]
+[ext_resource type="Script" uid="uid://s52ujt22d3ak" path="res://Scripts/player.gd" id="36_3ijh3"]
+[ext_resource type="Texture2D" uid="uid://bdbdkwtlg0xik" path="res://Sprites/HUD/ButtonShop.png" id="38_keblb"]
+[ext_resource type="Texture2D" uid="uid://ncoo13imyunj" path="res://Sprites/HUD/ButtonResume.png" id="40_8d4cd"]
+[ext_resource type="Script" uid="uid://b5argh51vjriy" path="res://Scripts/combat_manager.gd" id="40_cqekc"]
+[ext_resource type="Texture2D" uid="uid://dyr55hkvnwomk" path="res://Sprites/HUD/Combat/SkillList.png" id="41_50m7d"]
+[ext_resource type="Texture2D" uid="uid://vighta4qrk4i" path="res://Sprites/HUD/Dialogue/DialogueBox.png" id="41_ptfdn"]
+[ext_resource type="Texture2D" uid="uid://ba8v8i6v4q84s" path="res://Sprites/HUD/Combat/SkillButton.png" id="42_1u2qj"]
+[ext_resource type="Script" uid="uid://cwey1x1st6brx" path="res://Scripts/text_resizer.gd" id="42_y6hl6"]
+[ext_resource type="Texture2D" uid="uid://dx71xwogol5hv" path="res://Sprites/HUD/Dialogue/DialogueNameBox.png" id="43_gif3n"]
+[ext_resource type="Texture2D" uid="uid://cvll8vwijbe3t" path="res://Sprites/HUD/Combat/SkillButtonHighlight.png" id="43_hnhmk"]
+[ext_resource type="Script" uid="uid://2xdxyx3h2mos" path="res://Scripts/top_bar.gd" id="43_s11rx"]
+[ext_resource type="Texture2D" uid="uid://d170wg0dprbt8" path="res://Sprites/HUD/Dialogue/Sir_Tutoh_Rheall.png" id="44_r2bm4"]
+[ext_resource type="Texture2D" uid="uid://bn77jofch8mk0" path="res://Sprites/HUD/Combat/SkillOnCooldown.png" id="45_4ekvx"]
+[ext_resource type="Texture2D" uid="uid://dann16du4san0" path="res://Sprites/HUD/Dialogue/Sir_Tutoh_Rheall2.png" id="45_iy60f"]
+[ext_resource type="Texture2D" uid="uid://dr6yae10tdeqv" path="res://Sprites/HUD/Dialogue/Sir_Tutoh_Rheall3.png" id="46_b7cdi"]
+[ext_resource type="Texture2D" uid="uid://0c733tps0unr" path="res://Sprites/HUD/Combat/SkillMenu.png" id="46_m7vhu"]
+[ext_resource type="Texture2D" uid="uid://b8p68ctxriyif" path="res://Sprites/HUD/Combat/Action1.png" id="47_dhbwi"]
+[ext_resource type="Texture2D" uid="uid://24om8muyfesy" path="res://Sprites/HUD/Combat/Action1B.png" id="48_32bjv"]
+[ext_resource type="Texture2D" uid="uid://n0gxmfqxum7q" path="res://Sprites/HUD/Combat/Action2.png" id="48_hnhmk"]
+[ext_resource type="Script" uid="uid://dvkmnd6wicm01" path="res://Scripts/attack_button.gd" id="49_ni4m0"]
+[ext_resource type="Texture2D" uid="uid://dr6c8kvbu3cfd" path="res://Sprites/HUD/Combat/Action2B.png" id="50_fg0ar"]
+[ext_resource type="Script" uid="uid://v5ut3l1j6v5r" path="res://Scripts/skill.gd" id="51_oeqnk"]
+[ext_resource type="Texture2D" uid="uid://dhwuy5j2itm12" path="res://Sprites/HUD/Combat/back1.png" id="52_4ekvx"]
+[ext_resource type="Texture2D" uid="uid://0tewfcotqwes" path="res://Sprites/HUD/Combat/Action0.png" id="52_ih23b"]
+[ext_resource type="Texture2D" uid="uid://c5qxpjyjbgi83" path="res://Sprites/Background/bg1.png" id="52_lcmar"]
+[ext_resource type="Texture2D" uid="uid://b638h6xdts2ls" path="res://Sprites/Background/Parallax1.png" id="53_1u2qj"]
+[ext_resource type="Texture2D" uid="uid://8wse0eo8rhed" path="res://Sprites/HUD/Combat/back2.png" id="53_m7vhu"]
+[ext_resource type="Texture2D" uid="uid://dd14modn1dc8" path="res://Sprites/Background/Battleback.png" id="53_ptfdn"]
+[ext_resource type="Texture2D" uid="uid://dtbcx0f6drmhn" path="res://Sprites/Background/Parallax2.png" id="54_hnhmk"]
+[ext_resource type="Texture2D" uid="uid://bu6173301s0ps" path="res://Sprites/Background/Parallax3.png" id="55_s11rx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ktwve"]
+vertices = PackedVector2Array(326.21094, 251.57031, 211.71094, 197.27344, 223.47656, 188.92188, 326.5703, 250.1875, 801.8906, 483.64063, 849.6719, 514.9375, 816.7031, 536.27344, 761.97656, 504.6328, 759.28906, 490.27344, 516.8906, 346.64844, 512.2422, 383.52344, 311.10938, 264.5, 355.5, 248.1875, 773.6797, 456.85156, 796.0625, 469.0625, 741.5078, 471.4375, 733.52344, 452.46875, 751.0078, 419.03906, 767.1406, 436.17188, 719.6172, 437.64063, 717.5469, 415.78125, 593.77344, 301.71094, 745.3594, 398.35156, 699.46094, 401.5703, 679.3672, 391, 580.60156, 346.8672)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 0, 12), PackedInt32Array(13, 14, 4, 8, 15, 16), PackedInt32Array(17, 18, 13, 16, 19, 20), PackedInt32Array(21, 22, 17, 20, 23), PackedInt32Array(21, 23, 24), PackedInt32Array(21, 24, 25), PackedInt32Array(9, 21, 25, 10), PackedInt32Array(0, 3, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(192, 199, 306, 255, 294, 266, 512, 395, 581, 358, 675, 400, 694, 410, 708, 421, 710, 442, 725, 458, 733, 477, 750, 495, 753, 511, 817, 548, 868, 515, 810, 477, 804, 462, 782, 450, 776, 431, 760, 414, 754, 392, 594, 290, 517, 335, 358, 238, 329, 240, 223, 177)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lcmar"]
+vertices = PackedVector2Array(337.71875, 253.14063, 147.42188, 138.0625, 179.86719, 118.71094, 331.8203, 213.67969, 416.8828, 200.03906, 410.89844, 167.61719, 599.90625, 282.1172, 541.90625, 280.25, 435.03906, 385.04688, 375.53125, 380.8672, 648.7578, 541.27344, 642.02344, 512.7578, 960.8203, 314.8672, 1004.3906, 343.6797, 980.4922, 358.35156, 962.3828, 340.2422)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(11, 12, 15, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(128, 138, 180, 107, 332, 202, 411, 156, 619, 282, 454, 385, 642, 501, 961, 303, 1023, 344, 979, 371, 961, 353, 649, 553, 356, 381, 523, 280, 417, 212, 338, 265)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hnhmk"]
+vertices = PackedVector2Array(1041.0938, 293.3125, 1012.5078, 275.67188, 1078.3125, 231.8125, 1137.5703, 235.92188, 873.10156, 75.74219, 878.03906, 104.171875, 303.75, 233.28125, 154.40625, 136.04688, 178.13281, 120.796875, 363.64844, 233.92188, 191.39063, 337.09375, 140.54688, 332.78906, 409.82813, 489.32813, 407.14063, 463.6797, 747.75, 279.54688, 705.6719, 278.5703, 676.8281, 230.60938, 623.5703, 232.50781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11), PackedInt32Array(12, 11, 10, 13), PackedInt32Array(14, 12, 13, 15), PackedInt32Array(16, 14, 15, 17), PackedInt32Array(16, 17, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(136, 136, 178, 109, 383, 234, 211, 337, 407, 452, 686, 279, 604, 233, 873, 64, 1157, 236, 1041, 305, 994, 276, 1060, 232, 878, 116, 695, 231, 766, 280, 410, 501, 121, 333, 285, 233)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcmar"]
+radius = 44.407207
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgk2h"]
+texture = ExtResource("21_him8o")
+
+[sub_resource type="Theme" id="Theme_wn26v"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_fgk2h")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3aof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_r2bm4")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_iy60f")
+}],
+"loop": true,
+"name": &"Smirk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_b7cdi")
+}],
+"loop": true,
+"name": &"Surprised",
+"speed": 5.0
+}]
+
+[node name="MainGame" type="Node2D" unique_id=897781205]
+
+[node name="Floor1" type="Node2D" parent="." unique_id=2072207568]
+
+[node name="Tile2" type="Sprite2D" parent="Floor1" unique_id=537807805 groups=["FloorTile"]]
+position = Vector2(667, 370)
+texture = ExtResource("1_8etcy")
+
+[node name="WallA1" type="Sprite2D" parent="Floor1" unique_id=1099117981]
+position = Vector2(705, 300)
+texture = ExtResource("2_73a8k")
+
+[node name="WallA2" type="Sprite2D" parent="Floor1" unique_id=475493898]
+position = Vector2(628, 253)
+texture = ExtResource("2_73a8k")
+
+[node name="Tile4" type="Sprite2D" parent="Floor1" unique_id=1259396056 groups=["FloorTile"]]
+position = Vector2(512, 368)
+texture = ExtResource("1_8etcy")
+
+[node name="Tile5" type="Sprite2D" parent="Floor1" unique_id=1153979179 groups=["FloorTile"]]
+position = Vector2(434, 321)
+texture = ExtResource("1_8etcy")
+
+[node name="Tile6" type="Sprite2D" parent="Floor1" unique_id=1462590507 groups=["FloorTile"]]
+position = Vector2(357, 274)
+texture = ExtResource("1_8etcy")
+
+[node name="WallA5" type="Sprite2D" parent="Floor1" unique_id=114748877]
+position = Vector2(395, 204)
+texture = ExtResource("2_73a8k")
+
+[node name="EntrancePath" type="Sprite2D" parent="Floor1" unique_id=644624055]
+z_index = -1
+position = Vector2(260, 222)
+texture = ExtResource("4_yr2pg")
+
+[node name="TilesStairs" type="Sprite2D" parent="Floor1" unique_id=1130571229]
+position = Vector2(743, 446)
+texture = ExtResource("5_ylpyt")
+
+[node name="WallA7" type="Sprite2D" parent="Floor1" unique_id=1544965174]
+z_index = -1
+position = Vector2(782, 347)
+texture = ExtResource("2_73a8k")
+
+[node name="TileLevelChange" type="Sprite2D" parent="Floor1" unique_id=600297086]
+position = Vector2(817, 520)
+texture = ExtResource("6_wyocf")
+
+[node name="WallsCornerInwards" type="Sprite2D" parent="Floor1" unique_id=1639350440]
+position = Vector2(512, 253)
+texture = ExtResource("7_ktwve")
+
+[node name="Tilesbottom" type="Sprite2D" parent="Floor1" unique_id=1314678352]
+z_index = -1
+position = Vector2(512, 424)
+texture = ExtResource("8_r5sjn")
+
+[node name="WallB1" type="Sprite2D" parent="Floor1" unique_id=2030133154]
+z_index = -1
+position = Vector2(781.995, 439.33502)
+texture = ExtResource("9_yc6xl")
+
+[node name="Center" type="Marker2D" parent="Floor1" unique_id=450153728]
+position = Vector2(576, 324)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor1" unique_id=641678813]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_ktwve")
+
+[node name="Tilesbottom1" type="Sprite2D" parent="Floor1" unique_id=277172417]
+z_index = -1
+position = Vector2(628, 425)
+texture = ExtResource("10_r5sjn")
+
+[node name="Tilesbottom2" type="Sprite2D" parent="Floor1" unique_id=630132333]
+z_index = -1
+position = Vector2(704, 427)
+texture = ExtResource("11_yc6xl")
+
+[node name="Tilesbottom3" type="Sprite2D" parent="Floor1" unique_id=603831643]
+z_index = -1
+position = Vector2(397, 378)
+texture = ExtResource("10_r5sjn")
+
+[node name="Tilesbottom4" type="Sprite2D" parent="Floor1" unique_id=1673359773]
+z_index = -1
+position = Vector2(319, 330)
+texture = ExtResource("10_r5sjn")
+
+[node name="Tileflag" type="Sprite2D" parent="Floor1" unique_id=33579722 groups=["FlagTile"]]
+z_index = -1
+position = Vector2(589, 320)
+texture = ExtResource("17_ny3r6")
+metadata/Flag = NodePath("../Flag1")
+
+[node name="Flag1" parent="Floor1" unique_id=1475415467 instance=ExtResource("18_ny3r6")]
+position = Vector2(590, 288)
+
+[node name="Start" type="Marker2D" parent="Floor1" unique_id=700716596]
+position = Vector2(215, 186)
+
+[node name="Points" type="Node2D" parent="Floor1" unique_id=1720644035]
+
+[node name="End" type="Marker2D" parent="Floor1/Points" unique_id=695886593]
+position = Vector2(821, 513)
+
+[node name="Fight1" type="Marker2D" parent="Floor1/Points" unique_id=1624147275]
+position = Vector2(590, 319)
+
+[node name="Door" type="Node2D" parent="Floor1" unique_id=356508868]
+
+[node name="WallEntrance2" type="Sprite2D" parent="Floor1/Door" unique_id=686314763]
+position = Vector2(317, 205)
+texture = ExtResource("13_lcmar")
+
+[node name="WallEntrance" type="Sprite2D" parent="Floor1/Door" unique_id=1137724552]
+z_index = 4
+position = Vector2(317, 205)
+texture = ExtResource("14_cqekc")
+
+[node name="Floor2" type="Node2D" parent="." unique_id=1868701126]
+position = Vector2(0, 648)
+
+[node name="Tile2" type="Sprite2D" parent="Floor2" unique_id=1914259262 groups=["FloorTile"]]
+position = Vector2(568, 285)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile8" type="Sprite2D" parent="Floor2" unique_id=1610859010 groups=["FloorTile"]]
+position = Vector2(488, 333)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile9" type="Sprite2D" parent="Floor2" unique_id=286068624 groups=["FloorTile"]]
+position = Vector2(411, 381)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile11" type="Sprite2D" parent="Floor2" unique_id=558953048 groups=["FloorTile"]]
+position = Vector2(569, 477)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile12" type="Sprite2D" parent="Floor2" unique_id=470333733 groups=["FloorTile"]]
+position = Vector2(649, 525)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile13" type="Sprite2D" parent="Floor2" unique_id=887486570 groups=["FloorTile"]]
+position = Vector2(727, 477)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile14" type="Sprite2D" parent="Floor2" unique_id=24187706 groups=["FloorTile"]]
+position = Vector2(805, 429)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile15" type="Sprite2D" parent="Floor2" unique_id=736349531 groups=["FloorTile"]]
+position = Vector2(883, 381)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile7" type="Sprite2D" parent="Floor2" unique_id=1678619273 groups=["FloorTile"]]
+position = Vector2(961, 333)
+texture = ExtResource("10_k6vqf")
+
+[node name="WallA1" type="Sprite2D" parent="Floor2" unique_id=1552210866]
+position = Vector2(138, 324)
+texture = ExtResource("2_73a8k")
+
+[node name="Tile3" type="Sprite2D" parent="Floor2" unique_id=1406434898 groups=["FloorTile"]]
+position = Vector2(490, 235)
+texture = ExtResource("10_k6vqf")
+
+[node name="WallA2" type="Sprite2D" parent="Floor2" unique_id=1517811188]
+position = Vector2(49, 304)
+texture = ExtResource("2_73a8k")
+
+[node name="Tile4" type="Sprite2D" parent="Floor2" unique_id=1254227618 groups=["FloorTile"]]
+position = Vector2(411, 188)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile5" type="Sprite2D" parent="Floor2" unique_id=703054227 groups=["FloorTile"]]
+position = Vector2(333, 236)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile6" type="Sprite2D" parent="Floor2" unique_id=537878354 groups=["FloorTile"]]
+position = Vector2(255, 188)
+texture = ExtResource("10_k6vqf")
+
+[node name="WallA5" type="Sprite2D" parent="Floor2" unique_id=111155831]
+position = Vector2(589, 140)
+texture = ExtResource("2_73a8k")
+
+[node name="WallA7" type="Sprite2D" parent="Floor2" unique_id=1586285105]
+z_index = -1
+position = Vector2(1001, 264)
+texture = ExtResource("2_73a8k")
+
+[node name="TileLevelChange" type="Sprite2D" parent="Floor2" unique_id=210476244]
+position = Vector2(177, 141)
+texture = ExtResource("6_wyocf")
+
+[node name="WallsCornerInwards" type="Sprite2D" parent="Floor2" unique_id=1095467194]
+position = Vector2(252, 373)
+texture = ExtResource("7_ktwve")
+
+[node name="Tilesbottom" type="Sprite2D" parent="Floor2" unique_id=1930925731]
+z_index = -1
+position = Vector2(150, 466)
+texture = ExtResource("8_r5sjn")
+
+[node name="LordDungeon" type="Sprite2D" parent="Floor2" unique_id=749811026]
+position = Vector2(999.99994, 318.99994)
+rotation = -0.5275147
+scale = Vector2(0.21, 0.20999998)
+skew = 0.51312673
+texture = ExtResource("11_ev6kq")
+
+[node name="Center" type="Marker2D" parent="Floor2" unique_id=702193848]
+position = Vector2(576, 324)
+
+[node name="Start" type="Marker2D" parent="Floor2" unique_id=535930453]
+position = Vector2(174, 116)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor2" unique_id=1720183765]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_lcmar")
+
+[node name="Tileflag" type="Sprite2D" parent="Floor2" unique_id=1069569610 groups=["FlagTile"]]
+z_index = -1
+position = Vector2(491, 429)
+texture = ExtResource("17_ny3r6")
+metadata/Flag = NodePath("../Flag1")
+
+[node name="Flag1" parent="Floor2" unique_id=1626341124 instance=ExtResource("18_ny3r6")]
+position = Vector2(491, 397)
+
+[node name="Points" type="Node2D" parent="Floor2" unique_id=1405951218]
+
+[node name="End" type="Marker2D" parent="Floor2/Points" unique_id=284727669]
+position = Vector2(999, 352)
+
+[node name="Fight1" type="Marker2D" parent="Floor2/Points" unique_id=1850587627]
+position = Vector2(492, 427)
+
+[node name="Floor3" type="Node2D" parent="." unique_id=2001177782]
+position = Vector2(0, 1296)
+
+[node name="Tile8" type="Sprite2D" parent="Floor3" unique_id=1427651607 groups=["FloorTile"]]
+position = Vector2(338.5, 490)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile9" type="Sprite2D" parent="Floor3" unique_id=1705162375 groups=["FloorTile"]]
+position = Vector2(260.5, 442)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile11" type="Sprite2D" parent="Floor3" unique_id=99046939 groups=["FloorTile"]]
+position = Vector2(416.5, 442)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile12" type="Sprite2D" parent="Floor3" unique_id=675281684 groups=["FloorTile"]]
+position = Vector2(572.5, 346)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile13" type="Sprite2D" parent="Floor3" unique_id=1724142717 groups=["FloorTile"]]
+position = Vector2(650.5, 296)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile14" type="Sprite2D" parent="Floor3" unique_id=928881618 groups=["FloorTile"]]
+position = Vector2(572.5, 248)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile15" type="Sprite2D" parent="Floor3" unique_id=1174955025 groups=["FloorTile"]]
+position = Vector2(650.5, 200)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile16" type="Sprite2D" parent="Floor3" unique_id=880600947 groups=["FloorTile"]]
+position = Vector2(728.5, 152)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile17" type="Sprite2D" parent="Floor3" unique_id=375867008 groups=["FloorTile"]]
+position = Vector2(806.5, 104)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile18" type="Sprite2D" parent="Floor3" unique_id=1186654242 groups=["FloorTile"]]
+position = Vector2(884.5, 152)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile7" type="Sprite2D" parent="Floor3" unique_id=1348376670 groups=["FloorTile"]]
+position = Vector2(962.5, 200)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile10" type="Sprite2D" parent="Floor3" unique_id=733053633 groups=["FloorTile"]]
+position = Vector2(1044.5, 248)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile19" type="Sprite2D" parent="Floor3" unique_id=494158348 groups=["FloorTile"]]
+position = Vector2(962.5, 294)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile3" type="Sprite2D" parent="Floor3" unique_id=1167543182 groups=["FloorTile"]]
+position = Vector2(104.5, 346)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile4" type="Sprite2D" parent="Floor3" unique_id=1344716445 groups=["FloorTile"]]
+position = Vector2(182.5, 298)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile5" type="Sprite2D" parent="Floor3" unique_id=1098843116 groups=["FloorTile"]]
+position = Vector2(263.5, 250)
+texture = ExtResource("10_k6vqf")
+
+[node name="Tile6" type="Sprite2D" parent="Floor3" unique_id=1792570188 groups=["FloorTile"]]
+position = Vector2(185.5, 202)
+texture = ExtResource("10_k6vqf")
+
+[node name="WallA7" type="Sprite2D" parent="Floor3" unique_id=1475674995]
+z_index = -1
+position = Vector2(1082.5, 181)
+texture = ExtResource("2_73a8k")
+
+[node name="TileLevelChange" type="Sprite2D" parent="Floor3" unique_id=119741401]
+position = Vector2(107.5, 155)
+texture = ExtResource("6_wyocf")
+
+[node name="LordDungeon" type="Sprite2D" parent="Floor3" unique_id=1208321465]
+position = Vector2(996.4999, 277.99982)
+rotation = -0.5275147
+scale = Vector2(0.21, 0.20999998)
+skew = 0.51312673
+texture = ExtResource("11_ev6kq")
+
+[node name="Center" type="Marker2D" parent="Floor3" unique_id=412905057]
+position = Vector2(576, 324)
+
+[node name="Start" type="Marker2D" parent="Floor3" unique_id=1323980030]
+position = Vector2(104.5, 130)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Floor3" unique_id=864733780]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_hnhmk")
+
+[node name="Tileflag" type="Sprite2D" parent="Floor3" unique_id=1046358989 groups=["FlagTile"]]
+z_index = -1
+position = Vector2(182.5, 394)
+texture = ExtResource("17_ny3r6")
+metadata/Flag = NodePath("../Flag1")
+
+[node name="Tileflag2" type="Sprite2D" parent="Floor3" unique_id=273022603 groups=["FlagTile"]]
+z_index = -1
+position = Vector2(494.5, 394)
+texture = ExtResource("17_ny3r6")
+metadata/Flag = NodePath("../Flag2")
+
+[node name="Flag1" parent="Floor3" unique_id=218786216 instance=ExtResource("18_ny3r6")]
+position = Vector2(182.5, 362)
+
+[node name="Flag2" parent="Floor3" unique_id=2139496704 instance=ExtResource("18_ny3r6")]
+position = Vector2(494.5, 366)
+
+[node name="Points" type="Node2D" parent="Floor3" unique_id=314709739]
+
+[node name="End" type="Marker2D" parent="Floor3/Points" unique_id=1880526749]
+position = Vector2(958.5, 296)
+
+[node name="Fight1" type="Marker2D" parent="Floor3/Points" unique_id=1536137881]
+position = Vector2(182.5, 394)
+
+[node name="Fight2" type="Marker2D" parent="Floor3/Points" unique_id=98140291]
+position = Vector2(494.5, 395)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=526925156]
+position = Vector2(576, 324)
+skew = -1.3369222
+
+[node name="Chibis" type="Node2D" parent="." unique_id=1237708783]
+position = Vector2(-162, 8)
+script = ExtResource("14_wyocf")
+metadata/IsEnemy = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Chibis" unique_id=1502002232]
+path_postprocessing = 1
+simplify_path = true
+avoidance_enabled = true
+radius = 30.0
+
+[node name="Pos2" type="Marker2D" parent="Chibis" unique_id=1344667136]
+position = Vector2(13, 11)
+
+[node name="Pos1" type="Marker2D" parent="Chibis" unique_id=2016766828]
+position = Vector2(-14, 9)
+
+[node name="Pos3" type="Marker2D" parent="Chibis" unique_id=2128169870]
+position = Vector2(20, -10)
+
+[node name="Pos4" type="Marker2D" parent="Chibis" unique_id=2092719309]
+position = Vector2(-5, -17)
+
+[node name="Area2D" type="Area2D" parent="Chibis" unique_id=1879933613]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chibis/Area2D" unique_id=1600004031]
+shape = SubResource("CircleShape2D_lcmar")
+
+[node name="Player" type="Node2D" parent="." unique_id=942317630]
+script = ExtResource("36_3ijh3")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1520146413]
+layer = 10
+
+[node name="FloorUI" type="Control" parent="HUD" unique_id=1137557414]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_yr2pg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Floor1" type="Label" parent="HUD/FloorUI" unique_id=1982133546]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 259.0
+offset_right = 1096.0
+offset_bottom = 310.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(51, 25.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 41
+text = "FLOOR 1"
+horizontal_alignment = 1
+
+[node name="Floor2" type="Label" parent="HUD/FloorUI" unique_id=319606865]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 310.0
+offset_right = 1102.0
+offset_bottom = 361.0
+pivot_offset = Vector2(51, 25.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 41
+text = "FLOOR 2"
+horizontal_alignment = 1
+
+[node name="Floor3" type="Label" parent="HUD/FloorUI" unique_id=1131916600]
+visible = false
+layout_mode = 0
+offset_left = 994.0
+offset_top = 361.0
+offset_right = 1102.0
+offset_bottom = 412.0
+pivot_offset = Vector2(51, 25.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 41
+text = "FLOOR 3"
+horizontal_alignment = 1
+
+[node name="UpButton" type="TextureButton" parent="HUD/FloorUI" unique_id=1487528844]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 222.0
+offset_right = 1066.0
+offset_bottom = 256.0
+texture_normal = ExtResource("25_hnhmk")
+texture_hover = ExtResource("26_s11rx")
+
+[node name="DownButton" type="TextureButton" parent="HUD/FloorUI" unique_id=746517625]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 368.0
+offset_right = 1066.0
+offset_bottom = 402.0
+texture_normal = ExtResource("27_4ekvx")
+texture_hover = ExtResource("28_m7vhu")
+
+[node name="Shop" type="Control" parent="HUD" unique_id=9068246]
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_yy0n7")
+
+[node name="Background" type="TextureRect" parent="HUD/Shop" unique_id=1208431226]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_jn25s")
+
+[node name="TabName" type="TextureRect" parent="HUD/Shop" unique_id=971389085]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 19.0
+offset_right = 755.0
+offset_bottom = 65.0
+texture = ExtResource("17_glaac")
+
+[node name="Label" type="Label" parent="HUD/Shop/TabName" unique_id=992873834]
+layout_mode = 0
+offset_top = -22.0
+offset_right = 358.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.6392157, 0.63529414, 0.81960785, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 58
+text = "Wicked Contracts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Units" type="TextureButton" parent="HUD/Shop" unique_id=711908717]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 256.0
+texture_normal = ExtResource("18_7p2u3")
+
+[node name="Traps" type="TextureButton" parent="HUD/Shop" unique_id=512888626]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 267.0
+offset_right = 150.0
+offset_bottom = 373.0
+texture_normal = ExtResource("19_7p2u3")
+
+[node name="Fields" type="TextureButton" parent="HUD/Shop" unique_id=640271313]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 385.0
+offset_right = 150.0
+offset_bottom = 491.0
+texture_normal = ExtResource("20_him8o")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/Shop" unique_id=552161926]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 16.0
+offset_right = 348.0
+offset_bottom = 648.0
+theme = SubResource("Theme_wn26v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Shop/ScrollContainer" unique_id=224055936]
+layout_mode = 2
+
+[node name="Template" type="TextureButton" parent="HUD/Shop/ScrollContainer/VBoxContainer" unique_id=1759880123]
+visible = false
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("21_fgk2h")
+
+[node name="Cost" type="Label" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=990901363]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=367420478]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 69.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+vertical_alignment = 1
+
+[node name="Locked" type="ColorRect" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=249947924]
+visible = false
+modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
+self_modulate = Color(1, 1, 1, 0.5372549)
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IconMarker" type="Marker2D" parent="HUD/Shop/ScrollContainer/VBoxContainer/Template" unique_id=500440028]
+position = Vector2(10, 12)
+
+[node name="SidePanel" type="Control" parent="HUD/Shop" unique_id=1464531051]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=250876923]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 190.0
+offset_right = 867.0
+offset_bottom = 323.0
+texture = ExtResource("23_im1vy")
+
+[node name="Label" type="RichTextLabel" parent="HUD/Shop/SidePanel/Description" unique_id=553407361]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 495.0
+offset_bottom = 133.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("12_q8sds")
+theme_override_font_sizes/normal_font_size = 36
+text = "\"Cheap souls long cast aside, taken in by neither Heaven nor Hell. Lowest of the low. Thus perfect for our uses.\""
+autowrap_mode = 2
+
+[node name="UseDescription" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=1114179436]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 416.0
+offset_right = 867.0
+offset_bottom = 549.0
+texture = ExtResource("23_im1vy")
+
+[node name="Label" type="RichTextLabel" parent="HUD/Shop/SidePanel/UseDescription" unique_id=1398254578]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 495.0
+offset_bottom = 133.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("12_q8sds")
+theme_override_font_sizes/normal_font_size = 36
+text = "Zombie-like things idk we did not discuss this yet but like graawhh brainzzz"
+autowrap_mode = 2
+
+[node name="ThingName" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=604044114]
+z_index = 1
+layout_mode = 0
+offset_left = 383.0
+offset_top = 126.0
+offset_right = 807.0
+offset_bottom = 174.0
+texture = ExtResource("24_yy0n7")
+
+[node name="Label" type="Label" parent="HUD/Shop/SidePanel/ThingName" unique_id=261363001]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -28.0
+offset_right = 375.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.95686275, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 70
+text = "Lesser Zombie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseName" type="TextureRect" parent="HUD/Shop/SidePanel" unique_id=2039794209]
+z_index = 1
+layout_mode = 0
+offset_left = 397.0
+offset_top = 359.0
+offset_right = 821.0
+offset_bottom = 407.0
+texture = ExtResource("24_yy0n7")
+
+[node name="Label" type="Label" parent="HUD/Shop/SidePanel/UseName" unique_id=462386431]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -30.0
+offset_right = 361.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.95686275, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 70
+text = "Skills"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoulsBackground" type="TextureButton" parent="HUD/Shop/SidePanel" unique_id=1174478955]
+z_index = 1
+layout_mode = 0
+offset_left = 397.0
+offset_top = 562.0
+offset_right = 775.0
+offset_bottom = 633.0
+texture_normal = ExtResource("25_0wdc3")
+
+[node name="SoulsIcon" type="TextureRect" parent="HUD/Shop/SidePanel/SoulsBackground" unique_id=831776753]
+layout_mode = 0
+offset_left = 315.0
+offset_top = -1.0
+offset_right = 376.0
+offset_bottom = 66.0
+texture = ExtResource("26_w42fa")
+
+[node name="Label" type="Label" parent="HUD/Shop/SidePanel/SoulsBackground" unique_id=410841304]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -10.0
+offset_right = 227.0
+offset_bottom = 68.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 64
+text = "Unlock"
+vertical_alignment = 1
+
+[node name="Cost" type="Label" parent="HUD/Shop/SidePanel/SoulsBackground" unique_id=1515164743]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -10.0
+offset_right = 315.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 64
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Character" type="Control" parent="HUD/Shop/SidePanel" unique_id=597772143]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterSpot" type="Marker2D" parent="HUD/Shop/SidePanel/Character" unique_id=1701281266]
+position = Vector2(977, 573)
+
+[node name="Souls" parent="HUD" unique_id=1481786055 instance=ExtResource("33_o6tew")]
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopOpener" type="TextureButton" parent="HUD" unique_id=1439902303]
+z_index = 5
+offset_top = 604.0
+offset_right = 116.0
+offset_bottom = 648.0
+texture_normal = ExtResource("38_keblb")
+
+[node name="DungeonOpener" type="TextureButton" parent="HUD" unique_id=818692937]
+z_index = 5
+offset_top = 557.0
+offset_right = 189.0
+offset_bottom = 601.0
+texture_normal = ExtResource("40_8d4cd")
+
+[node name="TopBar" type="Control" parent="HUD" unique_id=489771842]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("43_s11rx")
+metadata/_edit_use_anchors_ = true
+
+[node name="UnitsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=494191383]
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 119.0
+mouse_filter = 2
+theme = SubResource("Theme_wn26v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar/UnitsContainer" unique_id=1278770368]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Template" type="TextureButton" parent="HUD/TopBar/UnitsContainer/HBoxContainer" unique_id=1563729243]
+visible = false
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("21_fgk2h")
+
+[node name="Cost" type="Label" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=876021064]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1911491561]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 69.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+vertical_alignment = 1
+
+[node name="Locked" type="ColorRect" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=1425974790]
+visible = false
+modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
+self_modulate = Color(1, 1, 1, 0.5372549)
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IconMarker" type="Marker2D" parent="HUD/TopBar/UnitsContainer/HBoxContainer/Template" unique_id=34994153]
+position = Vector2(10, 12)
+
+[node name="TrapsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=1480373633]
+visible = false
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 119.0
+mouse_filter = 2
+theme = SubResource("Theme_wn26v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar/TrapsContainer" unique_id=169890434]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Template" type="TextureButton" parent="HUD/TopBar/TrapsContainer/HBoxContainer" unique_id=1409747189]
+visible = false
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("21_fgk2h")
+
+[node name="Cost" type="Label" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1433479795]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1524648538]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 69.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+vertical_alignment = 1
+
+[node name="Locked" type="ColorRect" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=1564962680]
+visible = false
+modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
+self_modulate = Color(1, 1, 1, 0.5372549)
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IconMarker" type="Marker2D" parent="HUD/TopBar/TrapsContainer/HBoxContainer/Template" unique_id=522186183]
+position = Vector2(10, 12)
+
+[node name="FieldsContainer" type="ScrollContainer" parent="HUD/TopBar" unique_id=1667859017]
+visible = false
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 119.0
+mouse_filter = 2
+theme = SubResource("Theme_wn26v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar/FieldsContainer" unique_id=420688453]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Template" type="TextureButton" parent="HUD/TopBar/FieldsContainer/HBoxContainer" unique_id=1126566028]
+visible = false
+z_index = 1
+layout_mode = 2
+texture_normal = ExtResource("21_fgk2h")
+
+[node name="Cost" type="Label" parent="HUD/TopBar/FieldsContainer/HBoxContainer/Template" unique_id=1749984881]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.5882353, 0.827451, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HUD/TopBar/FieldsContainer/HBoxContainer/Template" unique_id=217858904]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 69.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 33
+text = "10"
+vertical_alignment = 1
+
+[node name="Locked" type="ColorRect" parent="HUD/TopBar/FieldsContainer/HBoxContainer/Template" unique_id=1058968745]
+visible = false
+modulate = Color(0.58431375, 0.58431375, 0.58431375, 1)
+self_modulate = Color(1, 1, 1, 0.5372549)
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IconMarker" type="Marker2D" parent="HUD/TopBar/FieldsContainer/HBoxContainer/Template" unique_id=1389966272]
+position = Vector2(10, 12)
+
+[node name="Units" type="Button" parent="HUD/TopBar" unique_id=13021746]
+layout_mode = 0
+offset_top = 108.0
+offset_right = 49.0
+offset_bottom = 139.0
+text = "Units"
+
+[node name="Traps" type="Button" parent="HUD/TopBar" unique_id=1837840852]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 108.0
+offset_right = 102.0
+offset_bottom = 139.0
+text = "Traps
+"
+
+[node name="Fields" type="Button" parent="HUD/TopBar" unique_id=367484879]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 108.0
+offset_right = 159.0
+offset_bottom = 139.0
+text = "Fields"
+
+[node name="Dialogue" type="Control" parent="HUD" unique_id=463549203]
+z_index = 50
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Dialogue" unique_id=1341110671]
+z_index = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 459.0
+offset_right = 790.0
+offset_bottom = 636.0
+texture = ExtResource("41_ptfdn")
+
+[node name="Label" type="Label" parent="HUD/Dialogue/TextureRect" unique_id=706772507]
+layout_mode = 0
+offset_right = 757.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 40
+text = "HELP ME"
+script = ExtResource("42_y6hl6")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/Dialogue" unique_id=424409516]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 421.0
+offset_right = 345.0
+offset_bottom = 478.0
+texture = ExtResource("43_gif3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/Dialogue" unique_id=854715401]
+position = Vector2(952, 361)
+sprite_frames = SubResource("SpriteFrames_o3aof")
+animation = &"Default"
+autoplay = "Default"
+
+[node name="ChibiPlace" type="Node2D" parent="." unique_id=564463514]
+
+[node name="Combat" type="Node2D" parent="." unique_id=1639644408]
+visible = false
+z_index = 20
+script = ExtResource("40_cqekc")
+
+[node name="Allies" type="Node2D" parent="Combat" unique_id=2112165524]
+z_index = 5
+
+[node name="Enemies" type="Node2D" parent="Combat" unique_id=8162375]
+
+[node name="HUD" type="CanvasLayer" parent="Combat" unique_id=87021241]
+visible = false
+
+[node name="SkillsMenu" type="TextureRect" parent="Combat/HUD" unique_id=624617219]
+visible = false
+offset_left = 924.0
+offset_top = 502.0
+offset_right = 1127.0
+offset_bottom = 609.0
+texture = ExtResource("41_50m7d")
+
+[node name="GridContainer" type="GridContainer" parent="Combat/HUD/SkillsMenu" unique_id=1937424719]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 272.0
+offset_bottom = 73.0
+
+[node name="Template" type="TextureButton" parent="Combat/HUD/SkillsMenu/GridContainer" unique_id=1813064681]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("42_1u2qj")
+texture_hover = ExtResource("43_hnhmk")
+
+[node name="OnCooldown" type="TextureRect" parent="Combat/HUD/SkillsMenu/GridContainer/Template" unique_id=1202586504]
+visible = false
+layout_mode = 0
+offset_right = 182.0
+offset_bottom = 25.0
+texture = ExtResource("45_4ekvx")
+
+[node name="Cooldown" type="Label" parent="Combat/HUD/SkillsMenu/GridContainer/Template/OnCooldown" unique_id=2075594665]
+layout_mode = 0
+offset_left = 173.0
+offset_top = -1.0
+offset_right = 184.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[node name="SkillName" type="Label" parent="Combat/HUD/SkillsMenu/GridContainer/Template" unique_id=2070383764]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 182.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 20
+text = "Skill Name"
+
+[node name="Description" type="TextureRect" parent="Combat/HUD/SkillsMenu" unique_id=2040832304]
+visible = false
+layout_mode = 0
+offset_left = -212.0
+offset_top = -23.0
+offset_right = -9.0
+offset_bottom = 122.0
+texture = ExtResource("46_m7vhu")
+
+[node name="SkillName" type="Label" parent="Combat/HUD/SkillsMenu/Description" unique_id=879342391]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 176.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 20
+text = "Skill Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown" type="Label" parent="Combat/HUD/SkillsMenu/Description" unique_id=426969646]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 85.0
+offset_right = 188.0
+offset_bottom = 117.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("12_q8sds")
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillDescription" type="RichTextLabel" parent="Combat/HUD/SkillsMenu/Description" unique_id=2036224358]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 52.0
+offset_right = 149.0
+offset_bottom = 119.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("12_q8sds")
+theme_override_font_sizes/normal_font_size = 15
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+autowrap_mode = 2
+
+[node name="Buttons" type="Control" parent="Combat/HUD" unique_id=1901307727]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Attack" type="TextureButton" parent="Combat/HUD/Buttons" unique_id=2011441462]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 446.0
+offset_right = 1094.0
+offset_bottom = 492.0
+texture_normal = ExtResource("47_dhbwi")
+texture_hover = ExtResource("48_32bjv")
+script = ExtResource("49_ni4m0")
+
+[node name="Skill" type="TextureButton" parent="Combat/HUD/Buttons" unique_id=398416270]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 504.0
+offset_right = 1094.0
+offset_bottom = 549.0
+texture_normal = ExtResource("48_hnhmk")
+texture_hover = ExtResource("50_fg0ar")
+script = ExtResource("51_oeqnk")
+
+[node name="Rectangle" type="TextureRect" parent="Combat/HUD/Buttons" unique_id=535106865]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 494.0
+offset_right = 1093.0
+offset_bottom = 503.0
+texture = ExtResource("52_ih23b")
+
+[node name="BackButton" type="TextureButton" parent="Combat/HUD" unique_id=1936883984]
+visible = false
+offset_left = 1064.0
+offset_top = 449.0
+offset_right = 1124.0
+offset_bottom = 499.0
+texture_normal = ExtResource("52_4ekvx")
+texture_hover = ExtResource("53_m7vhu")
+
+[node name="Slots" type="Node2D" parent="Combat" unique_id=2054398840]
+
+[node name="Allies" type="Node2D" parent="Combat/Slots" unique_id=2017970571]
+
+[node name="Slot1" type="Marker2D" parent="Combat/Slots/Allies" unique_id=106698824]
+position = Vector2(100, 573)
+
+[node name="Slot2" type="Marker2D" parent="Combat/Slots/Allies" unique_id=1315241494]
+position = Vector2(300, 573)
+
+[node name="Slot3" type="Marker2D" parent="Combat/Slots/Allies" unique_id=1080198704]
+position = Vector2(500, 573)
+
+[node name="Slot4" type="Marker2D" parent="Combat/Slots/Allies" unique_id=585529985]
+position = Vector2(700, 573)
+
+[node name="Enemies" type="Node2D" parent="Combat/Slots" unique_id=1224722822]
+
+[node name="Slot1" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1025039174]
+position = Vector2(200, 288)
+
+[node name="Slot2" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=246697091]
+position = Vector2(400, 288)
+
+[node name="Slot3" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1864940860]
+position = Vector2(600, 288)
+
+[node name="Slot4" type="Marker2D" parent="Combat/Slots/Enemies" unique_id=1480822559]
+position = Vector2(800, 288)
+
+[node name="Background" type="Node2D" parent="Combat" unique_id=986346843]
+z_index = -5
+
+[node name="BackgroundBottom" type="Sprite2D" parent="Combat/Background" unique_id=1196929416]
+z_index = 2
+position = Vector2(576, 324)
+texture = ExtResource("52_lcmar")
+
+[node name="BackgroundTop" type="Sprite2D" parent="Combat/Background" unique_id=1084818127]
+z_index = -5
+position = Vector2(576, 324)
+texture = ExtResource("53_ptfdn")
+
+[node name="Background" type="Node2D" parent="." unique_id=774514394]
+z_index = -100
+
+[node name="Parallax1" type="Sprite2D" parent="Background" unique_id=626196762]
+position = Vector2(576, 324)
+texture = ExtResource("53_1u2qj")
+
+[node name="Parallax2" type="Sprite2D" parent="Background" unique_id=1412571810]
+position = Vector2(576, 972)
+texture = ExtResource("54_hnhmk")
+
+[node name="Parallax3" type="Sprite2D" parent="Background" unique_id=934704991]
+position = Vector2(576, 1618)
+texture = ExtResource("55_s11rx")
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=1521963525]
+layer = 100
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="GameOver" unique_id=32567095]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("55_s11rx")
+
+[node name="Label" type="Label" parent="GameOver" unique_id=784877048]
+offset_left = 415.0
+offset_top = 124.0
+offset_right = 642.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 49
+text = "You died!"
+
+[node name="Checkpoint" type="Button" parent="GameOver" unique_id=1793184278]
+offset_left = 436.0
+offset_top = 256.0
+offset_right = 632.0
+offset_bottom = 287.0
+text = "Restart from checkpoint"
+
+[node name="Restart" type="Button" parent="GameOver" unique_id=1212209225]
+offset_left = 434.0
+offset_top = 313.0
+offset_right = 630.0
+offset_bottom = 344.0
+text = "Restart from scratch"
+
+[connection signal="button_down" from="HUD/FloorUI/UpButton" to="HUD/FloorUI" method="_on_up_button_button_down"]
+[connection signal="button_down" from="HUD/FloorUI/DownButton" to="HUD/FloorUI" method="_on_down_button_button_down"]
+[connection signal="pressed" from="HUD/Shop/Units" to="HUD/Shop" method="_on_units_pressed"]
+[connection signal="pressed" from="HUD/Shop/Traps" to="HUD/Shop" method="_on_traps_pressed"]
+[connection signal="pressed" from="HUD/Shop/Fields" to="HUD/Shop" method="_on_fields_pressed"]
+[connection signal="pressed" from="HUD/Shop/SidePanel/SoulsBackground" to="HUD/Shop" method="_on_souls_background_pressed"]
+[connection signal="pressed" from="HUD/ShopOpener" to="HUD/Shop" method="_on_shop_opener_pressed"]
+[connection signal="pressed" from="HUD/DungeonOpener" to="Chibis" method="_on_dungeon_opener_pressed"]
+[connection signal="pressed" from="HUD/TopBar/Units" to="HUD/TopBar" method="_on_units_pressed"]
+[connection signal="pressed" from="HUD/TopBar/Traps" to="HUD/TopBar" method="_on_traps_pressed"]
+[connection signal="pressed" from="HUD/TopBar/Fields" to="HUD/TopBar" method="_on_fields_pressed"]
+[connection signal="button_down" from="Combat/HUD/Buttons/Attack" to="Combat/HUD/Buttons/Attack" method="_on_button_down"]
+[connection signal="button_down" from="Combat/HUD/Buttons/Skill" to="Combat/HUD/Buttons/Skill" method="_on_button_down"]
+[connection signal="pressed" from="Combat/HUD/BackButton" to="Combat" method="_on_back_button_pressed"]

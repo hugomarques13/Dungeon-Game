@@ -5,7 +5,7 @@ var current_cooldown := 0
 
 const damage = 20
 
-var description = "TO DO"
+var description = "Swing quickly with both arms, dealing low damage twice to a target."
 
 @onready var character = $"../.."
 
@@ -23,7 +23,7 @@ func use(target):
 		
 		print("used basic attack!")
 		
-		await get_tree().create_timer(0.5).timeout
+		await VisualsHandler.make_visual(target, "Blunt")
 		
 		DamageHandler.do_damage(character, target, damage, {})
 	

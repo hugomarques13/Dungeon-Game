@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dsbirno6f130c"]
+
+[ext_resource type="Texture2D" uid="uid://duirjxy7voxl4" path="res://Sprites/Effects/MagicSlash/strike1.png" id="1_i2hyn"]
+[ext_resource type="Texture2D" uid="uid://b366vrxdj07lm" path="res://Sprites/Effects/MagicSlash/strike2.png" id="2_dhk03"]
+[ext_resource type="Texture2D" uid="uid://w44tig8txcin" path="res://Sprites/Effects/MagicSlash/strike3.png" id="3_0u7c0"]
+[ext_resource type="Texture2D" uid="uid://d1au14e8k8rsg" path="res://Sprites/Effects/MagicSlash/strike4.png" id="4_2juy5"]
+[ext_resource type="Texture2D" uid="uid://cw7mum8h3tar4" path="res://Sprites/Effects/MagicSlash/strike5.png" id="5_b4u2u"]
+[ext_resource type="Texture2D" uid="uid://b3tq5u17u5p1r" path="res://Sprites/Effects/MagicSlash/strike6.png" id="6_oeiqj"]
+[ext_resource type="Texture2D" uid="uid://4edjm5piliys" path="res://Sprites/Effects/MagicSlash/strike7.png" id="7_fa0st"]
+[ext_resource type="Texture2D" uid="uid://dfsiples2i5ol" path="res://Sprites/Effects/MagicSlash/strike8.png" id="8_qneyp"]
+[ext_resource type="Texture2D" uid="uid://dlsc6o16v6gn4" path="res://Sprites/Effects/MagicSlash/strike9.png" id="9_4yl4n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhfx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i2hyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dhk03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0u7c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2juy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b4u2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oeiqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fa0st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qneyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4yl4n")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="MagicBlast" type="AnimatedSprite2D" unique_id=1957433992]
+sprite_frames = SubResource("SpriteFrames_dhfx2")
+frame = 8
+frame_progress = 1.0
+centered = false
+offset = Vector2(-136, -280)

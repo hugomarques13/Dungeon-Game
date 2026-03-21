@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bw6n1ju32oum3"]
+
+[ext_resource type="Script" uid="uid://bjsm1kd6cssow" path="res://Scripts/Moves/Bull Rush.gd" id="1_ibsan"]
+
+[node name="Bull Rush" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_ibsan")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8x5k1tsl10va"]
+
+[ext_resource type="Script" uid="uid://c12yotcj8mgb0" path="res://Scripts/Moves/Reality Hemorrhage.gd" id="1_0aik0"]
+
+[node name="Reality Hemorrhage" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_0aik0")

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bsopungx4f4vt"]
+
+[ext_resource type="Script" uid="uid://dnrbct3mg4mh5" path="res://Scripts/character.gd" id="1_vx0sn"]
+[ext_resource type="PackedScene" uid="uid://b61lets05qtp7" path="res://Prefabs/Moves/Attack.tscn" id="2_ql637"]
+[ext_resource type="PackedScene" uid="uid://csq7d04imxh86" path="res://Prefabs/Moves/Cone of Cold.tscn" id="3_vx0sn"]
+[ext_resource type="PackedScene" uid="uid://di3m5fh3ykhyo" path="res://Prefabs/Moves/Burning Hands.tscn" id="4_ql637"]
+[ext_resource type="PackedScene" uid="uid://ctya612tyvu3v" path="res://Prefabs/Moves/Lightning Strike.tscn" id="5_ix3ai"]
+[ext_resource type="Texture2D" uid="uid://dqjjxsjxegrco" path="res://Sprites/Enemies/PartyScholar.png" id="6_n5b8k"]
+[ext_resource type="Texture2D" uid="uid://bbydsyean1qa6" path="res://Sprites/HUD/Combat/TargetSelectArrow.png" id="7_u655b"]
+[ext_resource type="Script" uid="uid://bsfdtsx6woegm" path="res://Scripts/target_select_arrow.gd" id="8_6spl4"]
+[ext_resource type="PackedScene" uid="uid://b416tymvylwql" path="res://Prefabs/gui.tscn" id="9_ckdox"]
+[ext_resource type="Shader" uid="uid://det5bp8jddfhj" path="res://Scripts/HitFlash.gdshader" id="10_xsmwu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gayuj"]
+shader = ExtResource("10_xsmwu")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+
+[node name="Scholar" type="CharacterBody2D" unique_id=1572280592]
+script = ExtResource("1_vx0sn")
+soul_reward = 750
+max_health = 300.0
+base_attack_damage = 10.0
+base_attack_amount = 5
+base_attack_effect = "Magic"
+breath_scale_y = 1.02
+
+[node name="Moves" type="Node2D" parent="." unique_id=1957935201]
+
+[node name="Attack" parent="Moves" unique_id=79268630 instance=ExtResource("2_ql637")]
+
+[node name="Cone of Cold" parent="Moves" unique_id=1111325172 instance=ExtResource("3_vx0sn")]
+
+[node name="Burning Hands" parent="Moves" unique_id=1437353989 instance=ExtResource("4_ql637")]
+
+[node name="Lightning Strike" parent="Moves" unique_id=1992046642 instance=ExtResource("5_ix3ai")]
+
+[node name="Status" type="Node2D" parent="." unique_id=640576991]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657085201]
+material = SubResource("ShaderMaterial_gayuj")
+position = Vector2(0, -148)
+texture = ExtResource("6_n5b8k")
+
+[node name="TargetSelectArrow" type="Sprite2D" parent="." unique_id=686715958]
+visible = false
+z_index = 7
+position = Vector2(7, -331)
+texture = ExtResource("7_u655b")
+script = ExtResource("8_6spl4")
+
+[node name="GUI" parent="." unique_id=1570402446 instance=ExtResource("9_ckdox")]

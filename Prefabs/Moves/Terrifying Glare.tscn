@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cqogq4dkip8tv"]
+
+[ext_resource type="Script" uid="uid://dgi8w5xe4xp1u" path="res://Scripts/Moves/Terrifying Glare.gd" id="1_bm5t2"]
+
+[node name="Terrifying Glare" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_bm5t2")

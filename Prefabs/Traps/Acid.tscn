@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://jxf0rxnlvtas"]
+
+[ext_resource type="Texture2D" uid="uid://cpvea3osvwif5" path="res://Sprites/Rooms/Traps/tileacid.png" id="1_in4ol"]
+[ext_resource type="Script" uid="uid://bfx4e3f5gt6d3" path="res://Scripts/Traps/AcidTrap.gd" id="2_in4ol"]
+
+[node name="AcidTrap" type="Sprite2D" unique_id=847994451]
+texture = ExtResource("1_in4ol")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1751312997]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_in4ol")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=493927177]
+polygon = PackedVector2Array(-53, 1, 6, -33, 52, -5, -3, 29)
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=408918043]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickBox" unique_id=1285463235]
+modulate = Color(1.3568124, 1.175139, 0.75589246, 0.07058824)
+light_mask = 0
+visibility_layer = 0
+polygon = PackedVector2Array(0, -46, 75, 0, 0, 46, -75, 0)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

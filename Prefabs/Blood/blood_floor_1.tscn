@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://m5p0y2x6ny7e"]
+
+[ext_resource type="Texture2D" uid="uid://c15u8oslamm1s" path="res://Sprites/Rooms/blood1.png" id="1_bjnuc"]
+
+[node name="Blood1" type="Sprite2D" unique_id=1157360101]
+z_index = 1
+texture = ExtResource("1_bjnuc")

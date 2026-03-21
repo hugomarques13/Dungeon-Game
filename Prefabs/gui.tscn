@@ -1,25 +1,39 @@
 [gd_scene format=3 uid="uid://b416tymvylwql"]
 
+[ext_resource type="Texture2D" uid="uid://j0yy4ejsyeu1" path="res://Sprites/HUD/hpbarr.png" id="1_du3xs"]
+[ext_resource type="Texture2D" uid="uid://bhi57ybnf3hq1" path="res://Sprites/HUD/HPback.png" id="2_ht24n"]
+
 [node name="GUI" type="Node2D" unique_id=1570402446]
 z_index = 5
 
-[node name="BarBackground" type="ColorRect" parent="." unique_id=729071848]
-offset_left = -63.0
-offset_top = 7.0
-offset_right = 67.0
-offset_bottom = 19.0
-color = Color(0, 0, 0, 1)
-
 [node name="Bar" type="ColorRect" parent="." unique_id=1930904078]
-offset_left = -62.0
-offset_top = 8.0
-offset_right = 66.0
-offset_bottom = 18.0
-color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
+z_index = 1
+offset_left = -51.771862
+offset_top = 5.793787
+offset_right = 55.88351
+offset_bottom = 17.724228
+color = Color(0.52156866, 0.9490196, 0.7137255, 1)
 
-[node name="StatusContainer" type="HBoxContainer" parent="." unique_id=1489990820]
-offset_left = -63.0
-offset_top = 19.0
-offset_right = 749.5
-offset_bottom = 125.0
-scale = Vector2(0.16, 0.16)
+[node name="StatusContainer" type="HFlowContainer" parent="." unique_id=1972659215]
+offset_left = -62.69542
+offset_top = 20.421356
+offset_right = 208.88353
+offset_bottom = 67.42136
+scale = Vector2(0.475, 0.475)
+
+[node name="BarAround" type="TextureRect" parent="." unique_id=297363934]
+z_index = 2
+offset_left = -61.0
+offset_top = 4.0
+offset_right = 247.0
+offset_bottom = 44.0
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("1_du3xs")
+
+[node name="BarBackground" type="TextureRect" parent="." unique_id=856258264]
+offset_left = -61.0
+offset_top = 4.0
+offset_right = 247.0
+offset_bottom = 44.0
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("2_ht24n")

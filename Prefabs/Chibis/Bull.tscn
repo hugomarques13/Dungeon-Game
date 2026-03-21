@@ -28,7 +28,7 @@ height = 44.0
 
 [node name="Bull" type="AnimatedSprite2D" unique_id=108898860]
 sprite_frames = SubResource("SpriteFrames_kowxn")
-animation = &"Front"
+animation = &"Back"
 autoplay = "Front"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1869281941]

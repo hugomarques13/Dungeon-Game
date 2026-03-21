@@ -7,11 +7,11 @@ const damage = 20
 const chain_amount = 5
 var has_no_target = true
 
-var description = "TO DO"
+var description = "Lightning that chains 5 times dealing low damage each time."
 
 @onready var character = $"../.."
 
-func use(false_target):
+func use(_false_target):
 	# extra safety
 	if current_cooldown > 0:
 		print("test move on cooldown, sorry")
@@ -24,7 +24,7 @@ func use(false_target):
 		return
 	
 	for target in targets:
-		await get_tree().create_timer(0.2).timeout
+		await VisualsHandler.make_visual(target, "Dark")
 		DamageHandler.do_damage(character, target, damage, {})
 	
 	return

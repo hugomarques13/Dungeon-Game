@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bm2ns2eoqvra2"]
+
+[ext_resource type="Texture2D" uid="uid://dg464a4trw1sd" path="res://Sprites/Rooms/Fields/TileImpair.png" id="1_aj7xl"]
+
+[node name="Icon" type="Control" unique_id=1953536414]
+clip_contents = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 94.00102
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1438911153]
+z_index = -1
+layout_mode = 1
+offset_left = -106.99999
+offset_top = -4.0
+offset_right = 48.000008
+offset_bottom = 92.0
+scale = Vector2(1.44, 1.44)
+mouse_filter = 2
+texture = ExtResource("1_aj7xl")

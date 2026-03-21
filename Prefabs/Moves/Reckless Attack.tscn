@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://wbbt8x6ahuog"]
+
+[ext_resource type="Script" uid="uid://b8f7nn4fpx6g0" path="res://Scripts/Moves/Reckless Attack.gd" id="1_fpkn1"]
+
+[node name="Reckless Attack" type="Node2D" unique_id=1111325172]
+script = ExtResource("1_fpkn1")

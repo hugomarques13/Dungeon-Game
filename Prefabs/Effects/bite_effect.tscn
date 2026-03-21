@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bvb3sdd2x0rve"]
+
+[ext_resource type="Texture2D" uid="uid://d1cs23750it3b" path="res://Sprites/Effects/Bite/bite1.png" id="1_a5huc"]
+[ext_resource type="Texture2D" uid="uid://bxr4thd2522p4" path="res://Sprites/Effects/Bite/bite2.png" id="2_2eboa"]
+[ext_resource type="Texture2D" uid="uid://dkgi61gqhes7m" path="res://Sprites/Effects/Bite/bite3.png" id="3_dh202"]
+[ext_resource type="Texture2D" uid="uid://b3mk0ndmkko6p" path="res://Sprites/Effects/Bite/bite4.png" id="4_fnkmv"]
+[ext_resource type="Texture2D" uid="uid://ctkl340kk48iq" path="res://Sprites/Effects/Bite/bite5.png" id="5_b3ysl"]
+[ext_resource type="Texture2D" uid="uid://2i40skbpu7d4" path="res://Sprites/Effects/Bite/bite6.png" id="6_rjpsp"]
+[ext_resource type="Texture2D" uid="uid://dy3ics6yxack" path="res://Sprites/Effects/Bite/bite7.png" id="7_bhbey"]
+[ext_resource type="Texture2D" uid="uid://n2hkm2p0moug" path="res://Sprites/Effects/Bite/bite8.png" id="8_nuq24"]
+[ext_resource type="Texture2D" uid="uid://b7jrucnpx1ax7" path="res://Sprites/Effects/Bite/bite9.png" id="9_dtptd"]
+[ext_resource type="Texture2D" uid="uid://483hsycx4lon" path="res://Sprites/Effects/Bite/bite10.png" id="10_4j4ry"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxr38"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("1_a5huc")
+}, {
+"duration": 0.9,
+"texture": ExtResource("2_2eboa")
+}, {
+"duration": 0.9,
+"texture": ExtResource("3_dh202")
+}, {
+"duration": 0.9,
+"texture": ExtResource("4_fnkmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b3ysl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rjpsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bhbey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nuq24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dtptd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4j4ry")
+}],
+"loop": false,
+"name": &"default",
+"speed": 19.0
+}]
+
+[node name="BiteEffect" type="AnimatedSprite2D" unique_id=217190639]
+sprite_frames = SubResource("SpriteFrames_lxr38")
+frame = 9
+frame_progress = 1.0
+centered = false
+offset = Vector2(-268.5, -323)
